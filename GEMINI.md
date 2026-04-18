@@ -30,7 +30,7 @@ Via Polymarket CLI (polymarket data positions with proxy wallet):
 - Sell positions but as a very last resort, if risk warrants it. If loss is unavoidable.
 
 ## Step 4 — Check Funds
-Fetch USDC balance via Polymarket CLI. **Bankroll for this run = 15% of balance.**
+Fetch USDC balance via Polymarket CLI. **Bankroll for this run = MAXIMUM 15% of balance.**
 If balance is 0 or tools are failing → skip to Step 9.
 
 ## Step 5 — Find Candidate Markets
