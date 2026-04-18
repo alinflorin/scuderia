@@ -1,1 +1,4 @@
 # scuderia
+## ENV
+- POLYMARKET_PRIVATE_KEY
+- SLACK_CLI_TOKEN

@@ -36,5 +36,7 @@ COPY ./gemini_settings.json /root/.gemini/settings.json
 COPY ./gemini_trusted_folders.json /root/.gemini/trustedFolders.json
 
 ENV NO_BROWSER=true
+ENV POLYMARKET_PRIVATE_KEY=""
+ENV SLACK_CLI_TOKEN=""
 
 CMD ["./run.sh"]
