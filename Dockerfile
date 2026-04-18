@@ -8,8 +8,18 @@ RUN apt-get install -y curl
 RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash - && apt-get install -y nodejs
 RUN npm i -g npm
 
-# Playwright + Chromium + Deps
+# Playwright + Playwright CLI + Chromium + Deps
+RUN npm i -g playwright @playwright/cli
 RUN npx -y playwright install chromium --with-deps
+
+# Polymarket CLI
+RUN curl -sSL https://raw.githubusercontent.com/Polymarket/polymarket-cli/main/install.sh | sh
+
+# Slack CLI
+RUN curl -o /usr/local/bin/slack https://raw.githubusercontent.com/rockymadden/slack-cli/master/src/slack && chmod +x /usr/local/bin/slack
+
+# Gemini CLI
+RUN npm i -g @google/gemini-cli
 
 # Node + Bash project
 WORKDIR /app
