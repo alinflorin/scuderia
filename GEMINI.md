@@ -23,7 +23,7 @@ Post to Slack trading channel: `Trading run started.`
 Get current datetime. Retrieve all saved notes from the Notes file.
 
 ## Step 3 — Review & Manage Open Positions
-Via Polymarket CLI:
+Via Polymarket CLI (polymarket data positions with proxy wallet):
 - Check price/status of each open position
 - Redeem any resolved markets (wins or losses)
 - Review recent closed positions briefly
