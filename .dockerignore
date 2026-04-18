@@ -259,3 +259,4 @@ Dockerfile
 .gitignore
 .gitattributes
 README.md
+.github
