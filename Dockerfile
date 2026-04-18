@@ -8,10 +8,6 @@ RUN apt-get install -y curl jq yq
 RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash - && apt-get install -y nodejs
 RUN npm i -g npm
 
-# Playwright + Playwright CLI + Chromium + Deps
-RUN npm i -g @playwright/cli@latest
-RUN playwright-cli install-browser chrome --with-deps
-
 # Polymarket CLI
 RUN curl -sSL https://raw.githubusercontent.com/Polymarket/polymarket-cli/main/install.sh | sh
 
@@ -20,6 +16,10 @@ RUN curl -o /usr/local/bin/slack https://raw.githubusercontent.com/rockymadden/s
 
 # Gemini CLI
 RUN npm i -g @google/gemini-cli
+
+# Playwright + Playwright CLI + Firefox + Deps
+RUN npm i -g @playwright/cli@latest
+RUN playwright-cli install-browser firefox --with-deps
 
 # Node + Bash project
 WORKDIR /app
@@ -37,4 +37,5 @@ ENV NO_BROWSER="true"
 ENV GEMINI_SYSTEM_MD="/app/SYSTEM.md"
 ENV PLAYWRIGHT_MCP_ISOLATED="true"
 ENV PLAYWRIGHT_MCP_SANDBOX="false"
+ENV PLAYWRIGHT_MCP_BROWSER="firefox"
 CMD ["./run.sh"]
