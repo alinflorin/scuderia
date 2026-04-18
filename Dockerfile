@@ -35,5 +35,7 @@ RUN mkdir -p /root/.gemini
 
 ENV NO_BROWSER="true"
 ENV GEMINI_SYSTEM_MD="/app/SYSTEM.md"
+ENV PLAYWRIGHT_MCP_ISOLATED="true"
+ENV PLAYWRIGHT_MCP_SANDBOX="false"
 ENV PLAYWRIGHT_MCP_BROWSER=chrome-for-testing
 CMD ["./run.sh"]
