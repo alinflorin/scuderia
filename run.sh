@@ -1,6 +1,7 @@
 #!/bin/bash
 
 mkdir -p /root/.gemini
+mkdir -p /app/persist
 
 if [ ! -f "/root/.gemini/settings.json" ]; then
   cat > /root/.gemini/settings.json << 'EOF'
@@ -29,6 +30,12 @@ if [ ! -f "/root/.gemini/projects.json" ]; then
     "/app": "app"
   }
 }
+EOF
+fi
+
+if [ ! -f "/app/persist/NOTES.md" ]; then
+  cat > /app/persist/NOTES.md << 'EOF'
+
 EOF
 fi
 

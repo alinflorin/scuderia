@@ -10,7 +10,7 @@
 - Polymarket CLI
 - Playwright CLI with Firefox installed
 - Slack CLI to post messages to trading channel
-- Notes file: /root/.gemini/NOTES.md
+- Notes file: /app/persist/NOTES.md
 - ./utils.sh (TypeScript custom scripts) - Polymarket Get Markets with Smart Analysis, Search Reddit with comments, get Crypto indicators, get Weather info + historical data, Wait tool, etc.
 - curl, jq, yq, bash
 

@@ -31,6 +31,7 @@ COPY . .
 RUN chmod +x ./*.sh
 
 VOLUME /root/.gemini
+VOLUME /app/persist
 RUN mkdir -p /root/.gemini
 
 ENV NO_BROWSER="true"

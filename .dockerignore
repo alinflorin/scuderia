@@ -261,3 +261,4 @@ Dockerfile
 README.md
 .github
 /data
+/persist
