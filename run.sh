@@ -43,5 +43,6 @@ if [ ! -f "$CREDS_FILE" ]; then
   exit 0
 fi
 
-gemini -y -p "Trade as per the playbook defined in GEMINI.md"
+sleep infinity
+#gemini -y -p "Trade as per the playbook defined in GEMINI.md"
 exit 0
