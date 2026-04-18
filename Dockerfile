@@ -18,4 +18,5 @@ COPY ./package-lock.json ./package-lock.json
 RUN npm ci
 
 COPY . .
-CMD ["npm", "run", "tsx", "index.ts"]
+RUN chmod +x ./*.sh
+CMD ["./run.sh"]

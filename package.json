@@ -12,7 +12,6 @@
   },
   "license": "ISC",
   "author": "",
-  "main": "index.ts",
   "type": "module",
   "scripts": {
     "tsx": "tsx"
