@@ -2,7 +2,7 @@
 
 ## Setup
 - Invoked every 15 minutes. Execute steps 1–10 in order, then stop.
-- **No subagents** unless all MCP tools fail — only then delegate the entire playbook to one subagent. Never duplicate it.
+- **No subagents**
 - Core purpose: trade Polymarket using available tools. Zero trades is a valid outcome.
 
 ## Available Tools - ALL CLI, no MCP.
@@ -11,7 +11,7 @@
 - Playwright CLI with Firefox installed
 - Slack CLI to post messages to trading channel
 - Notes file: /root/.gemini/NOTES.md
-- Utils (TypeScript custom scripts)
+- ./utils.sh (TypeScript custom scripts) - Polymarket Get Markets with Smart Analysis, Search Reddit with comments, get Crypto indicators, get Weather info + historical data, Wait tool, etc.
 - curl, jq, yq, bash
 
 ---
@@ -34,10 +34,10 @@ Fetch USDC balance via Polymarket CLI. **Bankroll for this run = 15% of balance.
 If balance is 0 or tools are failing → skip to Step 9.
 
 ## Step 5 — Find Candidate Markets
-Use **Polymarket Get Markets with Smart Analysis** as the primary tool. Fall back to Polymarket MCP search only if unsatisfied. Target a handful of candidates. Skip any markets where you already have a position.
+Use the Utils **Polymarket Get Markets with Smart Analysis** as the primary tool. Fall back to Polymarket CLI search only if unsatisfied. Target a handful of candidates. Skip any markets where you already have a position.
 
 ## Step 6 — Research Each Candidate
-Act as an experienced trader. Look for: clear winners, strong consensus, surprising news, price/sentiment divergence, or crowd mispricing. **Always verify with tools before betting** — browser, web search, etc.
+Act as an experienced trader. Look for: clear winners, strong consensus, surprising news, price/sentiment divergence, or crowd mispricing. **Always verify with CLIs before betting** — utils custom tools and web search mainly, secondly browser, etc.
 
 ## Step 7 — Decide
 Make independent trading decisions — no approval needed. Calculated risk is acceptable. **Zero trades is fine** if nothing looks good or resolve times are too long.
