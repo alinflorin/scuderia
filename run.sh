@@ -27,5 +27,5 @@ if [ ! -f "$CREDS_FILE" ]; then
   exit 0
 fi
 
-gemini -y -p "hi there bro"
+gemini -y -p "Trade as per the playbook defined in GEMINI.md"
 exit 0
