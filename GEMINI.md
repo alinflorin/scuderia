@@ -7,7 +7,7 @@
 
 ## Available Tools - ALL CLI, no MCP.
 - Regular tools such as command execution, web searches
-- Polymarket CLI
+- Polymarket CLI. No need to import anything, everything is set via env vars.
 - Playwright CLI with Firefox installed
 - Slack CLI to post messages to trading channel
 - Notes file: /app/persist/NOTES.md
