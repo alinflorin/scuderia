@@ -13,7 +13,8 @@
 - Notes file: /app/persist/NOTES.md
 - ./utils.sh (TypeScript custom scripts) - Polymarket Get Markets with Smart Analysis, Search Reddit with comments, get Crypto indicators, get Weather info + historical data, Wait tool, etc.
 - curl, jq, yq, bash
-
+- Persistent working directory: /app/persist (use this one)
+- Persistent Gemini CLI folder: /root/.gemini
 ---
 
 ## Step 1 — Notify Start
@@ -23,7 +24,7 @@ Post to Slack trading channel: `Trading run started.`
 Get current datetime. Retrieve all saved notes from the Notes file.
 
 ## Step 3 — Review & Manage Open Positions
-Via Polymarket CLI (polymarket data positions with proxy wallet):
+Via Polymarket CLI (you should run `polymarket data positions 0x.....` with the proxy wallet address: `polymarket wallet show`):
 - Check price/status of each open position
 - Redeem any resolved markets (wins or losses)
 - Review recent closed positions briefly
@@ -44,7 +45,7 @@ Make independent trading decisions — no approval needed. Calculated risk is ac
 
 ## Step 8 — Place Bets (if any)
 - **Cap: 15% of available funds total across all trades this run**
-- Split that 15% however you want across chosen markets/outcomes
+- Split that 15% however you want across chosen markets/outcomes. You should not aim to bet maximum amount.
 - Per trade: fetch current best price → place order → confirm a valid order ID
 - If an order fails, skip it (don't count it)
 
@@ -224,18 +225,13 @@ polymarket clob market-reward 0xCONDITION...
 polymarket clob order-scoring ORDER_ID
 polymarket clob orders-scoring "ORDER1,ORDER2"
 
-# API key management
-polymarket clob api-keys
-polymarket clob create-api-key
-polymarket clob delete-api-key
-
 # Account status
 polymarket clob account-status
 polymarket clob notifications
 polymarket clob delete-notifications "NOTIF1,NOTIF2"
 ```
 
-### On-Chain Data
+### On-Chain Data (USE PROXY WALLET ADDRESS)
 
 Public data — no wallet needed.
 
@@ -301,43 +297,13 @@ polymarket ctf position-id --collection 0xCOLLECTION...
 
 `--amount` is in USDC (e.g., `10` = $10). The `--partition` flag defaults to binary (`1,2`). On-chain operations require MATIC for gas on Polygon.
 
-### Bridge
-
-Deposit assets from other chains into Polymarket.
-
-```bash
-# Get deposit addresses (EVM, Solana, Bitcoin)
-polymarket bridge deposit 0xWALLET_ADDRESS
-
-# List supported chains and tokens
-polymarket bridge supported-assets
-
-# Check deposit status
-polymarket bridge status 0xDEPOSIT_ADDRESS
-```
 
 ### Wallet Management
 
 ```bash
-polymarket wallet create               # Generate new random wallet
-polymarket wallet create --force       # Overwrite existing
-polymarket wallet import 0xKEY...      # Import existing key
 polymarket wallet address              # Print wallet address
 polymarket wallet show                 # Full wallet info (address, source, config path)
-polymarket wallet reset                # Delete config (prompts for confirmation)
-polymarket wallet reset --force        # Delete without confirmation
 ```
-
-### Interactive Shell
-
-```bash
-polymarket shell
-# polymarket> markets list --limit 3
-# polymarket> clob book 48331043336612883...
-# polymarket> exit
-```
-
-Supports command history. All commands work the same as the CLI, just without the `polymarket` prefix.
 
 ### Other
 
@@ -360,16 +326,15 @@ polymarket clob book 48331043336612883...
 polymarket clob price-history 48331043336612883... --interval 1d
 ```
 
-### Set up a new wallet and start trading
+### Set up wallet
 
 ```bash
-polymarket wallet create
 polymarket approve set                    # needs MATIC for gas
 polymarket clob balance --asset-type collateral
 polymarket clob market-order --token TOKEN_ID --side buy --amount 5
 ```
 
-### Monitor your portfolio
+### Monitor your portfolio (PROXY WALLET ONLY!)
 
 ```bash
 polymarket data positions 0xYOUR_ADDRESS
@@ -521,42 +486,6 @@ playwright-cli sessionstorage-get <k>   # get sessionStorage value
 playwright-cli sessionstorage-set <k> <v> # set sessionStorage value
 playwright-cli sessionstorage-delete <k>  # delete sessionStorage entry
 playwright-cli sessionstorage-clear     # clear all sessionStorage
-```
-
-### Network
-
-```bash
-playwright-cli route <pattern> [opts]   # mock network requests
-playwright-cli route-list               # list active routes
-playwright-cli unroute [pattern]        # remove route(s)
-```
-
-### DevTools
-
-```bash
-playwright-cli console [min-level]      # list console messages
-playwright-cli network                  # list all network requests since loading the page
-playwright-cli run-code <code>          # run playwright code snippet
-playwright-cli run-code --filename=f    # run playwright code from a file
-playwright-cli tracing-start            # start trace recording
-playwright-cli tracing-stop             # stop trace recording
-playwright-cli video-start [filename]   # start video recording
-playwright-cli video-chapter <title>    # add a chapter marker to the video
-playwright-cli video-stop               # stop video recording
-```
-
-### Open parameters
-
-```bash
-playwright-cli open --browser=chrome    # use specific browser
-playwright-cli attach --extension       # connect via browser extension
-playwright-cli attach --cdp=chrome      # attach to running Chrome/Edge by channel
-playwright-cli attach --cdp=<url>       # attach via CDP endpoint
-playwright-cli open --persistent        # use persistent profile
-playwright-cli open --profile=<path>    # use custom profile directory
-playwright-cli open --config=file.json  # use config file
-playwright-cli close                    # close the browser
-playwright-cli delete-data              # delete user data for default session
 ```
 
 ### Snapshots
