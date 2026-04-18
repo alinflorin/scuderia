@@ -10,7 +10,7 @@ RUN npm i -g npm
 
 # Playwright + Playwright CLI + Chromium + Deps
 RUN npm i -g playwright @playwright/cli
-RUN npx -y playwright install chrome-for-testing --with-deps
+RUN npx -y playwright install chrome --with-deps
 
 # Polymarket CLI
 RUN curl -sSL https://raw.githubusercontent.com/Polymarket/polymarket-cli/main/install.sh | sh
@@ -37,5 +37,4 @@ ENV NO_BROWSER="true"
 ENV GEMINI_SYSTEM_MD="/app/SYSTEM.md"
 ENV PLAYWRIGHT_MCP_ISOLATED="true"
 ENV PLAYWRIGHT_MCP_SANDBOX="false"
-ENV PLAYWRIGHT_MCP_BROWSER=chrome-for-testing
 CMD ["./run.sh"]
