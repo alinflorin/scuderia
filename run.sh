@@ -1,5 +1,16 @@
 #!/bin/bash
 
+SETTINGS_FILE="/root/.gemini/settings.json"
+if [ ! -f "$SETTINGS_FILE" ]; then
+  mkdir -p /root/.gemini
+  cp /app/gemini_settings.json "$SETTINGS_FILE"
+fi
+
+TRUSTED_FILE="/root/.gemini/trustedFolders.json"
+if [ ! -f "$TRUSTED_FILE" ]; then
+  cp /app/gemini_trusted_folders.json "$TRUSTED_FILE"
+fi
+
 CREDS_FILE="/root/.gemini/oauth_creds.json"
 
 if [ ! -f "$CREDS_FILE" ]; then
