@@ -626,3 +626,93 @@ playwright-cli kill-all                 # forcefully kill all browser processes
 ```
 
 ALWAYS PREFER SNAPSHOTS TO SCREENSHOTS WITH PLAYWRIGHT.
+
+
+
+
+
+
+
+
+## Utils - custom
+Usage: ./utils.sh [options] [command]
+
+Utils for trading
+
+Options:
+  -V, --version                                            output the version number
+  -h, --help                                               display help for command
+
+Commands:
+  smart-analysis [options]                                 Fetch, score and rank active markets using leaderboard smart-money signals (mirrors the n8n smart-analysis workflow).
+  crypto-coin-indicators <coin>                            Fetch 30-day CoinGecko market data and compute technical indicators (RSI, MACD, Bollinger Bands, MAs, ATR, Volume)
+                                                           for a given coin.
+  search-reddit-with-comments [options] <query>            Search Reddit for posts matching a query and return each post with its top comments.
+  weather-forecast <location> <target_date> <target_hour>  Get weather forecast for a location/date/hour with historical comparison (last 5 years). Outputs forecast, historical
+                                                           stats, and anomaly analysis.
+  wait <seconds>                                           Wait for a specified number of seconds before exiting.
+  help-all                                                 Show help for all commands
+  help [command]                                           display help for command
+
+
+────────────────────────────────────────────────────────────
+Usage: ./utils.sh smart-analysis [options]
+
+Fetch, score and rank active markets using leaderboard smart-money signals (mirrors the n8n smart-analysis workflow).
+
+Options:
+  -l, --limit <number>   number of markets to fetch (default: "30")
+  -o, --offset <number>  pagination offset (default: "0")
+  -h, --help             display help for command
+
+
+────────────────────────────────────────────────────────────
+Usage: ./utils.sh crypto-coin-indicators [options] <coin>
+
+Fetch 30-day CoinGecko market data and compute technical indicators (RSI, MACD, Bollinger Bands, MAs, ATR, Volume) for a given coin.
+
+Arguments:
+  coin        Coin symbol (BTC, ETH) or CoinGecko ID (bitcoin, ethereum)
+
+Options:
+  -h, --help  display help for command
+
+
+────────────────────────────────────────────────────────────
+Usage: ./utils.sh search-reddit-with-comments [options] <query>
+
+Search Reddit for posts matching a query and return each post with its top comments.
+
+Arguments:
+  query                          Search query
+
+Options:
+  -p, --limit-posts <number>     Max number of posts to return (default: "10")
+  -c, --limit-comments <number>  Max number of comments per post (default: "10")
+  -h, --help                     display help for command
+
+
+────────────────────────────────────────────────────────────
+Usage: ./utils.sh weather-forecast [options] <location> <target_date> <target_hour>
+
+Get weather forecast for a location/date/hour with historical comparison (last 5 years). Outputs forecast, historical stats, and anomaly analysis.
+
+Arguments:
+  location     City or location name (e.g. "Hong Kong", "London")
+  target_date  Date in YYYY-MM-DD format
+  target_hour  Hour in local time (0-23)
+
+Options:
+  -h, --help   display help for command
+
+
+────────────────────────────────────────────────────────────
+Usage: ./utils.sh wait [options] <seconds>
+
+Wait for a specified number of seconds before exiting.
+
+Arguments:
+  seconds     Number of seconds to wait
+
+Options:
+  -h, --help  display help for command
