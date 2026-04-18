@@ -11,6 +11,11 @@ if [ ! -f "$TRUSTED_FILE" ]; then
   cp /app/gemini_trusted_folders.json "$TRUSTED_FILE"
 fi
 
+PROJECTS_FILE="/root/.gemini/projects.json"
+if [ ! -f "$PROJECTS_FILE" ]; then
+  cp /app/gemini_projects.json "$PROJECTS_FILE"
+fi
+
 CREDS_FILE="/root/.gemini/oauth_creds.json"
 
 if [ ! -f "$CREDS_FILE" ]; then
@@ -22,5 +27,5 @@ if [ ! -f "$CREDS_FILE" ]; then
   exit 0
 fi
 
-gemini -y -p "bla bla"
+gemini -y -p "hi there bro"
 exit 0
