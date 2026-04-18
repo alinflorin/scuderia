@@ -54,6 +54,6 @@ if [ "${DEBUG}" = "1" ]; then
   echo DEBUG
   sleep infinity
 else
-  gemini -y -p "Trade as per the playbook defined in GEMINI.md. Current datetime (UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ). Your Polymarket Proxy Wallet address is: $(polymarket wallet show -o json | jq -r '.proxy_address')"
+  timeout "${TIMEOUT:-600}s" gemini -y -p "Trade as per the playbook defined in GEMINI.md. Current datetime (UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ). Your Polymarket Proxy Wallet address is: $(polymarket wallet show -o json | jq -r '.proxy_address')"
 fi
 exit 0
