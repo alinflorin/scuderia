@@ -44,5 +44,5 @@ if [ ! -f "$CREDS_FILE" ]; then
 fi
 
 #sleep infinity
-gemini -y -p "Trade as per the playbook defined in GEMINI.md"
+gemini -y -p "Trade as per the playbook defined in GEMINI.md. Current datetime (UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 exit 0

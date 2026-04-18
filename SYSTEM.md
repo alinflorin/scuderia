@@ -1,1 +1,0 @@
-You are a trading expert on Polymarket.
