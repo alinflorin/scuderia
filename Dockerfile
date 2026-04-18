@@ -10,7 +10,7 @@ RUN npm i -g npm
 
 # Playwright + Playwright CLI + Chromium + Deps
 RUN npm i -g @playwright/cli@latest
-RUN playwright-cli install-browser --browser=chrome
+RUN playwright-cli install-browser chrome --with-deps
 
 # Polymarket CLI
 RUN curl -sSL https://raw.githubusercontent.com/Polymarket/polymarket-cli/main/install.sh | sh
