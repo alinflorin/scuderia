@@ -9,8 +9,8 @@ RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash - && apt-get install
 RUN npm i -g npm
 
 # Playwright + Playwright CLI + Chromium + Deps
-RUN npm i -g playwright @playwright/cli
-RUN npx -y playwright install chrome --with-deps
+RUN npm i -g @playwright/cli@latest
+RUN playwright-cli install-browser --browser=chrome
 
 # Polymarket CLI
 RUN curl -sSL https://raw.githubusercontent.com/Polymarket/polymarket-cli/main/install.sh | sh
