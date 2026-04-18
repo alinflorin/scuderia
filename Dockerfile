@@ -33,6 +33,6 @@ RUN chmod +x ./*.sh
 VOLUME /root/.gemini
 RUN mkdir -p /root/.gemini
 
-ENV NO_BROWSER=true
-
+ENV NO_BROWSER="true"
+ENV GEMINI_SYSTEM_MD="/app/SYSTEM.md"
 CMD ["./run.sh"]
