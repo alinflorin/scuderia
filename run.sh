@@ -1,19 +1,35 @@
 #!/bin/bash
 
-SETTINGS_FILE="/root/.gemini/settings.json"
-if [ ! -f "$SETTINGS_FILE" ]; then
-  mkdir -p /root/.gemini
-  cp /app/gemini_settings.json "$SETTINGS_FILE"
+mkdir -p /root/.gemini
+
+if [ ! -f "/root/.gemini/settings.json" ]; then
+  cat > /root/.gemini/settings.json << 'EOF'
+{
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  }
+}
+EOF
 fi
 
-TRUSTED_FILE="/root/.gemini/trustedFolders.json"
-if [ ! -f "$TRUSTED_FILE" ]; then
-  cp /app/gemini_trusted_folders.json "$TRUSTED_FILE"
+if [ ! -f "/root/.gemini/trustedFolders.json" ]; then
+  cat > /root/.gemini/trustedFolders.json << 'EOF'
+{
+  "/app": "TRUST_FOLDER"
+}
+EOF
 fi
 
-PROJECTS_FILE="/root/.gemini/projects.json"
-if [ ! -f "$PROJECTS_FILE" ]; then
-  cp /app/gemini_projects.json "$PROJECTS_FILE"
+if [ ! -f "/root/.gemini/projects.json" ]; then
+  cat > /root/.gemini/projects.json << 'EOF'
+{
+  "projects": {
+    "/app": "app"
+  }
+}
+EOF
 fi
 
 CREDS_FILE="/root/.gemini/oauth_creds.json"
