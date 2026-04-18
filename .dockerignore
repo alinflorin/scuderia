@@ -260,3 +260,4 @@ Dockerfile
 .gitattributes
 README.md
 .github
+/data
