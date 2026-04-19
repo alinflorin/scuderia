@@ -1,65 +1,11 @@
 #!/bin/bash
 
-mkdir -p /root/.gemini
+mkdir -p /root/.claude
 mkdir -p /app/persist
-
-if [ ! -f "/root/.gemini/settings.json" ]; then
-  cat > /root/.gemini/settings.json << 'EOF'
-{
-  "security": {
-    "auth": {
-      "selectedType": "oauth-personal"
-    },
-    "enablePermanentToolApproval": true,
-    "folderTrust": {
-      "enabled": false
-    }
-  },
-  "general": {
-    "defaultApprovalMode": "default"
-  },
-  "ui": {
-    "inlineThinkingMode": "full",
-    "showHomeDirectoryWarning": false,
-    "showCompatibilityWarnings": false,
-    "hideTips": true,
-    "compactToolOutput": false,
-    "showShortcutsHint": false,
-    "footer": {
-      "hideContextPercentage": false
-    },
-    "showMemoryUsage": true,
-    "showModelInfoInChat": true,
-    "errorVerbosity": "full",
-    "accessibility": {
-      "screenReader": false
-    }
-  },
-  "billing": {
-    "overageStrategy": "never"
-  },
-  "model": {
-    "compressionThreshold": 0.8,
-    "name": "gemini-2.5-flash"
-  }
-EOF
-fi
 
 if [ ! -f "/root/.gemini/trustedFolders.json" ]; then
   cat > /root/.gemini/trustedFolders.json << 'EOF'
-{
-  "/app": "TRUST_FOLDER"
-}
-EOF
-fi
 
-if [ ! -f "/root/.gemini/projects.json" ]; then
-  cat > /root/.gemini/projects.json << 'EOF'
-{
-  "projects": {
-    "/app": "app"
-  }
-}
 EOF
 fi
 
@@ -72,7 +18,7 @@ fi
 CREDS_FILE="/root/.gemini/oauth_creds.json"
 
 if [ ! -f "$CREDS_FILE" ]; then
-  echo "Credentials not found. SSH into this container and run 'gemini' to authenticate."
+  echo "Credentials not found. SSH into this container and run 'claude' to authenticate."
   while [ ! -f "$CREDS_FILE" ]; do
     sleep 5
   done
@@ -86,6 +32,6 @@ if [ "${DEBUG}" = "1" ]; then
 else
   timeout "${TIMEOUT:-600}s" gemini -y -o stream-json -p "$(cat ./RUNBOOK.md)
 
-Trade as per the playbook defined in GEMINI.md. Current datetime (UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ). Your Polymarket Proxy Wallet address is: $(polymarket wallet show -o json | jq -r '.proxy_address')"
+Trade as per the playbook defined above. Current datetime (UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ). Your Polymarket Proxy Wallet address is: $(polymarket wallet show -o json | jq -r '.proxy_address')"
 fi
 exit 0
