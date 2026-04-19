@@ -134,7 +134,7 @@ Trade as per the playbook defined above. Current datetime (UTC): $(date -u +%Y-%
 
 if [ "${DEBUG}" = "1" ]; then
   echo SLEEPING
-  sleep infinity
+  sleep 600
 else
   MODEL="${CLAUDE_MODEL:-${GEMINI_MODEL}}"
   slack chat send "Starting run (${LLM} / ${MODEL}) at $(date -u +%Y-%m-%dT%H:%M:%SZ)" '#trading'

@@ -167,7 +167,7 @@ docker run --rm \
 
 ## First-time Setup
 
-On first run, the container sleeps and waits for authentication. Exec into it and run `claude` or `gemini` from `/app` to authenticate:
+On first run, the container sleeps for 10 minutes and waits for authentication. Exec into it and run `claude` or `gemini` from `/app` to authenticate:
 
 ```sh
 docker exec -it scuderia bash
@@ -176,3 +176,8 @@ claude   # or: gemini
 ```
 
 Once authentication completes, the container exits. On the next scheduled run, everything works automatically.
+
+---
+
+> **Important:** When running on a schedule, ensure only one instance is active at a time. Starting a second container while one is already running will cause conflicting trades and unpredictable behavior. Use `docker ps` to check before starting, or use `--name scuderia` (as shown above) so Docker prevents duplicate containers automatically.  
+Do not schedule these more often than every 15 minutes!  
