@@ -53,6 +53,7 @@ if [ ! -f "/home/appuser/.gemini/settings.json" ]; then
   "model": {
     "compressionThreshold": 0.8
   }
+}
 EOF
 fi
 
