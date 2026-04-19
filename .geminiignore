@@ -1,4 +1,5 @@
-*.md
+README.md
+RUNBOOK.md
 node_modules
 .github
 package.json
