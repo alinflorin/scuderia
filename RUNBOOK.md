@@ -36,10 +36,11 @@ Fetch USDC balance via Polymarket CLI. **Bankroll for this run = MAXIMUM 15% of 
 If balance is 0 or tools are failing → skip to Step 9.
 
 ## Step 5 — Find Candidate Markets
-Use the Utils **Polymarket Get Markets with Smart Analysis** as the primary tool. Fall back to Polymarket CLI search only if unsatisfied. Target a handful of candidates. Skip any markets where you already have a position.
+Use the Utils **Polymarket Get Markets with Smart Analysis** as the primary tool. Fall back to Polymarket CLI search only if unsatisfied. Target only a handful of candidates. Skip any markets where you already have a position.
 
 ## Step 6 — Research Each Candidate
-Act as an experienced trader. Look for: clear winners, strong consensus, surprising news, price/sentiment divergence, or crowd mispricing. **Always verify with CLIs before betting** — utils custom tools and web search mainly, secondly browser, etc.
+Act as an experienced trader. Look for: clear winners, strong consensus, surprising news, price/sentiment divergence, or crowd mispricing. **Always verify with CLIs before betting** — utils custom tools and web search mainly, secondly browser, etc. Only use default tool for web searches, and use the browser to open found links, ONLY IF NEEDED.
+Do not bend over backwards trying to find info - if there's no info, skip the market entirely.
 
 ## Step 7 — Decide
 Make independent trading decisions — no approval needed. Calculated risk is acceptable. **Zero trades is fine** if nothing looks good or resolve times are too long.
