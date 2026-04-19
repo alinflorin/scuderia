@@ -39,7 +39,8 @@ if [ ! -f "/root/.gemini/settings.json" ]; then
     "overageStrategy": "never"
   },
   "model": {
-    "compressionThreshold": 0.8
+    "compressionThreshold": 0.8,
+    "name": "gemini-2.5-flash"
   }
 EOF
 fi
@@ -83,6 +84,8 @@ if [ "${DEBUG}" = "1" ]; then
   echo DEBUG
   sleep infinity
 else
-  timeout "${TIMEOUT:-600}s" gemini -y -p "Trade as per the playbook defined in GEMINI.md. Current datetime (UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ). Your Polymarket Proxy Wallet address is: $(polymarket wallet show -o json | jq -r '.proxy_address')"
+  timeout "${TIMEOUT:-600}s" gemini -y -p "$(cat ./RUNBOOK.md)
+
+Trade as per the playbook defined in GEMINI.md. Current datetime (UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ). Your Polymarket Proxy Wallet address is: $(polymarket wallet show -o json | jq -r '.proxy_address')"
 fi
 exit 0
