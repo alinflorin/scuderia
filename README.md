@@ -4,13 +4,14 @@ Required:
 - POLYMARKET_PRIVATE_KEY 0x......
 - SLACK_CLI_TOKEN asdasdas
   
-Optional:  
+Optional (+ default):  
 - LLM claude (or gemini)
 - DEBUG 0 (or 1)
 - TIMEOUT 600s (or custom)
 - CLAUDE_MODEL claude-sonnet-4-6
 - CLAUDE_EFFORT low
 - GEMINI_MODEL gemini-2.5-flash
+
 ## Volumes
 - One for /home/appuser
 - One for /app/persist
