@@ -47,6 +47,5 @@ ENV PLAYWRIGHT_MCP_BROWSER="firefox"
 ENV GEMINI_MODEL="gemini-2.5-flash"
 ENV CLAUDE_MODEL="claude-sonnet-4-6"
 ENV CLAUDE_EFFORT="low"
-ENV TIMEOUT="600"
 
 CMD ["./run.sh"]

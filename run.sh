@@ -104,7 +104,7 @@ if [ "${DEBUG}" = "1" ]; then
   echo DEBUGMODE
   sleep infinity
 elif [ "$LLM" = "claude" ]; then
-  timeout "${TIMEOUT}s" claude \
+  claude \
     --verbose \
     --allow-dangerously-skip-permissions \
     --dangerously-skip-permissions \
@@ -116,5 +116,5 @@ elif [ "$LLM" = "claude" ]; then
     --output-format stream-json \
     -p "$PROMPT"
 else
-  timeout "${TIMEOUT}s" gemini -o stream-json -m "${GEMINI_MODEL}" -y -p "$PROMPT"
+  gemini -o stream-json -m "${GEMINI_MODEL}" -y -p "$PROMPT"
 fi
