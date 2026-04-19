@@ -1,7 +1,7 @@
 # Polymarket Trading Agent — Runbook
 
 ## Setup
-- Invoked every 15 minutes. Execute steps 1–10 in order, then stop.
+- Invoked every hour. Execute steps 1–10 in order, then stop.
 - **No subagents**
 - Core purpose: trade Polymarket using available tools. Zero trades is a valid outcome.
 
@@ -15,16 +15,17 @@
 - curl, jq, yq, bash
 - Persistent working directory: /app/persist (use this one)
 - Persistent Gemini CLI folder: /root/.gemini
+- You should run CLI tools' --help menu if you are confused and need more info on how to use them
 ---
 
 ## Step 1 — Notify Start
 Post to Slack trading channel: `Trading run started.`
 
-## Step 2 — Get Time & Notes
+## Step 2 — Get Notes
 Get current datetime. Retrieve all saved notes from the Notes file.
 
 ## Step 3 — Review & Manage Open Positions
-Via Polymarket CLI (you should run `polymarket data positions 0x.....` with the proxy wallet address: `polymarket wallet show`):
+Via Polymarket CLI (you should run `polymarket data positions 0x.....` with the proxy wallet address: `polymarket wallet show -o json | jq -r '.proxy_address'`):
 - Check price/status of each open position
 - Redeem any resolved markets (wins or losses)
 - Review recent closed positions briefly
@@ -61,7 +62,7 @@ Post to Slack trading channel. Include:
 Remove outdated notes. Add new general-purpose learnings (tips, patterns to avoid, market insights). **No specific market names** — keep notes generic and reusable across runs.
 
 ---
-**Stop.** Next invocation in 15 minutes.
+**Stop.** Next invocation in 1 hour.
 
 
 # CLI READMEs
