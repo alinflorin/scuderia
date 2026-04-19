@@ -90,6 +90,7 @@ Transactions on Polygon require **POL** (formerly MATIC) for gas fees. This also
 2. Approve the permissions prompt
 3. Copy the **Bot User OAuth Token** — it starts with `xoxb-`
 4. Use it as `SLACK_CLI_TOKEN`
+5. Create a public channel called trading 
 
 ### 4. Invite the bot to channels (if needed)
 
