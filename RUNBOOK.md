@@ -14,7 +14,7 @@
 - ./utils.sh (TypeScript custom scripts) - Polymarket Get Markets with Smart Analysis, Search Reddit with comments, get Crypto indicators, get Weather info + historical data, Wait tool, etc.
 - curl, jq, yq, bash
 - Persistent working directory: /app/persist (use this one)
-- Persistent Claude Code CLI folder: /root/.claude
+- Persistent user home folder: /home/appuser
 - You should run CLI tools' --help menu if you are confused and need more info on how to use them
 ---
 
