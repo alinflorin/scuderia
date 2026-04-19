@@ -1,10 +1,17 @@
 # scuderia
-## ENV
+## ENV  
+Required:  
 - POLYMARKET_PRIVATE_KEY 0x......
 - SLACK_CLI_TOKEN asdasdas
-- DEBUG 1 or 0
+  
+Optional:  
+- DEBUG 0
 - TIMEOUT 600s
 - MODEL claude-sonnet-4-6
+
+## Volumes
+- One for /home/appuser
+- One for /app/persist
 
 
 ## Run locally
