@@ -1,5 +1,108 @@
 # scuderia
 
+## MetaMask Setup
+
+### 1. Install MetaMask
+
+Download the browser extension from [metamask.io](https://metamask.io). On first launch, choose **Create a new wallet** and save your 12-word seed phrase somewhere safe.
+
+If you already have a wallet, choose **Import wallet** and enter your seed phrase or private key instead.
+
+### 2. Buy POL (for gas)
+
+POL is the native gas token on Polygon. You need a small amount to pay for any transaction.
+
+1. In MetaMask, make sure you're on the **Polygon** network
+2. Click **Buy** → select a provider (e.g. MoonPay, Transak)
+3. Purchase a small amount — **1–2 POL** is enough for many transactions
+
+### 3. Buy USDC on Polygon (for trading)
+
+USDC is the currency used on Polymarket. Make sure you get **USDC on Polygon**, not on Ethereum.
+
+1. In MetaMask on the **Polygon** network, click **Buy**
+2. Search for **USDC** and confirm the network is Polygon before completing the purchase
+3. Alternatively, if you already have USDC on Ethereum, bridge it to Polygon via [app.polygon.technology](https://app.polygon.technology)
+
+> If you buy USDC on the wrong network it won't show up in Polymarket. Always double-check the network before purchasing.
+
+---
+
+## Polymarket Setup
+
+### 1. Create an account
+
+Go to [polymarket.com](https://polymarket.com) and sign up with your email (no social, no MetaMask login. Only email.). Polymarket will create a **proxy wallet** for you — this is the wallet that actually holds your funds and places bets on-chain.
+
+### 2. Get your private key
+
+Your `POLYMARKET_PRIVATE_KEY` is the private key of your Polymarket proxy wallet, not your MetaMask wallet.
+
+To find it:
+
+1. Log in to Polymarket
+2. Click your profile → **Settings** → **Export Private Key**
+3. Copy the `0x...` key and use it as `POLYMARKET_PRIVATE_KEY`
+
+> **Keep this key secret.** Anyone with it can move your funds.
+
+### 3. Fund with USDC (for trading)
+
+Polymarket runs on Polygon and only accepts USDC. Funds go into your proxy wallet.
+
+1. On Polymarket, click **Deposit** → select **Polygon** as the network
+2. Copy the deposit address shown (this is your proxy wallet address)
+3. In MetaMask on the **Polygon** network, send USDC to that address
+
+If you only have USDC on Ethereum, bridge it first via [app.polygon.technology](https://app.polygon.technology). Sending USDC on the wrong network will result in lost funds.
+
+### 4. Fund with POL (for gas)
+
+Transactions on Polygon require **POL** (formerly MATIC) for gas fees. This also goes to your proxy wallet address.
+
+1. Switch MetaMask to the **Polygon** network
+2. Send a small amount of POL (e.g. 1–2 POL is plenty) to your proxy wallet address
+
+> Without POL, transactions will fail even if you have USDC.
+
+---
+
+## Slack Setup
+
+### 1. Create a Slack app
+
+1. Go to [api.slack.com/apps](https://api.slack.com/apps) and click **Create New App**
+2. Choose **From scratch**, give it a name, and select your workspace
+
+### 2. Grant bot permissions
+
+1. In the left sidebar, go to **OAuth & Permissions**
+2. Under **Scopes → Bot Token Scopes**, add the following:
+
+| Scope | Purpose |
+|---|---|
+| `chat:write` | Send messages to channels |
+| `chat:write.public` | Send messages to public channels without joining |
+
+### 3. Install the app to your workspace
+
+1. Scroll up on the **OAuth & Permissions** page and click **Install to Workspace**
+2. Approve the permissions prompt
+3. Copy the **Bot User OAuth Token** — it starts with `xoxb-`
+4. Use it as `SLACK_CLI_TOKEN`
+
+### 4. Invite the bot to channels (if needed)
+
+If you want the bot to post to a specific private channel, invite it first:
+
+```
+/invite @your-app-name
+```
+
+Public channels work without an invite if you added the `chat:write.public` scope.
+
+---
+
 ## Environment Variables
 
 **Required:**
