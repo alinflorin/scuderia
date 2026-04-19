@@ -104,17 +104,17 @@ if [ "${DEBUG}" = "1" ]; then
   echo DEBUGMODE
   sleep infinity
 elif [ "$LLM" = "claude" ]; then
-  timeout "${TIMEOUT:-600}s" claude \
+  timeout "${TIMEOUT}s" claude \
     --verbose \
     --allow-dangerously-skip-permissions \
     --dangerously-skip-permissions \
     --permission-mode bypassPermissions \
     --no-chrome \
     --no-session-persistence \
-    --model "${CLAUDE_MODEL:-claude-sonnet-4-6}" \
-    --effort "${CLAUDE_EFFORT:-low}" \
+    --model "${CLAUDE_MODEL}" \
+    --effort "${CLAUDE_EFFORT}" \
     --output-format stream-json \
     -p "$PROMPT"
 else
-  timeout "${TIMEOUT:-600}s" gemini -o stream-json -m "${GEMINI_MODEL:-gemini-2.5-flash}" -y -p "$PROMPT"
+  timeout "${TIMEOUT}s" gemini -o stream-json -m "${GEMINI_MODEL}" -y -p "$PROMPT"
 fi
