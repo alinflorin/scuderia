@@ -9,9 +9,9 @@ if [ ! -f "/app/persist/NOTES.md" ]; then
 EOF
 fi
 
-if ! claude auth status --output-format json 2>/dev/null | jq -e '.loggedIn' > /dev/null 2>&1; then
-  echo "Not logged in. SSH into this container and run 'claude auth login' to authenticate."
-  while ! claude auth status --output-format json 2>/dev/null | jq -e '.loggedIn' > /dev/null 2>&1; do
+if ! claude auth status 2>/dev/null | jq -e '.loggedIn' > /dev/null 2>&1; then
+  echo "Not logged in. SSH into this container and run 'claude' to authenticate interactively."
+  while ! claude auth status 2>/dev/null | jq -e '.loggedIn' > /dev/null 2>&1; do
     sleep 5
   done
   echo "Logged in. Exiting."
