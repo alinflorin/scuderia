@@ -15,7 +15,7 @@ RUN curl -sSL https://raw.githubusercontent.com/Polymarket/polymarket-cli/main/i
 RUN curl -o /usr/local/bin/slack https://raw.githubusercontent.com/rockymadden/slack-cli/master/src/slack && chmod +x /usr/local/bin/slack
 
 # Claude CLI
-RUN npm i -g @anthropic-ai/claude-code@2.1.104
+RUN npm i -g @anthropic-ai/claude-code@2.1.89
 
 # Playwright + Playwright CLI + Firefox + Deps
 RUN npm i -g @playwright/cli@latest
