@@ -98,10 +98,42 @@ fi
 
 PROMPT="$(cat ./RUNBOOK.md)
 
+---
+## CLI Help Reference
+
+### utils.sh
+\`\`\`
+$(./utils.sh help-all 2>&1)
+\`\`\`
+
+### polymarket
+\`\`\`
+$(polymarket --help 2>&1)
+\`\`\`
+
+### slack
+\`\`\`
+$(slack --help 2>&1)
+\`\`\`
+
+### playwright-cli
+\`\`\`
+$(playwright-cli --help 2>&1)
+\`\`\`
+
+---
+
+## Your Previous Notes
+
+$(cat ./persist/NOTES.md 2>/dev/null)
+
+---
+
+Current command is the following!
 Trade as per the playbook defined above. Current datetime (UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ). Your Polymarket Proxy Wallet address is: $(polymarket wallet show -o json | jq -r '.proxy_address')"
 
 if [ "${DEBUG}" = "1" ]; then
-  echo DEBUGMODE
+  echo SLEEPING
   sleep infinity
 elif [ "$LLM" = "claude" ]; then
   claude \

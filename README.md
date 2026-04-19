@@ -11,6 +11,8 @@ Optional + default:
 - CLAUDE_EFFORT low
 - GEMINI_MODEL gemini-2.5-flash
 
+- REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET - completely optional
+
 ## Volumes
 - One for /home/appuser
 - One for /app/persist

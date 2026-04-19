@@ -1,5 +1,73 @@
 import axios from 'axios';
 import { Command } from 'commander';
+import fs from 'fs';
+import path from 'path';
+
+const TOKEN_CACHE_PATH = path.resolve('./persist/reddit_token');
+
+interface TokenCache {
+  access_token: string;
+  expires_at: number;
+}
+
+interface RedditAuth {
+  baseUrl: string;
+  headers: Record<string, string>;
+}
+
+function readCachedToken(): TokenCache | null {
+  try {
+    const raw = fs.readFileSync(TOKEN_CACHE_PATH, 'utf-8');
+    const cached = JSON.parse(raw) as TokenCache;
+    if (Date.now() < cached.expires_at) return cached;
+  } catch {
+    // missing or invalid cache
+  }
+  return null;
+}
+
+function writeCachedToken(token: TokenCache): void {
+  fs.mkdirSync(path.dirname(TOKEN_CACHE_PATH), { recursive: true });
+  fs.writeFileSync(TOKEN_CACHE_PATH, JSON.stringify(token), 'utf-8');
+}
+
+async function getAuth(): Promise<RedditAuth> {
+  const clientId = process.env.REDDIT_CLIENT_ID;
+  const clientSecret = process.env.REDDIT_CLIENT_SECRET;
+  const userAgent = `scuderia/1.0`;
+
+  if (!clientId || !clientSecret) {
+    return { baseUrl: 'https://www.reddit.com', headers: { 'User-Agent': userAgent } };
+  }
+
+  const cached = readCachedToken();
+  const accessToken = cached
+    ? cached.access_token
+    : await (async () => {
+        const res = await axios.post<{ access_token: string; expires_in: number }>(
+          'https://www.reddit.com/api/v1/access_token',
+          'grant_type=client_credentials',
+          {
+            auth: { username: clientId, password: clientSecret },
+            headers: {
+              'User-Agent': userAgent,
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            timeout: 15000,
+          },
+        );
+        writeCachedToken({
+          access_token: res.data.access_token,
+          expires_at: Date.now() + res.data.expires_in * 1000 - 60_000,
+        });
+        return res.data.access_token;
+      })();
+
+  return {
+    baseUrl: 'https://oauth.reddit.com',
+    headers: { 'User-Agent': userAgent, Authorization: `Bearer ${accessToken}` },
+  };
+}
 
 interface RedditPost {
   id: string;
@@ -34,8 +102,7 @@ type RedditCommentsResponse = [
 ];
 
 async function searchPosts(
-  baseUrl: string,
-  userAgent: string,
+  auth: RedditAuth,
   query: string,
   limit: number,
 ): Promise<RedditPost[]> {
@@ -45,8 +112,8 @@ async function searchPosts(
     limit: String(limit),
     type: 'link',
   });
-  const res = await axios.get<RedditSearchResponse>(`${baseUrl}/search.json?${params}`, {
-    headers: { 'User-Agent': userAgent },
+  const res = await axios.get<RedditSearchResponse>(`${auth.baseUrl}/search.json?${params}`, {
+    headers: auth.headers,
     timeout: 15000,
   });
   const body = res.data;
@@ -59,8 +126,7 @@ async function searchPosts(
 }
 
 async function fetchComments(
-  baseUrl: string,
-  userAgent: string,
+  auth: RedditAuth,
   post: RedditPost,
   limit: number,
 ): Promise<RedditComment[]> {
@@ -68,8 +134,8 @@ async function fetchComments(
   let body: RedditCommentsResponse;
   try {
     const res = await axios.get<RedditCommentsResponse>(
-      `${baseUrl}/r/${post.subreddit}/comments/${post.id}.json?${params}`,
-      { headers: { 'User-Agent': userAgent }, timeout: 15000 },
+      `${auth.baseUrl}/r/${post.subreddit}/comments/${post.id}.json?${params}`,
+      { headers: auth.headers, timeout: 15000 },
     );
     body = res.data;
   } catch {
@@ -94,19 +160,18 @@ export function makeSearchRedditWithCommentsCommand(): Command {
     .option('-p, --limit-posts <number>', 'Max number of posts to return', '10')
     .option('-c, --limit-comments <number>', 'Max number of comments per post', '10')
     .action(async (query: string, options) => {
-      const redditApiBase = `https://www.reddit.com`;
-      const redditUserAgent = `scuderia/1.0`;
+      const auth = await getAuth();
       const limitPosts = parseInt(options.limitPosts, 10);
       const limitComments = parseInt(options.limitComments, 10);
 
-      const posts = await searchPosts(redditApiBase, redditUserAgent, query, limitPosts);
+      const posts = await searchPosts(auth, query, limitPosts);
       if (posts.length === 0) {
         console.log(JSON.stringify([], null, 2));
         return;
       }
 
       const commentsPerPost = await Promise.all(
-        posts.map(p => fetchComments(redditApiBase, redditUserAgent, p, limitComments)),
+        posts.map(p => fetchComments(auth, p, limitComments)),
       );
 
       const result: PostWithComments[] = posts.map((post, i) => ({
