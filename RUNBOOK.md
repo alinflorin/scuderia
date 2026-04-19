@@ -51,7 +51,7 @@ Make independent trading decisions — no approval needed. Calculated risk is ac
 - If an order fails, skip it (don't count it)
 
 ## Step 9 — Notify Outcome
-Post to Slack trading channel. Include:
+Post to Slack trading channel. Always include:
 - Open positions & redeems summary
 - Number of trades placed
 - Per trade: market name, YES/NO, amount, price, reasoning
