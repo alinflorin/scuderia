@@ -6,4 +6,4 @@ Dockerfile
 .dockerignore
 utils.sh
 run.sh
-.geminiignore
+.claudeignore
