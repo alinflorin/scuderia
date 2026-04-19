@@ -3,12 +3,6 @@
 mkdir -p /root/.claude
 mkdir -p /app/persist
 
-if [ ! -f "/root/.gemini/trustedFolders.json" ]; then
-  cat > /root/.gemini/trustedFolders.json << 'EOF'
-
-EOF
-fi
-
 if [ ! -f "/app/persist/NOTES.md" ]; then
   cat > /app/persist/NOTES.md << 'EOF'
 
