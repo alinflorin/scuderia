@@ -24,3 +24,5 @@ Next scheduled run, it will do the right thing :)
 
 ## Run locally
 docker run --rm -e POLYMARKET_PRIVATE_KEY=0xasdasdasd -e SLACK_CLI_TOKEN=xoxb-zxczxczxc --name scuderia -v ./data:/home/appuser -v ./persist:/app/persist -e DEBUG=0 -e LLM=gemini scuderia:latest
+
+To get inside the container: docker exec -it scuderia /bin/bash
