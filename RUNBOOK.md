@@ -398,64 +398,6 @@ playwright-cli tab-close [index]        # close a browser tab
 playwright-cli tab-select <index>       # select a browser tab
 ```
 
-### Storage
-
-```bash
-playwright-cli state-save [filename]    # save storage state
-playwright-cli state-load <filename>    # load storage state
-
-# Cookies
-playwright-cli cookie-list [--domain]   # list cookies
-playwright-cli cookie-get <name>        # get a cookie
-playwright-cli cookie-set <name> <val>  # set a cookie
-playwright-cli cookie-delete <name>     # delete a cookie
-playwright-cli cookie-clear             # clear all cookies
-
-# LocalStorage
-playwright-cli localstorage-list        # list localStorage entries
-playwright-cli localstorage-get <key>   # get localStorage value
-playwright-cli localstorage-set <k> <v> # set localStorage value
-playwright-cli localstorage-delete <k>  # delete localStorage entry
-playwright-cli localstorage-clear       # clear all localStorage
-
-# SessionStorage
-playwright-cli sessionstorage-list      # list sessionStorage entries
-playwright-cli sessionstorage-get <k>   # get sessionStorage value
-playwright-cli sessionstorage-set <k> <v> # set sessionStorage value
-playwright-cli sessionstorage-delete <k>  # delete sessionStorage entry
-playwright-cli sessionstorage-clear     # clear all sessionStorage
-```
-
-### Snapshots
-
-After each command, playwright-cli provides a snapshot of the current browser state.
-
-```bash
-> playwright-cli goto https://example.com
-### Page
-- Page URL: https://example.com/
-- Page Title: Example Domain
-### Snapshot
-[Snapshot](.playwright-cli/page-2026-02-14T19-22-42-679Z.yml)
-```
-
-You can also take a snapshot on demand using `playwright-cli snapshot` command. All the options below can be combined as needed.
-
-```bash
-# default - save to a file with timestamp-based name
-playwright-cli snapshot
-
-# save to file, use when snapshot is a part of the workflow result
-playwright-cli snapshot --filename=after-click.yaml
-
-# snapshot an element instead of the whole page
-playwright-cli snapshot "#main"
-
-# limit snapshot depth for efficiency, take a partial snapshot afterwards
-playwright-cli snapshot --depth=4
-playwright-cli snapshot e34
-```
-
 ### Targeting elements
 
 By default, use refs from the snapshot to interact with page elements.
