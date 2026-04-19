@@ -116,5 +116,5 @@ elif [ "$LLM" = "claude" ]; then
     --output-format stream-json \
     -p "$PROMPT"
 else
-  timeout "${TIMEOUT:-600}s" gemini -o stream-json -m "${GEMINI_MODEL:-gemini-2.5.flash}" -y -p "$PROMPT"
+  timeout "${TIMEOUT:-600}s" gemini -o stream-json -m "${GEMINI_MODEL:-gemini-2.5-flash}" -y -p "$PROMPT"
 fi
