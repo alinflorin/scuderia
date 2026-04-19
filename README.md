@@ -148,8 +148,6 @@ docker run --rm \
   --name scuderia \
   -e POLYMARKET_PRIVATE_KEY=0x... \
   -e SLACK_CLI_TOKEN=xoxb-... \
-  -e LLM=gemini \
-  -e DEBUG=0 \
   -v ./data:/home/appuser \
   -v ./persist:/app/persist \
   scuderia:latest
@@ -162,8 +160,6 @@ docker run --rm \
   --name scuderia \
   -e POLYMARKET_PRIVATE_KEY=0x... \
   -e SLACK_CLI_TOKEN=xoxb-... \
-  -e LLM=gemini \
-  -e DEBUG=0 \
   -v ./data:/home/appuser \
   -v ./persist:/app/persist \
   ghcr.io/alinflorin/scuderia:latest
