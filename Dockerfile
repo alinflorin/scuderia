@@ -17,9 +17,13 @@ RUN curl -o /usr/local/bin/slack https://raw.githubusercontent.com/rockymadden/s
 # Claude CLI
 RUN npm i -g @anthropic-ai/claude-code@2.1.89
 
-# Playwright + Playwright CLI + Firefox + Deps
+# Playwright + Playwright CLI + Firefox + Deps — install to a fixed path so non-root can access it
+ENV PLAYWRIGHT_BROWSERS_PATH=/opt/ms-playwright
 RUN npm i -g @playwright/cli@latest
-RUN playwright-cli install-browser firefox --with-deps
+RUN playwright-cli install-browser firefox --with-deps && chmod -R 755 /opt/ms-playwright
+
+# Non-privileged user
+RUN useradd -m -s /bin/bash appuser
 
 # Node + Bash project
 WORKDIR /app
@@ -28,11 +32,13 @@ COPY ./package-lock.json ./package-lock.json
 RUN npm ci
 
 COPY . .
-RUN chmod +x ./*.sh
+RUN chmod +x ./*.sh && chown -R appuser:appuser /app
 
-VOLUME /root/
+VOLUME /home/appuser/
 VOLUME /app/persist/
-RUN mkdir -p /root/.claude
+RUN mkdir -p /home/appuser/.claude && chown -R appuser:appuser /home/appuser
+RUN chown -R appuser:appuser /app
+USER appuser
 
 ENV NO_BROWSER="true"
 ENV PLAYWRIGHT_MCP_ISOLATED="true"

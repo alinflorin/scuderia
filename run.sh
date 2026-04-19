@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -p /root/.claude
+mkdir -p /home/appuser/.claude
 mkdir -p /app/persist
 
 if [ ! -f "/app/persist/NOTES.md" ]; then
