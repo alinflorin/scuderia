@@ -28,18 +28,6 @@
 | `/home/appuser` | User home directory |
 | `/app/persist` | Persistent app data |
 
-## First-time Setup
-
-On first run, the container sleeps and waits for authentication. Exec into it and run `claude` or `gemini` from `/app` to authenticate:
-
-```sh
-docker exec -it scuderia bash
-cd /app
-claude   # or: gemini
-```
-
-Once authentication completes, the container exits. On the next scheduled run, everything works automatically.
-
 ## Running Locally
 
 Clone the repo and build:
@@ -77,3 +65,15 @@ docker run --rm \
   -v ./persist:/app/persist \
   ghcr.io/alinflorin/scuderia:latest
 ```
+
+## First-time Setup
+
+On first run, the container sleeps and waits for authentication. Exec into it and run `claude` or `gemini` from `/app` to authenticate:
+
+```sh
+docker exec -it scuderia bash
+cd /app
+claude   # or: gemini
+```
+
+Once authentication completes, the container exits. On the next scheduled run, everything works automatically.
