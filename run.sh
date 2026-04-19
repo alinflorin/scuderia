@@ -9,9 +9,38 @@ if [ ! -f "/root/.gemini/settings.json" ]; then
   "security": {
     "auth": {
       "selectedType": "oauth-personal"
+    },
+    "enablePermanentToolApproval": true,
+    "folderTrust": {
+      "enabled": false
     }
+  },
+  "general": {
+    "defaultApprovalMode": "default"
+  },
+  "ui": {
+    "inlineThinkingMode": "full",
+    "showHomeDirectoryWarning": false,
+    "showCompatibilityWarnings": false,
+    "hideTips": true,
+    "compactToolOutput": false,
+    "showShortcutsHint": false,
+    "footer": {
+      "hideContextPercentage": false
+    },
+    "showMemoryUsage": true,
+    "showModelInfoInChat": true,
+    "errorVerbosity": "full",
+    "accessibility": {
+      "screenReader": false
+    }
+  },
+  "billing": {
+    "overageStrategy": "never"
+  },
+  "model": {
+    "compressionThreshold": 0.8
   }
-}
 EOF
 fi
 
