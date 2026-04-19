@@ -135,18 +135,23 @@ Trade as per the playbook defined above. Current datetime (UTC): $(date -u +%Y-%
 if [ "${DEBUG}" = "1" ]; then
   echo SLEEPING
   sleep infinity
-elif [ "$LLM" = "claude" ]; then
-  claude \
-    --verbose \
-    --allow-dangerously-skip-permissions \
-    --dangerously-skip-permissions \
-    --permission-mode bypassPermissions \
-    --no-chrome \
-    --no-session-persistence \
-    --model "${CLAUDE_MODEL}" \
-    --effort "${CLAUDE_EFFORT}" \
-    --output-format stream-json \
-    -p "$PROMPT"
 else
-  gemini -o stream-json -m "${GEMINI_MODEL}" -y -p "$PROMPT"
+  MODEL="${CLAUDE_MODEL:-${GEMINI_MODEL}}"
+  slack chat send "Starting run (${LLM} / ${MODEL}) at $(date -u +%Y-%m-%dT%H:%M:%SZ)" '#trading'
+  if [ "$LLM" = "claude" ]; then
+    claude \
+      --verbose \
+      --allow-dangerously-skip-permissions \
+      --dangerously-skip-permissions \
+      --permission-mode bypassPermissions \
+      --no-chrome \
+      --no-session-persistence \
+      --model "${CLAUDE_MODEL}" \
+      --effort "${CLAUDE_EFFORT}" \
+      --output-format stream-json \
+      -p "$PROMPT"
+  else
+    gemini -o stream-json -m "${GEMINI_MODEL}" -y -p "$PROMPT"
+  fi
+  slack chat send "Finished run (${LLM} / ${MODEL}) at $(date -u +%Y-%m-%dT%H:%M:%SZ)" '#trading'
 fi
