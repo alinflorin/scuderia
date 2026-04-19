@@ -5,7 +5,7 @@
 - **No subagents**
 - Core purpose: trade Polymarket using available tools. Zero trades is a valid outcome.
 
-## Available Tools - ALL CLI, no MCP.
+## Available Tools (mostly CLIs)
 - Regular tools such as command execution, web searches
 - Polymarket CLI. No need to import anything, everything is set via env vars.
 - Playwright CLI with Firefox installed
