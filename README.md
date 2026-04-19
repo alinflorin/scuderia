@@ -8,6 +8,7 @@ Optional:
 - DEBUG 0
 - TIMEOUT 600s
 - MODEL claude-sonnet-4-6
+- EFFORT low
 
 ## Volumes
 - One for /home/appuser

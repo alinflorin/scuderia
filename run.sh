@@ -22,7 +22,8 @@ if [ "${DEBUG}" = "1" ]; then
   echo DEBUGMODE
   sleep infinity
 else
-  timeout "${TIMEOUT:-600}s" claude --verbose --allow-dangerously-skip-permissions --dangerously-skip-permissions --permission-mode bypassPermissions --no-chrome --no-session-persistence --model "${MODEL:-claude-sonnet-4-6}" --output-format stream-json -p "$(cat ./RUNBOOK.md)
+
+  timeout "${TIMEOUT:-600}s" claude --verbose --allow-dangerously-skip-permissions --dangerously-skip-permissions --permission-mode bypassPermissions --no-chrome --no-session-persistence --model "${MODEL:-claude-sonnet-4-6}" --effort "${EFFORT:-low}" --output-format stream-json -p "$(cat ./RUNBOOK.md)
 
 Trade as per the playbook defined above. Current datetime (UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ). Your Polymarket Proxy Wallet address is: $(polymarket wallet show -o json | jq -r '.proxy_address')"
 fi
