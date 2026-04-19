@@ -15,19 +15,17 @@ if [ ! -f "/app/persist/NOTES.md" ]; then
 EOF
 fi
 
-CREDS_FILE="/root/.gemini/oauth_creds.json"
-
-if [ ! -f "$CREDS_FILE" ]; then
-  echo "Credentials not found. SSH into this container and run 'claude' to authenticate."
-  while [ ! -f "$CREDS_FILE" ]; do
+if ! claude auth status --output-format json 2>/dev/null | jq -e '.loggedIn' > /dev/null 2>&1; then
+  echo "Not logged in. SSH into this container and run 'claude auth login' to authenticate."
+  while ! claude auth status --output-format json 2>/dev/null | jq -e '.loggedIn' > /dev/null 2>&1; do
     sleep 5
   done
-  echo "Credentials detected. Exiting."
+  echo "Logged in. Exiting."
   exit 0
 fi
 
 if [ "${DEBUG}" = "1" ]; then
-  echo DEBUG
+  echo DEBUGMODE
   sleep infinity
 else
   timeout "${TIMEOUT:-600}s" gemini -y -o stream-json -p "$(cat ./RUNBOOK.md)

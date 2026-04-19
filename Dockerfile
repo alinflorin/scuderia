@@ -30,8 +30,8 @@ RUN npm ci
 COPY . .
 RUN chmod +x ./*.sh
 
-VOLUME /root/.claude
-VOLUME /app/persist
+VOLUME /root/
+VOLUME /app/persist/
 RUN mkdir -p /root/.claude
 
 ENV NO_BROWSER="true"
