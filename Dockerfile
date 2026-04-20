@@ -37,6 +37,8 @@ RUN chmod +x ./*.sh
 VOLUME /home/appuser/
 VOLUME /app/persist/
 
+RUN chown -R appuser:appuser /app || true
+RUN chown -R appuser:appuser /home/appuser || true
 
 ENV NO_BROWSER="true"
 ENV PLAYWRIGHT_MCP_ISOLATED="true"
