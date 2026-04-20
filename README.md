@@ -117,6 +117,7 @@ Public channels work without an invite if you added the `chat:write.public` scop
 | Variable | Default | Options |
 |---|---|---|
 | `LLM` | `claude` | `gemini` |
+| `SLACK_CHANNEL` | `trading` | |
 | `DEBUG` | `0` | `1` |
 | `CLAUDE_MODEL` | `claude-sonnet-4-6` | |
 | `CLAUDE_EFFORT` | `low` | |

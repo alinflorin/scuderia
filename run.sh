@@ -130,14 +130,14 @@ $(cat ./persist/NOTES.md 2>/dev/null)
 ---
 
 Current command is the following!
-Trade as per the playbook defined above. Current datetime (UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ). Your Polymarket Proxy Wallet address is: $(polymarket wallet show -o json | jq -r '.proxy_address')"
+Trade as per the playbook defined above. Current datetime (UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ). Your Polymarket Proxy Wallet address is: $(polymarket wallet show -o json | jq -r '.proxy_address'). The Slack channel name is #${SLACK_CHANNEL:-trading}"
 
 if [ "${DEBUG}" = "1" ]; then
   echo SLEEPING
   sleep 600
 else
   MODEL="${CLAUDE_MODEL:-${GEMINI_MODEL}}"
-  slack chat send "Starting run (${LLM} / ${MODEL}) at $(date -u +%Y-%m-%dT%H:%M:%SZ)" '#trading'
+  slack chat send "Starting run (${LLM} / ${MODEL}) at $(date -u +%Y-%m-%dT%H:%M:%SZ)" "#${SLACK_CHANNEL:-trading}"
   if [ "$LLM" = "claude" ]; then
     claude \
       --verbose \
@@ -153,5 +153,5 @@ else
   else
     gemini -o stream-json -m "${GEMINI_MODEL}" -y -p "$PROMPT"
   fi
-  slack chat send "Finished run (${LLM} / ${MODEL}) at $(date -u +%Y-%m-%dT%H:%M:%SZ)" '#trading'
+  slack chat send "Finished run (${LLM} / ${MODEL}) at $(date -u +%Y-%m-%dT%H:%M:%SZ)" "#${SLACK_CHANNEL:-trading}"
 fi

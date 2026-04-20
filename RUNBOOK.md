@@ -1,27 +1,27 @@
 # Polymarket Trading Agent — Runbook
 
 ## Setup
-- Invoked every few minutes. Execute steps 1–8 in order, then stop.
-- **No subagents**
+- Invoked every few hours. Execute steps 1–8 in order, then stop.
+- You should aim to optimize token usage. If an operation doesn't need the full context window, use a subagent or whatever to use less tokens.
 - Core purpose: trade Polymarket using available tools. Zero trades is also a valid outcome.
 
 ## Available Tools (mostly CLIs)
-- Regular tools such as command execution, web searches
-- Polymarket CLI. No need to import anything, everything is set via env vars.
-- Playwright CLI with Firefox installed
-- Slack CLI to post messages to trading channel
-- Notes file: /app/persist/NOTES.md
-- ./utils.sh (TypeScript custom scripts) - Polymarket Get Markets with Smart Analysis, Search Reddit with comments, get Crypto indicators, get Weather info + historical data, Wait tool, etc.
-- curl, jq, yq, bash
+- Regular tools such as command execution, web searches. For web searches, use your native capability!
+- `polymarket` CLI. No need to import anything, everything is set via env vars.
+- `playwright-cli` CLI with the Firefox browser installed (as a last resort for accessing web pages needing JS)
+- `slack` CLI to post messages to channel
+- Notes file: ./persist/NOTES.md
+- `./utils.sh` (TypeScript custom scripts) - Polymarket Get Markets with Smart Analysis, Search Reddit with comments, get Crypto indicators, get Weather info + historical data, Wait tool, etc.
+- `curl`, `jq`, `yq`, common bash utils are all there
 - Persistent working directory: /app/persist (use this one)
 - Persistent user home folder: /home/appuser
-- You should run CLI tools' --help menu if you are confused and need more info on how to use them
+- You should run CLI tools' `--help` menu if you need more info on how to use CLI tools
 ---
 
 
 ## Step 1 — Review & Manage Open Positions
-Via Polymarket CLI (you should run `polymarket data positions 0x.....` with the proxy wallet address: `polymarket wallet show -o json | jq -r '.proxy_address'`):
-- Check price/status of each open position
+Via Polymarket CLI (you should run `polymarket data positions 0x.....` with the proxy wallet address in the initial prompt):
+- Do not investigate these. Just watch for closed/redeemable ones.
 - Redeem any resolved markets (wins or losses)
 - Review recent closed positions briefly
 - Sell positions but as a very last resort, if risk warrants it. If loss is unavoidable.
@@ -31,14 +31,16 @@ Fetch USDC balance via Polymarket CLI. **Bankroll for this run = MAXIMUM 15% of 
 If balance is 0 or tools are failing → skip to Step 7.
 
 ## Step 3 — Find Candidate Markets
-Use the Utils **Polymarket Get Markets with Smart Analysis** as the primary tool. Fall back to Polymarket CLI search only if unsatisfied. Target only a handful of candidates. Skip any markets where you already have a position.
+Use the Utils **Polymarket Get Markets with Smart Analysis** as the primary tool to search for markets. This tool will include smart whales positions data, too. Fall back to Polymarket CLI search, only if really unsatisfied with the results. Target only a handful of candidates. Skip any markets where you already have a position.
 
 ## Step 4 — Research Each Candidate
-Act as an experienced trader. Look for: clear winners, strong consensus, surprising news, price/sentiment divergence, or crowd mispricing. **Always verify with CLIs before betting** — utils custom tools and web search mainly, secondly browser, etc. Only use default tool for web searches, not the browser (Google, DuckDuckGo). Use the browser to open found links, ONLY IF NEEDED.
+Act as an experienced trader. Look for: clear winners, strong consensus, surprising news, price/sentiment divergence, whale positions, or crowd mispricing.
+**Always verify with CLIs before betting** — you can use utils custom tools, your native web search, etc. Only use default tool for web searches, not the browser.
 Do not bend over backwards trying to find info - if there's no info, skip the market entirely.
 
 ## Step 5 — Decide
-Make independent trading decisions — no approval needed. Calculated risk is acceptable. **Zero trades is fine** if nothing looks good or resolve times are too long.
+Make independent trading decisions — no approval needed. Calculated risk is acceptable.
+**Zero trades is fine** if nothing looks good or resolve times are too long.
 
 ## Step 6 — Place Bets (if any)
 - **Cap: 15% of available funds total across all trades this run**
@@ -47,15 +49,16 @@ Make independent trading decisions — no approval needed. Calculated risk is ac
 - If an order fails, skip it (don't count it)
 
 ## Step 7 — Notify Outcome
-Post to Slack #trading channel. Always include:
-- Open positions & redeems summary
-- Number of trades placed
-- Per trade: market name, YES/NO, amount, price, reasoning
+Post to Slack channel mentioned in the initial prompt. Always include:
+- Open positions, their status, and the redeems summary
+- Number of trades placed (if any)
+    - Per trade: market name, chosen outcome, amount, price, reasoning for choice
 - Current balance after trades
 - Any errors
 
 ## Step 8 — Manage Notes
-Remove outdated notes. Add new general-purpose learnings (tips, patterns to avoid, market insights). **No specific market names** — keep notes generic and reusable across runs.
+Remove outdated notes. Add new general-purpose learnings (tips, patterns to avoid, market insights).
+**No specific market names** — keep notes generic and reusable across runs.
 
 ---
-**Stop.** Next invocation in a few minutes.
+**Stop.**
