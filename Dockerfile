@@ -36,8 +36,9 @@ RUN chmod +x ./*.sh && chown -R appuser:appuser /app
 
 VOLUME /home/appuser/
 VOLUME /app/persist/
-RUN mkdir -p /home/appuser/.claude && chown -R appuser:appuser /home/appuser
+RUN mkdir -p /home/appuser/.claude
 RUN chown -R appuser:appuser /app
+RUN chown -R appuser:appuser /home/appuser
 USER appuser
 
 ENV NO_BROWSER="true"
