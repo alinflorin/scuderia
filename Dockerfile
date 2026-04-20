@@ -46,6 +46,7 @@ ENV PLAYWRIGHT_MCP_SANDBOX="false"
 ENV PLAYWRIGHT_MCP_BROWSER="firefox"
 ENV GEMINI_MODEL="gemini-2.5-flash"
 ENV CLAUDE_MODEL="claude-sonnet-4-6"
-ENV CLAUDE_EFFORT="low"
+ENV SLACK_CHANNEL="trading"
+ENV CLAUDE_EFFORT="medium"
 
 CMD ["./entrypoint.sh"]

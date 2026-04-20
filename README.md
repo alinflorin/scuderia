@@ -121,7 +121,7 @@ Public channels work without an invite if you added the `chat:write.public` scop
 | `SLACK_CHANNEL` | `trading` | |
 | `DEBUG` | `0` | `1` |
 | `CLAUDE_MODEL` | `claude-sonnet-4-6` | |
-| `CLAUDE_EFFORT` | `low` | |
+| `CLAUDE_EFFORT` | `medium` | |
 | `GEMINI_MODEL` | `gemini-2.5-flash` | |
 | `REDDIT_CLIENT_ID` | — | |
 | `REDDIT_CLIENT_SECRET` | — | |
@@ -169,7 +169,7 @@ docker run --rm \
 
 ## First-time Setup
 
-On first run, the container sleeps for 10 minutes and waits for authentication. Exec into it and run `exec gosu appuser claude` or `exec gosu appuser gemini` from `/app` to authenticate:
+Run the docker run command manually at first. On first run, the container sleeps for 10 minutes and waits for authentication. Exec into it and run `exec gosu appuser claude` or `exec gosu appuser gemini` from `/app` to authenticate:
 
 ```sh
 docker exec -it scuderia bash
@@ -177,7 +177,7 @@ cd /app
 exec gosu appuser claude   # or: exec gosu appuser gemini
 ```
 
-Once authentication completes, the container exits. On the next scheduled run, everything works automatically.
+Once authentication completes, the container exits. On the next (scheduled or not) run, everything works automatically.
 
 ---
 

@@ -59,7 +59,7 @@ Post to Slack channel mentioned in the initial prompt. Always include:
 - Any errors
 
 ## Step 8 — Manage Notes
-Remove outdated notes. Add new general-purpose learnings (tips, patterns to avoid, market insights).
+Remove outdated notes. Add new general-purpose learnings (tips, patterns to avoid, market insights). It's perfectly fine if you add no notes.
 **No specific market names** — keep notes generic and reusable across runs.
 
 ---
