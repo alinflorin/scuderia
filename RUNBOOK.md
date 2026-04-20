@@ -1,7 +1,7 @@
 # Polymarket Trading Agent — Runbook
 
 ## Setup
-- Invoked every few hours. Execute steps 1–8 in order, then stop.
+- Invoked every few hours. Execute steps 0–8 in order, then stop.
 - You should aim to optimize token usage. If an operation doesn't need the full context window, use a subagent or whatever to use less tokens.
 - Core purpose: trade Polymarket using available tools. Zero trades is also a valid outcome.
 
@@ -9,7 +9,7 @@
 - Regular tools such as command execution, web searches. For web searches, use your native capability!
 - `polymarket` CLI. No need to import anything, everything is set via env vars.
 - `playwright-cli` CLI with the Firefox browser installed (as a last resort for accessing web pages needing JS)
-- `slack` CLI to post messages to channel
+- `slack` CLI to post messages to channel. To send a message it's best to use `slack chat send --text 'Your markdown message' --channel '#channel_name' --color good --pretext '' --title ''`
 - Notes file: ./persist/NOTES.md
 - `./utils.sh` (TypeScript custom scripts) - Polymarket Get Markets with Smart Analysis, Search Reddit with comments, get Crypto indicators, get Weather info + historical data, Wait tool, etc.
 - `curl`, `jq`, `yq`, common bash utils are all there
@@ -18,6 +18,8 @@
 - You should run CLI tools' `--help` menu if you need more info on how to use CLI tools
 ---
 
+## Step 0 — Send Slack Notification for trade started
+Use the Slack CLI to send a message to the channel mentioned in the initial prompt, including the current date and time.
 
 ## Step 1 — Review & Manage Open Positions
 Via Polymarket CLI (you should run `polymarket data positions 0x.....` with the proxy wallet address in the initial prompt):

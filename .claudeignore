@@ -4,6 +4,5 @@ RUNBOOK.md
 dist
 Dockerfile
 .dockerignore
-utils.sh
 run.sh
 .geminiignore
