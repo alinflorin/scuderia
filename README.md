@@ -169,7 +169,7 @@ docker run --rm \
 
 ## First-time Setup
 
-On first run, the container sleeps for 10 minutes and waits for authentication. Exec into it and run `claude` or `gemini` from `/app` to authenticate:
+On first run, the container sleeps for 10 minutes and waits for authentication. Exec into it and run `exec gosu appuser claude` or `exec gosu appuser gemini` from `/app` to authenticate:
 
 ```sh
 docker exec -it scuderia bash
