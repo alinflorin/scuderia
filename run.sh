@@ -137,7 +137,6 @@ if [ "${DEBUG}" = "1" ]; then
   sleep 600
 else
   MODEL="${CLAUDE_MODEL:-${GEMINI_MODEL}}"
-  slack chat send "Starting run (${LLM} / ${MODEL}) at $(date -u +%Y-%m-%dT%H:%M:%SZ)" "#${SLACK_CHANNEL:-trading}"
   if [ "$LLM" = "claude" ]; then
     claude \
       --verbose \
@@ -153,5 +152,4 @@ else
   else
     gemini -o stream-json -m "${GEMINI_MODEL}" -y -p "$PROMPT"
   fi
-  slack chat send "Finished run (${LLM} / ${MODEL}) at $(date -u +%Y-%m-%dT%H:%M:%SZ)" "#${SLACK_CHANNEL:-trading}"
 fi
