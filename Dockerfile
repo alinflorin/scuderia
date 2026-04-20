@@ -2,7 +2,7 @@ FROM debian:trixie-slim
 
 # APT
 RUN apt-get update
-RUN apt-get install -y curl jq yq
+RUN apt-get install -y curl jq yq gosu
 
 # NodeJS
 RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash - && apt-get install -y nodejs
@@ -32,14 +32,13 @@ COPY ./package-lock.json ./package-lock.json
 RUN npm ci
 
 COPY . .
-RUN chmod +x ./*.sh && chown -R appuser:appuser /app
+RUN chmod +x ./*.sh
 
-VOLUME /home/appuser/
-VOLUME /app/persist/
-RUN mkdir -p /home/appuser/.claude
+RUN mkdir -p /home/appuser/.claude /app/persist
 RUN chown -R appuser:appuser /app
 RUN chown -R appuser:appuser /home/appuser
-USER appuser
+VOLUME /home/appuser/
+VOLUME /app/persist/
 
 ENV NO_BROWSER="true"
 ENV PLAYWRIGHT_MCP_ISOLATED="true"
@@ -49,4 +48,4 @@ ENV GEMINI_MODEL="gemini-2.5-flash"
 ENV CLAUDE_MODEL="claude-sonnet-4-6"
 ENV CLAUDE_EFFORT="low"
 
-CMD ["./run.sh"]
+CMD ["./entrypoint.sh"]

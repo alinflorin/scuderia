@@ -174,7 +174,7 @@ On first run, the container sleeps for 10 minutes and waits for authentication. 
 ```sh
 docker exec -it scuderia bash
 cd /app
-claude   # or: gemini
+exec gosu appuser claude   # or: exec gosu appuser gemini
 ```
 
 Once authentication completes, the container exits. On the next scheduled run, everything works automatically.
