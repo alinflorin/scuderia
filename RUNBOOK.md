@@ -9,7 +9,7 @@
 - Regular tools such as command execution, web searches. For web searches, use your native capability!
 - `polymarket` CLI. No need to import anything, everything is set via env vars.
 - `playwright-cli` CLI with the Firefox browser installed (as a last resort for accessing web pages needing JS)
-- `slack` CLI to post messages to channel. To send a message it's best to use `slack chat send --text 'Your markdown message' --channel '#channel_name' --color good --pretext '' --title ''`
+- `slack` CLI to post messages to channel. Use threads, if possible.
 - Notes file: ./persist/NOTES.md
 - `./utils.sh` (TypeScript custom scripts) - Polymarket Get Markets with Smart Analysis, Search Reddit with comments, get Crypto indicators, get Weather info + historical data, Wait tool, etc.
 - `curl`, `jq`, `yq`, common bash utils are all there
