@@ -48,5 +48,6 @@ ENV GEMINI_MODEL="gemini-2.5-flash"
 ENV CLAUDE_MODEL="claude-sonnet-4-6"
 ENV SLACK_CHANNEL="trading"
 ENV CLAUDE_EFFORT="medium"
+ENV LLM="claude"
 
 CMD ["./entrypoint.sh"]

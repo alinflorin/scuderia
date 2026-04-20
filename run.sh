@@ -1,6 +1,5 @@
 #!/bin/bash
 
-LLM="${LLM:-claude}"
 if [ "$LLM" != "claude" ] && [ "$LLM" != "gemini" ]; then
   echo "Error: LLM must be 'claude' or 'gemini' (got: '$LLM')"
   exit 1
@@ -81,7 +80,7 @@ claude_logged_in() {
 
 if [ "$LLM" = "claude" ]; then
   if ! claude_logged_in; then
-    echo "Not logged in. SSH into this container and run 'claude' to authenticate interactively."
+    echo "Not logged in. SSH into this container and run 'exec gosu appuser claude' to authenticate interactively."
     until claude_logged_in; do sleep 5; done
     echo "Logged in. Exiting."
     exit 0
@@ -89,7 +88,7 @@ if [ "$LLM" = "claude" ]; then
 else
   GEMINI_CREDS_FILE="/home/appuser/.gemini/oauth_creds.json"
   if [ ! -f "$GEMINI_CREDS_FILE" ]; then
-    echo "Credentials not found. SSH into this container and run 'gemini' to authenticate."
+    echo "Credentials not found. SSH into this container and run 'exec gosu appuser gemini' to authenticate."
     until [ -f "$GEMINI_CREDS_FILE" ]; do sleep 5; done
     echo "Credentials detected. Exiting."
     exit 0
