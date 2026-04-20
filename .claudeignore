@@ -6,3 +6,4 @@ Dockerfile
 .dockerignore
 run.sh
 .geminiignore
+entrypoint.sh
