@@ -6,9 +6,9 @@ if [ "$LLM" != "claude" ] && [ "$LLM" != "gemini" ]; then
   exit 1
 fi
 
-mkdir -p /home/appuser/.claude /home/appuser/.gemini /app/persist
+mkdir -p /home/appuser/.claude /home/appuser/.gemini /app/persist || true
 
-touch -a /app/persist/NOTES.md
+touch -a /app/persist/NOTES.md || true
 
 write_if_missing() {
   local path="$1"; shift
