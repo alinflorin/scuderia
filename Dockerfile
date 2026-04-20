@@ -35,8 +35,8 @@ COPY . .
 RUN chmod +x ./*.sh
 
 RUN mkdir -p /home/appuser/.claude /app/persist
-RUN chown -R appuser:appuser /app
-RUN chown -R appuser:appuser /home/appuser
+RUN chown -R appuser:appuser /app || true
+RUN chown -R appuser:appuser /home/appuser || true
 VOLUME /home/appuser/
 VOLUME /app/persist/
 
