@@ -47,5 +47,5 @@ ENV CLAUDE_MODEL="claude-sonnet-4-6"
 ENV CLAUDE_EFFORT="low"
 
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
 CMD ["./run.sh"]
