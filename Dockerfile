@@ -34,7 +34,7 @@ RUN npm ci
 COPY . .
 RUN chmod +x ./*.sh
 
-RUN mkdir -p /home/appuser/.claude /app/persist
+RUN mkdir -p /home/appuser/.claude /app/persist || true
 RUN chown -R appuser:appuser /app || true
 RUN chown -R appuser:appuser /home/appuser || true
 VOLUME /home/appuser/
