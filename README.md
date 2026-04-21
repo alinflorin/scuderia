@@ -139,41 +139,6 @@ Public channels work without an invite if you added the `chat:write.public` scop
 | `/home/appuser` | User home directory |
 | `/app/persist` | Persistent app data |
 
-## Running Locally
-
-### Clone and build (not preferred)
-Clone the repo and build:
-
-```sh
-git clone https://github.com/alinflorin/scuderia.git
-cd scuderia
-docker build -t scuderia:latest .
-```
-
-Run with the local image:
-
-```sh
-docker run --rm \
-  --name scuderia \
-  -e POLYMARKET_PRIVATE_KEY=0x... \
-  -e SLACK_CLI_TOKEN=xoxb-... \
-  -v ./data:/home/appuser \
-  -v ./persist:/app/persist \
-  scuderia:latest
-```
-
-### Or use the pre-built image from the registry:
-
-```sh
-docker pull ghcr.io/alinflorin/scuderia:latest && docker run --rm \
-  --name scuderia \
-  -e POLYMARKET_PRIVATE_KEY=0x... \
-  -e SLACK_CLI_TOKEN=xoxb-... \
-  -v ./data:/home/appuser \
-  -v ./persist:/app/persist \
-  ghcr.io/alinflorin/scuderia:latest
-```
-
 ## First-time Setup
 
 Run the docker run command manually at first. On first run, the container sleeps for 10 minutes and waits for authentication.
@@ -188,6 +153,18 @@ claude
 Once authentication completes, the container exits. On the next (scheduled or not) run, everything works automatically.
 
 ---
+
+## Running
+
+```sh
+docker pull ghcr.io/alinflorin/scuderia:latest && docker run --rm \
+  --name scuderia \
+  -e POLYMARKET_PRIVATE_KEY=0x... \
+  -e SLACK_CLI_TOKEN=xoxb-... \
+  -v /path/to/data:/home/appuser \
+  -v /path/to/persist:/app/persist \
+  ghcr.io/alinflorin/scuderia:latest
+```
 
 > **Important:** When running on a schedule, ensure only one instance is active at a time. Starting a second container while one is already running will cause conflicting trades and unpredictable behavior. Use `docker ps` to check before starting, or use `--name scuderia` (as shown above) so Docker prevents duplicate containers automatically.  
 Do not schedule these more often than every 15 minutes!  

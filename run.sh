@@ -5,11 +5,6 @@ mkdir -p /app/persist/logs || true
 
 touch -a /app/persist/NOTES.md || true
 
-write_if_missing() {
-  local path="$1"; shift
-  [ -f "$path" ] || cat > "$path" <<< "$@"
-}
-
 claude_logged_in() {
   claude auth status 2>/dev/null | jq -e '.loggedIn' > /dev/null 2>&1
 }
@@ -17,8 +12,7 @@ claude_logged_in() {
 if ! claude_logged_in; then
   echo "Not logged in. SSH into this container and run 'claude' to authenticate interactively."
   until claude_logged_in; do sleep 5; done
-  echo "Logged in. Exiting."
-  exit 0
+  echo "Logged in. Continuing."
 fi
 
 PROMPT="$(cat ./RUNBOOK.md)
