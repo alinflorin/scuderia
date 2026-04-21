@@ -135,6 +135,7 @@ Public channels work without an invite if you added the `chat:write.public` scop
 
 ## Running Locally
 
+### Clone and build (not preferred)
 Clone the repo and build:
 
 ```sh
@@ -155,7 +156,7 @@ docker run --rm \
   scuderia:latest
 ```
 
-Or use the pre-built image from the registry:
+### Or use the pre-built image from the registry:
 
 ```sh
 docker pull ghcr.io/alinflorin/scuderia:latest && docker run --rm \
