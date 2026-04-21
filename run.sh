@@ -150,6 +150,7 @@ else
       --dangerously-skip-permissions \
       --permission-mode bypassPermissions \
       --no-chrome \
+      --no-session-persistence \
       --add-dir /home/appuser \
       --model "${CLAUDE_MODEL}" \
       --effort "${CLAUDE_EFFORT}" \
