@@ -143,12 +143,12 @@ else
       --dangerously-skip-permissions \
       --permission-mode bypassPermissions \
       --no-chrome \
-      --no-session-persistence \
+      --add-dir /home/appuser \
       --model "${CLAUDE_MODEL}" \
       --effort "${CLAUDE_EFFORT}" \
       --output-format stream-json \
       -p "$PROMPT"
   else
-    gemini -o stream-json -m "${GEMINI_MODEL}" -y -p "$PROMPT"
+    gemini -o stream-json --include-directories /home/appuser -m "${GEMINI_MODEL}" -y -p "$PROMPT"
   fi
 fi
