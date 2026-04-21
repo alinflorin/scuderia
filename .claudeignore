@@ -5,5 +5,4 @@ dist
 Dockerfile
 .dockerignore
 run.sh
-.geminiignore
 CLI_READMES.md

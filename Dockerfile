@@ -14,8 +14,8 @@ RUN curl -sSL https://raw.githubusercontent.com/Polymarket/polymarket-cli/main/i
 # Slack CLI
 RUN curl -o /usr/local/bin/slack https://raw.githubusercontent.com/rockymadden/slack-cli/master/src/slack && chmod +x /usr/local/bin/slack
 
-# Claude CLI + Gemini CLI
-RUN npm i -g @google/gemini-cli @anthropic-ai/claude-code
+# Claude CLI
+RUN npm i -g @anthropic-ai/claude-code
 
 # Playwright + Playwright CLI + Firefox + Deps — install to a fixed path so non-root can access it
 ENV PLAYWRIGHT_BROWSERS_PATH=/opt/ms-playwright
@@ -47,7 +47,6 @@ ENV NO_BROWSER="true"
 ENV PLAYWRIGHT_MCP_ISOLATED="true"
 ENV PLAYWRIGHT_MCP_SANDBOX="false"
 ENV PLAYWRIGHT_MCP_BROWSER="firefox"
-ENV GEMINI_MODEL="gemini-2.5-flash"
 ENV CLAUDE_MODEL="claude-sonnet-4-6"
 ENV SLACK_CHANNEL="trading"
 ENV CLAUDE_EFFORT="medium"

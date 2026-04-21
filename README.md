@@ -123,12 +123,10 @@ Public channels work without an invite if you added the `chat:write.public` scop
 
 | Variable | Default | Options |
 |---|---|---|
-| `LLM` | `claude` | `gemini` |
 | `SLACK_CHANNEL` | `trading` | |
 | `DEBUG` | `0` | `1` |
 | `CLAUDE_MODEL` | `claude-sonnet-4-6` | |
 | `CLAUDE_EFFORT` | `medium` | |
-| `GEMINI_MODEL` | `gemini-2.5-flash` | |
 | `REDDIT_CLIENT_ID` | — | |
 | `REDDIT_CLIENT_SECRET` | — | |
 | `BUDGETCAPPERCENT` | 20 | |
@@ -179,12 +177,12 @@ docker pull ghcr.io/alinflorin/scuderia:latest && docker run --rm \
 ## First-time Setup
 
 Run the docker run command manually at first. On first run, the container sleeps for 10 minutes and waits for authentication.
-Then, run `claude` or `gemini` (depending on how you've set the LLM env var. Defaults to claude) from `/app` to authenticate:
+Then, run `claude` from `/app` to authenticate:
 
 ```sh
 docker exec -it scuderia bash
 cd /app
-claude   # or: gemini
+claude
 ```
 
 Once authentication completes, the container exits. On the next (scheduled or not) run, everything works automatically.
