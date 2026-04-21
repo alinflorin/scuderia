@@ -139,12 +139,22 @@ Public channels work without an invite if you added the `chat:write.public` scop
 | `/home/appuser` | User home directory |
 | `/app/persist` | Persistent app data |
 
+Make sure to use absolute paths for local folders on Windows.  
+
 ## First-time Setup
 
-Run the docker run command manually at first. On first run, the container sleeps for 10 minutes and waits for authentication.
-Then, run `claude` from `/app` to authenticate:
+Run the docker run command manually at first (not scheduled). On first run, the container sleeps for infinity and waits for you to enter its console and do authentication.
 
 ```sh
+docker pull ghcr.io/alinflorin/scuderia:latest && docker run --rm \
+  --name scuderia \
+  -e POLYMARKET_PRIVATE_KEY=0x... \
+  -e SLACK_CLI_TOKEN=xoxb-... \
+  -e OTHER_ENV_VARS=values \
+  -v /path/to/data:/home/appuser \
+  -v /path/to/persist:/app/persist \
+  ghcr.io/alinflorin/scuderia:latest
+
 docker exec -it scuderia bash
 cd /app
 claude
@@ -161,6 +171,7 @@ docker pull ghcr.io/alinflorin/scuderia:latest && docker run --rm \
   --name scuderia \
   -e POLYMARKET_PRIVATE_KEY=0x... \
   -e SLACK_CLI_TOKEN=xoxb-... \
+  -e OTHER_ENV_VARS=values \
   -v /path/to/data:/home/appuser \
   -v /path/to/persist:/app/persist \
   ghcr.io/alinflorin/scuderia:latest
@@ -186,7 +197,7 @@ Add a line to run the container on your desired schedule. The example below runs
   --name scuderia \
   -e POLYMARKET_PRIVATE_KEY=0x... \
   -e SLACK_CLI_TOKEN=xoxb-... \
-  -e OTHER_ENV_VARS=value \
+  -e OTHER_ENV_VARS=values \
   -v /home/youruser/data:/home/appuser \
   -v /home/youruser/persist:/app/persist \
   ghcr.io/alinflorin/scuderia:latest
