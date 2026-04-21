@@ -169,7 +169,9 @@ docker run --rm \
 
 ## First-time Setup
 
-Run the docker run command manually at first. On first run, the container sleeps for 10 minutes and waits for authentication. Exec into it and run `exec gosu appuser claude` or `exec gosu appuser gemini` from `/app` to authenticate:
+Run the docker run command manually at first. On first run, the container sleeps for 10 minutes and waits for authentication.
+Exec into it and run `polymarket wallet address`. Send some POL currency to this address (not right now).
+Then, run `exec gosu appuser claude` or `exec gosu appuser gemini` from `/app` to authenticate:
 
 ```sh
 docker exec -it scuderia bash
