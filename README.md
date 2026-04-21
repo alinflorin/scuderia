@@ -56,9 +56,9 @@ Polymarket runs on Polygon and only accepts USDC. Funds go into your proxy walle
 
 If you only have USDC on Ethereum, bridge it first via [app.polygon.technology](https://app.polygon.technology). Sending USDC on the wrong network will result in lost funds.
 
-### 4. Fund with POL (for gas) - do this at First Time Setup step below.
+### 4. Fund with POL (for gas)
 
-Transactions on Polygon require **POL** (formerly MATIC) for gas fees. This goes to your proxy wallet >>>EOA<<< address.
+Transactions on Polygon require **POL** (formerly MATIC) for gas fees. This goes to your proxy wallet >>>EOA<<< address (you can find it in https://polymarket.com/settings?tab=api-keys - Signer Address field).
 
 1. Switch MetaMask to the **Polygon** network
 2. Send a small amount of POL (e.g. 1–2 POL is plenty) to your proxy wallet address (see first time setup on how to find out the address)
@@ -170,8 +170,6 @@ docker run --rm \
 ## First-time Setup
 
 Run the docker run command manually at first. On first run, the container sleeps for 10 minutes and waits for authentication.
-Exec into it and run `polymarket wallet address`. Send some POL currency to this address (not right now).
-If you are already authenticated and need to find the wallet address, run the container with -e DEBUG=1 to stop the trading.
 Then, run `exec gosu appuser claude` or `exec gosu appuser gemini` from `/app` to authenticate:
 
 ```sh
