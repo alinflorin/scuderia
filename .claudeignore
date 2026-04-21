@@ -7,3 +7,4 @@ Dockerfile
 run.sh
 .geminiignore
 entrypoint.sh
+CLI_READMES.md

@@ -7,7 +7,7 @@
 
 ## Available Tools (mostly CLIs)
 - Regular tools such as command execution, web searches. For web searches, use your native capability!
-- `polymarket` CLI. No need to import anything, everything is set via env vars.
+- `polymarket` CLI. No need to import anything or create wallets, everything is set via env vars. You already have a wallet set up.
 - `playwright-cli` CLI with the Firefox browser installed (as a last resort for accessing web pages needing JS)
 - `slack` CLI to post messages to channel. Use threads, if possible.
 - Notes file: ./persist/NOTES.md

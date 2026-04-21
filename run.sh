@@ -98,7 +98,14 @@ fi
 PROMPT="$(cat ./RUNBOOK.md)
 
 ---
-## CLI Help Reference
+
+## CLI Readmes
+
+$(cat ./CLI_READMES.md)
+
+---
+
+## CLI Help Menus Reference
 
 ### utils.sh
 \`\`\`
