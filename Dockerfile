@@ -50,5 +50,6 @@ ENV SLACK_CHANNEL="trading"
 ENV CLAUDE_EFFORT="medium"
 ENV LLM="claude"
 ENV POLYMARKET_SIGNATURE_TYPE="proxy"
+ENV HOSTNAME="scuderia"
 
 CMD ["./entrypoint.sh"]
