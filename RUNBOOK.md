@@ -49,6 +49,7 @@ Make independent trading decisions — no approval needed. Calculated risk is ac
 - Split that 15% however you want across chosen markets/outcomes. You should not aim to bet maximum amount.
 - Per trade: fetch current best price → place order → confirm a valid order ID
 - If an order fails, skip it (don't count it)
+- Place orders in such a way they get filled immediately! Do not wait for someone to match the price! This is important.
 
 ## Step 7 — Notify Outcome
 Post to Slack channel mentioned in the initial prompt. Always include:
