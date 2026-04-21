@@ -17,11 +17,6 @@ RUN curl -o /usr/local/bin/slack https://raw.githubusercontent.com/rockymadden/s
 # Claude CLI
 RUN npm i -g @anthropic-ai/claude-code
 
-# Playwright + Playwright CLI + Firefox + Deps — install to a fixed path so non-root can access it
-ENV PLAYWRIGHT_BROWSERS_PATH=/opt/ms-playwright
-RUN npm i -g @playwright/cli@latest
-RUN playwright-cli install-browser firefox --with-deps && chmod -R 755 /opt/ms-playwright
-
 # Non-privileged user
 RUN useradd -m -s /bin/bash appuser
 
@@ -44,13 +39,9 @@ RUN chown -R appuser:appuser /app || true
 RUN chown -R appuser:appuser /home/appuser || true
 
 ENV NO_BROWSER="true"
-ENV PLAYWRIGHT_MCP_ISOLATED="true"
-ENV PLAYWRIGHT_MCP_SANDBOX="false"
-ENV PLAYWRIGHT_MCP_BROWSER="firefox"
 ENV CLAUDE_MODEL="claude-sonnet-4-6"
 ENV SLACK_CHANNEL="trading"
 ENV CLAUDE_EFFORT="medium"
-ENV LLM="claude"
 ENV POLYMARKET_SIGNATURE_TYPE="proxy"
 ENV HOSTNAME="scuderia"
 ENV BUDGETCAPPERCENT="20"

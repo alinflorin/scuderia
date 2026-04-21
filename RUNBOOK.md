@@ -6,9 +6,8 @@
 - Core purpose: trade Polymarket using available tools. Zero trades is also a valid outcome.
 
 ## Available Tools (mostly CLIs)
-- Regular tools such as command execution, web searches. For web searches, use your native capability!
+- Regular tools such as command execution, web searches.
 - `polymarket` CLI. No need to import anything or create wallets, everything is set via env vars. You already have a wallet set up.
-- `playwright-cli` CLI with the Firefox browser installed (as a last resort for accessing web pages needing JS)
 - `slack` CLI to post messages to channel. Use threads, if possible.
 - Notes file: ./persist/NOTES.md
 - `./utils.sh` (TypeScript custom scripts) - Polymarket Get Markets with Smart Analysis, Search Reddit with comments, get Crypto indicators, get Weather info + historical data, Wait tool, etc.
@@ -36,7 +35,7 @@ Use the Utils **Polymarket Get Markets with Smart Analysis** as the primary tool
 
 ## Step 4 — Research Each Candidate
 Act as an experienced trader. Look for: clear winners, strong consensus, surprising news, price/sentiment divergence, whale positions, or crowd mispricing.
-**Always verify with CLIs before betting** — you can use utils custom tools, your native web search, etc. Only use default tool for web searches, not the browser.
+**Always verify with CLIs before betting** — you can use utils custom tools, your native web search, etc.
 It's good to prioritize markets where you would have ways to gather information (available specialized tools, or even if web searches are sufficient).
 Do not bend over backwards trying to find info - if there's no info, skip the market entirely.
 
