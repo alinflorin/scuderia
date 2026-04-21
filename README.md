@@ -131,6 +131,8 @@ Public channels work without an invite if you added the `chat:write.public` scop
 | `GEMINI_MODEL` | `gemini-2.5-flash` | |
 | `REDDIT_CLIENT_ID` | — | |
 | `REDDIT_CLIENT_SECRET` | — | |
+| `BUDGETCAPPERCENT` | 20 | |
+
 
 ## Volumes
 
