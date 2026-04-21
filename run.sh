@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for var in CLAUDE_CODE_OAUTH_TOKEN POLYMARKET_PRIVATE_KEY SLACK_CLI_TOKEN; do
+for var in CLAUDE_CODE_OAUTH_TOKEN POLYMARKET_PRIVATE_KEY; do
     if [ -z "${!var}" ]; then
         echo "Error: $var is not set" >&2
         exit 1
