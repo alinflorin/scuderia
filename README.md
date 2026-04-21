@@ -61,7 +61,7 @@ If you only have USDC on Ethereum, bridge it first via [app.polygon.technology](
 Transactions on Polygon require **POL** (formerly MATIC) for gas fees. This also goes to your proxy wallet address.
 
 1. Switch MetaMask to the **Polygon** network
-2. Send a small amount of POL (e.g. 1–2 POL is plenty) to your proxy wallet address
+2. Send a small amount of POL (e.g. 1–2 POL is plenty) to your proxy wallet address (see first time setup on how to find out the address)
 
 > Without POL, transactions will fail even if you have USDC.
 
