@@ -185,6 +185,7 @@ Once authentication completes, the container exits. On the next (scheduled or no
 > **Important:** When running on a schedule, ensure only one instance is active at a time. Starting a second container while one is already running will cause conflicting trades and unpredictable behavior. Use `docker ps` to check before starting, or use `--name scuderia` (as shown above) so Docker prevents duplicate containers automatically.  
 Do not schedule these more often than every 15 minutes!  
 
+
 ## Scheduling with cron (Debian/Ubuntu VPS)
 
 Open the crontab editor:
