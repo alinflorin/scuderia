@@ -6,5 +6,4 @@ Dockerfile
 .dockerignore
 run.sh
 .claudeignore
-entrypoint.sh
 CLI_READMES.md

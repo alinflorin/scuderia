@@ -2,7 +2,7 @@ FROM debian:trixie-slim
 
 # APT
 RUN apt-get update
-RUN apt-get install -y curl jq yq gosu
+RUN apt-get install -y curl jq yq
 
 # NodeJS
 RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash - && apt-get install -y nodejs
@@ -39,6 +39,9 @@ RUN chown -R appuser:appuser /app || true
 RUN chown -R appuser:appuser /home/appuser || true
 VOLUME /home/appuser/
 VOLUME /app/persist/
+RUN mkdir -p /home/appuser/.claude /app/persist || true
+RUN chown -R appuser:appuser /app || true
+RUN chown -R appuser:appuser /home/appuser || true
 
 ENV NO_BROWSER="true"
 ENV PLAYWRIGHT_MCP_ISOLATED="true"
@@ -52,4 +55,6 @@ ENV LLM="claude"
 ENV POLYMARKET_SIGNATURE_TYPE="proxy"
 ENV HOSTNAME="scuderia"
 
-CMD ["./entrypoint.sh"]
+USER appuser
+
+CMD ["./run.sh"]
