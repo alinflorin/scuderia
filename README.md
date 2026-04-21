@@ -158,7 +158,7 @@ docker run --rm \
 Or use the pre-built image from the registry:
 
 ```sh
-docker run --rm \
+docker pull ghcr.io/alinflorin/scuderia:latest && docker run --rm \
   --name scuderia \
   -e POLYMARKET_PRIVATE_KEY=0x... \
   -e SLACK_CLI_TOKEN=xoxb-... \
