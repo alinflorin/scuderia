@@ -37,7 +37,8 @@ For API access, Romania still works (this is what scuderia uses).
    
 ### 1. Create an account
 
-Go to [polymarket.com](https://polymarket.com) and sign up with your email (no social, no MetaMask login. Only email.). Polymarket will create a **proxy wallet** for you — this is the wallet that actually holds your funds and places bets on-chain.
+Go to [polymarket.com](https://polymarket.com) and sign up with your email (no social, no MetaMask login. Only email.). Polymarket will create a **proxy wallet** for you — this is the wallet that actually holds your funds and places bets on-chain.  
+Enable automatic redeems in Settings! (important)  
 
 ### 2. Get your private key
 
