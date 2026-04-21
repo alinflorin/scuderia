@@ -212,7 +212,7 @@ Add a line to run the container on your desired schedule. The example below runs
   -e OTHER_ENV_VARS=value \
   -v /home/youruser/data:/home/appuser \
   -v /home/youruser/persist:/app/persist \
-  ghcr.io/alinflorin/scuderia:latest >> /home/youruser/scuderia.log 2>&1
+  ghcr.io/alinflorin/scuderia:latest
 ```
 
 Replace `/home/youruser/` with actual absolute paths — cron does not run in your home directory, so relative paths like `./data` will not work.
