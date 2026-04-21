@@ -1,0 +1,15 @@
+services:
+  scuderia:
+    image: ghcr.io/alinflorin/scuderia:3.0.10
+    container_name: scuderia
+    environment:
+      - POLYMARKET_PRIVATE_KEY=${POLYMARKET_PRIVATE_KEY}
+      - SLACK_CLI_TOKEN=${SLACK_CLI_TOKEN}
+      - BUDGETCAPPERCENT=20
+    volumes:
+      - type: bind
+        source: ./data
+        target: /home/appuser
+      - type: bind
+        source: ./persist
+        target: /app/persist
