@@ -28,7 +28,7 @@ Via Polymarket CLI (you should run `polymarket data positions 0x.....` with the 
 - Sell positions but as a very last resort, if risk warrants it. If loss is unavoidable.
 
 ## Step 2 — Check Funds
-Fetch USDC balance via Polymarket CLI. **Bankroll for this run = MAXIMUM 20% of balance.**
+Fetch USDC balance via Polymarket CLI.
 If balance is 0 or tools are failing → skip to Step 7.
 
 ## Step 3 — Find Candidate Markets
@@ -45,8 +45,8 @@ Make independent trading decisions — no approval needed. Calculated risk is ac
 **Zero trades is fine** if nothing looks good or resolve times are too long.
 
 ## Step 6 — Place Bets (if any)
-- **Cap: 20% of available funds total across all trades this run**
-- Split that 20% however you want across chosen markets/outcomes. You should not aim to bet maximum amount. At the same time, you could spend them in one place, but only if you're 1000% sure.
+- **Budget cap - percentage of available funds (balance) - it is defined below. This is very important.**
+- Split that percentage however you want across chosen markets/outcomes. You should not aim to bet maximum amount. At the same time, you could spend them in one place, but only if you're 1000% sure.
 - Per trade: place order → confirm a valid order ID
 - If an order fails, skip it (don't count it)
 - Place orders in such a way they get filled immediately! Do not wait for someone to match the price! This is important. I think these would be market orders?
