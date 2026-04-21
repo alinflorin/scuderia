@@ -49,5 +49,6 @@ ENV CLAUDE_MODEL="claude-sonnet-4-6"
 ENV SLACK_CHANNEL="trading"
 ENV CLAUDE_EFFORT="medium"
 ENV LLM="claude"
+ENV POLYMARKET_SIGNATURE_TYPE="proxy"
 
 CMD ["./entrypoint.sh"]
