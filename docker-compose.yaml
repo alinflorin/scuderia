@@ -1,6 +1,9 @@
+# to start: docker compose pull && docker compose up -d
+# this command as an alternative to docker run
+# this can also be scheduled in cron
 services:
   scuderia:
-    image: ghcr.io/alinflorin/scuderia:3.0.13
+    image: ghcr.io/alinflorin/scuderia:latest
     container_name: scuderia
     environment:
       - POLYMARKET_PRIVATE_KEY=${POLYMARKET_PRIVATE_KEY}
