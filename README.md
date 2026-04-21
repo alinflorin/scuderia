@@ -188,6 +188,7 @@ Do not schedule these more often than every 15 minutes!
 
 ## Scheduling with cron (Debian/Ubuntu VPS)
 
+After you have successfully ran the image once and logged in:
 Open the crontab editor:
 
 ```sh
