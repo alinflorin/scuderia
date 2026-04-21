@@ -171,6 +171,7 @@ docker run --rm \
 
 Run the docker run command manually at first. On first run, the container sleeps for 10 minutes and waits for authentication.
 Exec into it and run `polymarket wallet address`. Send some POL currency to this address (not right now).
+If you are already authenticated and need to find the wallet address, run the container with -e DEBUG=1 to stop the trading.
 Then, run `exec gosu appuser claude` or `exec gosu appuser gemini` from `/app` to authenticate:
 
 ```sh
