@@ -6,6 +6,7 @@ if [ "$LLM" != "claude" ] && [ "$LLM" != "gemini" ]; then
 fi
 
 mkdir -p /home/appuser/.claude /home/appuser/.gemini /app/persist || true
+mkdir -p /app/persist/logs || true
 
 touch -a /app/persist/NOTES.md || true
 
@@ -80,7 +81,7 @@ claude_logged_in() {
 
 if [ "$LLM" = "claude" ]; then
   if ! claude_logged_in; then
-    echo "Not logged in. SSH into this container and run 'exec gosu appuser claude' to authenticate interactively."
+    echo "Not logged in. SSH into this container and run 'claude' to authenticate interactively."
     until claude_logged_in; do sleep 5; done
     echo "Logged in. Exiting."
     exit 0
@@ -88,7 +89,7 @@ if [ "$LLM" = "claude" ]; then
 else
   GEMINI_CREDS_FILE="/home/appuser/.gemini/oauth_creds.json"
   if [ ! -f "$GEMINI_CREDS_FILE" ]; then
-    echo "Credentials not found. SSH into this container and run 'exec gosu appuser gemini' to authenticate."
+    echo "Credentials not found. SSH into this container and run 'gemini' to authenticate."
     until [ -f "$GEMINI_CREDS_FILE" ]; do sleep 5; done
     echo "Credentials detected. Exiting."
     exit 0
@@ -119,6 +120,7 @@ if [ "${DEBUG}" = "1" ]; then
   sleep infinity
 else
   MODEL="${CLAUDE_MODEL:-${GEMINI_MODEL}}"
+  LOG_FILE="/app/persist/logs/${LLM}_$(date -u +%Y-%m-%dT%H:%M:%SZ)_run.log"
   if [ "$LLM" = "claude" ]; then
     claude \
       --verbose \
@@ -131,8 +133,8 @@ else
       --model "${CLAUDE_MODEL}" \
       --effort "${CLAUDE_EFFORT}" \
       --output-format stream-json \
-      -p "$PROMPT"
+      -p "$PROMPT" | tee "$LOG_FILE"
   else
-    gemini -o stream-json --include-directories /home/appuser -m "${GEMINI_MODEL}" -y -p "$PROMPT"
+    gemini -o stream-json --include-directories /home/appuser -m "${GEMINI_MODEL}" -y -p "$PROMPT" | tee "$LOG_FILE"
   fi
 fi
