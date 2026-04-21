@@ -184,3 +184,26 @@ Once authentication completes, the container exits. On the next (scheduled or no
 
 > **Important:** When running on a schedule, ensure only one instance is active at a time. Starting a second container while one is already running will cause conflicting trades and unpredictable behavior. Use `docker ps` to check before starting, or use `--name scuderia` (as shown above) so Docker prevents duplicate containers automatically.  
 Do not schedule these more often than every 15 minutes!  
+
+## Scheduling with cron (Debian/Ubuntu VPS)
+
+Open the crontab editor:
+
+```sh
+crontab -e
+```
+
+Add a line to run the container on your desired schedule. The example below runs every hour. The `--rm` flag ensures the container is removed after it exits, so a new one can start next time. The `--name scuderia` flag prevents Docker from starting a duplicate if the previous run is still active (Docker will refuse to start and the cron job will simply exit).
+
+```
+* */1 * * * docker pull ghcr.io/alinflorin/scuderia:latest && docker run --rm \
+  --name scuderia \
+  -e POLYMARKET_PRIVATE_KEY=0x... \
+  -e SLACK_CLI_TOKEN=xoxb-... \
+  -e OTHER_ENV_VARS=value \
+  -v /home/youruser/data:/home/appuser \
+  -v /home/youruser/persist:/app/persist \
+  ghcr.io/alinflorin/scuderia:latest >> /home/youruser/scuderia.log 2>&1
+```
+
+Replace `/home/youruser/` with actual absolute paths — cron does not run in your home directory, so relative paths like `./data` will not work.
