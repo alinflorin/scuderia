@@ -110,6 +110,14 @@ Public channels work without an invite if you added the `chat:write.public` scop
 
 ---
 
+## Claude Code Oauth Token
+
+1. Open Claude Code in terminal, somewhere you are already logged in: `claude setup-token`
+2. Log in in the browser
+3. Token will be displayed in the terminal. Store it, to be used for the env var CLAUDE_CODE_OAUTH_TOKEN. It is valid for 1 year.
+
+---
+
 ## Environment Variables
 
 **Required:**
@@ -118,6 +126,7 @@ Public channels work without an invite if you added the `chat:write.public` scop
 |---|---|
 | `POLYMARKET_PRIVATE_KEY` | `0x...` |
 | `SLACK_CLI_TOKEN` | `xoxb-...` |
+| `CLAUDE_CODE_OAUTH_TOKEN` | `sk-ant-...` |
 
 **Optional (with defaults):**
 
@@ -131,37 +140,6 @@ Public channels work without an invite if you added the `chat:write.public` scop
 | `REDDIT_CLIENT_SECRET` | — | |
 | `BUDGETCAPPERCENT` | 20 | |
 
-
-## Volumes
-
-| Mount | Purpose |
-|---|---|
-| `/home/appuser` | User home directory |
-| `/app/persist` | Persistent app data |
-
-Make sure to use absolute paths for local folders on Windows.  
-
-## First-time Setup
-
-Run the docker run command manually at first (not scheduled). On first run, the container sleeps for infinity and waits for you to enter its console and do authentication.
-
-```sh
-docker pull ghcr.io/alinflorin/scuderia:latest && docker run --rm \
-  --name scuderia \
-  -e POLYMARKET_PRIVATE_KEY=0x... \
-  -e SLACK_CLI_TOKEN=xoxb-... \
-  -e OTHER_ENV_VARS=values \
-  -v /path/to/data:/home/appuser \
-  -v /path/to/persist:/app/persist \
-  ghcr.io/alinflorin/scuderia:latest
-
-docker exec -it scuderia bash
-cd /app
-claude
-```
-
-Once authentication completes, the container exits. On the next (scheduled or not) run, everything works automatically.
-
 ---
 
 ## Running
@@ -171,9 +149,8 @@ docker pull ghcr.io/alinflorin/scuderia:latest && docker run --rm \
   --name scuderia \
   -e POLYMARKET_PRIVATE_KEY=0x... \
   -e SLACK_CLI_TOKEN=xoxb-... \
+  -e CLAUDE_CODE_OAUTH_TOKEN=... \
   -e OTHER_ENV_VARS=values \
-  -v /path/to/data:/home/appuser \
-  -v /path/to/persist:/app/persist \
   ghcr.io/alinflorin/scuderia:latest
 ```
 
@@ -183,7 +160,6 @@ Do not schedule these more often than every 15 minutes!
 
 ## Scheduling with cron (Debian/Ubuntu VPS)
 
-After you have successfully ran the image once and logged in:
 Open the crontab editor:
 
 ```sh
@@ -197,9 +173,8 @@ Add a line to run the container on your desired schedule. The example below runs
   --name scuderia \
   -e POLYMARKET_PRIVATE_KEY=0x... \
   -e SLACK_CLI_TOKEN=xoxb-... \
+  -e CLAUDE_CODE_OAUTH_TOKEN=... \
   -e OTHER_ENV_VARS=values \
-  -v /home/youruser/data:/home/appuser \
-  -v /home/youruser/persist:/app/persist \
   ghcr.io/alinflorin/scuderia:latest
 ```
 

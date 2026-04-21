@@ -8,11 +8,5 @@ services:
     environment:
       - POLYMARKET_PRIVATE_KEY=${POLYMARKET_PRIVATE_KEY}
       - SLACK_CLI_TOKEN=${SLACK_CLI_TOKEN}
+      - CLAUDE_CODE_OAUTH_TOKEN=${CLAUDE_CODE_OAUTH_TOKEN}
       - BUDGETCAPPERCENT=20
-    volumes:
-      - type: bind
-        source: ./data
-        target: /home/appuser
-      - type: bind
-        source: ./persist
-        target: /app/persist

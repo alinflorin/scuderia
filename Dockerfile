@@ -29,15 +29,6 @@ RUN npm ci
 COPY . .
 RUN chmod +x ./*.sh
 
-RUN mkdir -p /home/appuser/.claude /app/persist || true
-RUN chown -R appuser:appuser /app || true
-RUN chown -R appuser:appuser /home/appuser || true
-VOLUME /home/appuser/
-VOLUME /app/persist/
-RUN mkdir -p /home/appuser/.claude /app/persist || true
-RUN chown -R appuser:appuser /app || true
-RUN chown -R appuser:appuser /home/appuser || true
-
 ENV NO_BROWSER="true"
 ENV CLAUDE_MODEL="claude-sonnet-4-6"
 ENV SLACK_CHANNEL="trading"
@@ -45,6 +36,8 @@ ENV CLAUDE_EFFORT="medium"
 ENV POLYMARKET_SIGNATURE_TYPE="proxy"
 ENV HOSTNAME="scuderia"
 ENV BUDGETCAPPERCENT="20"
+ENV CLAUDE_CODE_ENABLE_TELEMETRY="0"
+ENV CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="1"
 
 USER appuser
 

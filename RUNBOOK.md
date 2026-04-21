@@ -1,7 +1,7 @@
 # Polymarket Trading Agent — Runbook
 
 ## Setup
-- Invoked every few hours. Execute steps 0–8 in order, then stop.
+- Invoked every few hours. Execute steps 0–7 in order, then stop.
 - You should aim to optimize token usage. If an operation doesn't need the full context window, use a subagent or whatever to use less tokens.
 - Core purpose: trade Polymarket using available tools. Zero trades is also a valid outcome.
 
@@ -9,11 +9,9 @@
 - Regular tools such as command execution, web searches.
 - `polymarket` CLI. No need to import anything or create wallets, everything is set via env vars. You already have a wallet set up.
 - `slack` CLI to post messages to channel. Use threads, if possible.
-- Notes file: ./persist/NOTES.md
 - `./utils.sh` (TypeScript custom scripts) - Polymarket Get Markets with Smart Analysis, Search Reddit with comments, get Crypto indicators, get Weather info + historical data, Wait tool, etc.
 - `curl`, `jq`, `yq`, common bash utils are all there
-- Persistent working directory: /app/persist (use this one for work files)
-- Persistent user home folder: /home/appuser
+- No directory is persistent between runs
 - You should run CLI tools' help menus if you need more info on how to use them
 ---
 
@@ -57,10 +55,6 @@ Post to Slack channel mentioned in the initial prompt. Always include:
     - Per trade: market name, chosen outcome, amount, price, reasoning for choice
 - Current balance after trades
 - Any errors
-
-## Step 8 — Manage Notes
-Remove outdated notes. Add new general-purpose learnings (tips, patterns to avoid, market insights). It's perfectly fine if you add no notes.
-**No specific market names** — keep notes generic and reusable across runs.
 
 ---
 **Stop.**
