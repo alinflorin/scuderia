@@ -56,9 +56,9 @@ Polymarket runs on Polygon and only accepts USDC. Funds go into your proxy walle
 
 If you only have USDC on Ethereum, bridge it first via [app.polygon.technology](https://app.polygon.technology). Sending USDC on the wrong network will result in lost funds.
 
-### 4. Fund with POL (for gas)
+### 4. Fund with POL (for gas) - do this at First Time Setup step below.
 
-Transactions on Polygon require **POL** (formerly MATIC) for gas fees. This also goes to your proxy wallet address.
+Transactions on Polygon require **POL** (formerly MATIC) for gas fees. This goes to your proxy wallet >>>EOA<<< address.
 
 1. Switch MetaMask to the **Polygon** network
 2. Send a small amount of POL (e.g. 1–2 POL is plenty) to your proxy wallet address (see first time setup on how to find out the address)
