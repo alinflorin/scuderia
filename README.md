@@ -171,7 +171,7 @@ docker pull ghcr.io/alinflorin/scuderia:latest && docker run --rm \
 ## First-time Setup
 
 Run the docker run command manually at first. On first run, the container sleeps for 10 minutes and waits for authentication.
-Then, run `exec gosu appuser claude` or `exec gosu appuser gemini` from `/app` to authenticate:
+Then, run `exec gosu appuser claude` or `exec gosu appuser gemini` (depending on how you've set the LLM env var. Defaults to claude) from `/app` to authenticate:
 
 ```sh
 docker exec -it scuderia bash
