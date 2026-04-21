@@ -105,30 +105,6 @@ $(cat ./CLI_READMES.md)
 
 ---
 
-## CLI Help Menus Reference
-
-### utils.sh
-\`\`\`
-$(./utils.sh help-all 2>&1)
-\`\`\`
-
-### polymarket
-\`\`\`
-$(polymarket --help 2>&1)
-\`\`\`
-
-### slack
-\`\`\`
-$(slack --help 2>&1)
-\`\`\`
-
-### playwright-cli
-\`\`\`
-$(playwright-cli --help 2>&1)
-\`\`\`
-
----
-
 ## Your Previous Notes
 
 $(cat ./persist/NOTES.md 2>/dev/null)
