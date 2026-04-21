@@ -30,6 +30,11 @@ USDC is the currency used on Polymarket. Make sure you get **USDC on Polygon**, 
 
 ## Polymarket Setup
 
+### 0. Romania restrictions
+In order to bypass and visit the website in your browser, set your DNS servers on your machine or router to 8.8.8.8, 8.8.4.4.  
+Or, use a Swedish VPN.  
+For API access, Romania still works (this is what scuderia uses).  
+   
 ### 1. Create an account
 
 Go to [polymarket.com](https://polymarket.com) and sign up with your email (no social, no MetaMask login. Only email.). Polymarket will create a **proxy wallet** for you — this is the wallet that actually holds your funds and places bets on-chain.
