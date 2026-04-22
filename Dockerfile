@@ -28,7 +28,8 @@ RUN chmod +x ./*.sh
 
 # Other 3rd party CLIs here
 
-
+# Verdict - browser CLI
+RUN npm install -g verdict-cli
 
 
 
