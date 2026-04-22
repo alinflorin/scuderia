@@ -1,9 +1,34 @@
 import axios from 'axios';
 import { Command } from 'commander';
+import fs from 'fs';
+import path from 'path';
+
+const TOKEN_CACHE_PATH = path.resolve('./reddit_token');
+
+interface TokenCache {
+  access_token: string;
+  expires_at: number;
+}
 
 interface RedditAuth {
   baseUrl: string;
   headers: Record<string, string>;
+}
+
+function readCachedToken(): TokenCache | null {
+  try {
+    const raw = fs.readFileSync(TOKEN_CACHE_PATH, 'utf-8');
+    const cached = JSON.parse(raw) as TokenCache;
+    if (Date.now() < cached.expires_at) return cached;
+  } catch {
+    // missing or invalid cache
+  }
+  return null;
+}
+
+function writeCachedToken(token: TokenCache): void {
+  fs.mkdirSync(path.dirname(TOKEN_CACHE_PATH), { recursive: true });
+  fs.writeFileSync(TOKEN_CACHE_PATH, JSON.stringify(token), 'utf-8');
 }
 
 async function getAuth(): Promise<RedditAuth> {
@@ -15,22 +40,32 @@ async function getAuth(): Promise<RedditAuth> {
     return { baseUrl: 'https://www.reddit.com', headers: { 'User-Agent': userAgent } };
   }
 
-  const res = await axios.post<{ access_token: string }>(
-    'https://www.reddit.com/api/v1/access_token',
-    'grant_type=client_credentials',
-    {
-      auth: { username: clientId, password: clientSecret },
-      headers: {
-        'User-Agent': userAgent,
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      timeout: 15000,
-    },
-  );
+  const cached = readCachedToken();
+  const accessToken = cached
+    ? cached.access_token
+    : await (async () => {
+        const res = await axios.post<{ access_token: string; expires_in: number }>(
+          'https://www.reddit.com/api/v1/access_token',
+          'grant_type=client_credentials',
+          {
+            auth: { username: clientId, password: clientSecret },
+            headers: {
+              'User-Agent': userAgent,
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            timeout: 15000,
+          },
+        );
+        writeCachedToken({
+          access_token: res.data.access_token,
+          expires_at: Date.now() + res.data.expires_in * 1000 - 60_000,
+        });
+        return res.data.access_token;
+      })();
 
   return {
     baseUrl: 'https://oauth.reddit.com',
-    headers: { 'User-Agent': userAgent, Authorization: `Bearer ${res.data.access_token}` },
+    headers: { 'User-Agent': userAgent, Authorization: `Bearer ${accessToken}` },
   };
 }
 
