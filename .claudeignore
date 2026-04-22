@@ -6,5 +6,9 @@ Dockerfile
 .dockerignore
 run.sh
 CLI_READMES.md
-setup.sh
 docker-compose.yaml
+**/*.ts
+tsconfig.json
+.gitignore
+.git
+.gitattributes

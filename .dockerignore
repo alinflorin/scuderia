@@ -264,3 +264,6 @@ README.md
 /persist
 .claudeignore
 docker-compose.yaml
+.gitignore
+.git
+.gitattributes

@@ -3,7 +3,7 @@
 # this can also be scheduled in cron
 services:
   scuderia:
-    image: ghcr.io/alinflorin/scuderia:latest
+    image: ghcr.io/alinflorin/scuderia:latest # or experimental or sha tag or version tag
     container_name: scuderia
     environment:
       - POLYMARKET_PRIVATE_KEY=${POLYMARKET_PRIVATE_KEY}
