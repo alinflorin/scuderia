@@ -31,7 +31,7 @@ else
     --permission-mode bypassPermissions \
     --no-chrome \
     --no-session-persistence \
-    --add-dir /home/appuser \
+    --add-dir /root \
     --model "${CLAUDE_MODEL}" \
     --effort "${CLAUDE_EFFORT}" \
     --output-format stream-json \
