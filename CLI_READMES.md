@@ -2,61 +2,6 @@
 
 Rust CLI for Polymarket. Browse markets, place orders, manage positions, and interact with onchain contracts — from a terminal or as a JSON API for scripts and agents.
 
-## Quick Start
-
-```bash
-# No wallet needed — browse markets immediately
-polymarket markets list --limit 5
-polymarket markets search "election"
-polymarket events list --tag politics
-
-# Check a specific market
-polymarket markets get will-trump-win-the-2024-election
-
-# JSON output for scripts
-polymarket -o json markets list --limit 3
-```
-
-To trade, set up a wallet:
-
-```bash
-polymarket setup
-# Or manually:
-polymarket wallet create
-polymarket approve set
-```
-
-## Output Formats
-
-Every command supports `--output table` (default) and `--output json`.
-
-```bash
-# Human-readable table (default)
-polymarket markets list --limit 2
-```
-
-```
- Question                            Price (Yes)  Volume   Liquidity  Status
- Will Trump win the 2024 election?   52.00¢       $145.2M  $1.2M      Active
- Will BTC hit $100k by Dec 2024?     67.30¢       $89.4M   $430.5K    Active
-```
-
-```bash
-# Machine-readable JSON
-polymarket -o json markets list --limit 2
-```
-
-```json
-[
-  { "id": "12345", "question": "Will Trump win the 2024 election?", "outcomePrices": ["0.52", "0.48"], ... },
-  { "id": "67890", "question": "Will BTC hit $100k by Dec 2024?", ... }
-]
-```
-
-Short form: `-o json` or `-o table`.
-
-Errors follow the same pattern — table mode prints `Error: ...` to stderr, JSON mode prints `{"error": "..."}` to stdout. Non-zero exit code either way.
-
 ## Commands
 
 ### Markets
@@ -295,112 +240,20 @@ polymarket ctf position-id --collection 0xCOLLECTION...
 
 `--amount` is in USDC (e.g., `10` = $10). The `--partition` flag defaults to binary (`1,2`). On-chain operations require MATIC for gas on Polygon.
 
-### Bridge
-
-Deposit assets from other chains into Polymarket.
-
-```bash
-# Get deposit addresses (EVM, Solana, Bitcoin)
-polymarket bridge deposit 0xWALLET_ADDRESS
-
-# List supported chains and tokens
-polymarket bridge supported-assets
-
-# Check deposit status
-polymarket bridge status 0xDEPOSIT_ADDRESS
-```
 
 ### Wallet Management
 
 ```bash
-polymarket wallet create               # Generate new random wallet
-polymarket wallet create --force       # Overwrite existing
-polymarket wallet import 0xKEY...      # Import existing key
 polymarket wallet address              # Print wallet address
 polymarket wallet show                 # Full wallet info (address, source, config path)
-polymarket wallet reset                # Delete config (prompts for confirmation)
-polymarket wallet reset --force        # Delete without confirmation
 ```
-
-### Interactive Shell
-
-```bash
-polymarket shell
-# polymarket> markets list --limit 3
-# polymarket> clob book 48331043336612883...
-# polymarket> exit
-```
-
-Supports command history. All commands work the same as the CLI, just without the `polymarket` prefix.
 
 ### Other
 
 ```bash
 polymarket status     # API health check
-polymarket setup      # Guided first-time setup wizard
-polymarket upgrade    # Update to the latest version
 polymarket --version
 polymarket --help
-```
-
-## Common Workflows
-
-### Browse and research markets
-
-```bash
-polymarket markets search "bitcoin" --limit 5
-polymarket markets get bitcoin-above-100k
-polymarket clob book 48331043336612883...
-polymarket clob price-history 48331043336612883... --interval 1d
-```
-
-### Set up a new wallet and start trading
-
-```bash
-polymarket wallet create
-polymarket approve set                    # needs MATIC for gas
-polymarket clob balance --asset-type collateral
-polymarket clob market-order --token TOKEN_ID --side buy --amount 5
-```
-
-### Monitor your portfolio
-
-```bash
-polymarket data positions 0xYOUR_ADDRESS
-polymarket data value 0xYOUR_ADDRESS
-polymarket clob orders
-polymarket clob trades
-```
-
-### Place and manage limit orders
-
-```bash
-# Place order
-polymarket clob create-order --token TOKEN_ID --side buy --price 0.45 --size 20
-
-# Check it
-polymarket clob orders
-
-# Cancel if needed
-polymarket clob cancel ORDER_ID
-
-# Or cancel everything
-polymarket clob cancel-all
-```
-
-### Script with JSON output
-
-```bash
-# Pipe market data to jq
-polymarket -o json markets list --limit 100 | jq '.[].question'
-
-# Check prices programmatically
-polymarket -o json clob midpoint TOKEN_ID | jq '.mid'
-
-# Error handling in scripts
-if ! result=$(polymarket -o json clob balance --asset-type collateral 2>/dev/null); then
-  echo "Failed to fetch balance"
-fi
 ```
 
 
@@ -503,195 +356,6 @@ $ slack chat send 'Hello world!' '#channel' --filter '.ts + "\n" + .channel' |
   xargs -n2 slack chat delete
 ```
 
-### `file upload`
-
-```console
-$ # Upload file via prompts:
-$ slack file upload
-$
-$ # Upload file via arguments:
-$ slack file upload README.md '#channel'
-$
-$ # Upload file via options:
-$ slack file upload --file README.md --channels '#channel'
-$
-$ # Upload file via pipe:
-$ ls -al | slack file upload --channels '#channel'
-$
-$ # Upload file with rich formatting:
-$ slack file upload README.md '#channel' --comment 'Comment' --title 'Title'
-$
-$ # Create a Slack post, noting the filetype option:
-$ slack file upload --file post.md --filetype post --title 'Post Title' --channels '#channel'
-```
-
-### `file list`
-
-```console
-$ # List files:
-$ slack file list
-$
-$ # List files and output only ID and size:
-$ slack file list --filter '[.files[] | {id, size}]'
-```
-
-### `file info`
-
-```console
-$ # Info about file via prompts:
-$ slack file info
-$
-$ # Info about file via arguments:
-$ slack file info F2147483862
-$
-$ # Info about file via options:
-$ slack file info --file F2147483862
-```
-
-### `file delete`
-
-```console
-$ # Delete file via prompts:
-$ slack file delete
-$
-$ # Delete file via arguments:
-$ slack file delete F2147483862
-$
-$ # Delete file via options:
-$ slack file delete --file F2147483862
-```
-
-### `presence active`
-
-```console
-$ # Active presence:
-$ slack presence active
-```
-
-### `reminder list`
-
-```console
-$ # List reminders:
-$ slack reminder list
-```
-
-### `reminder add`
-
-```console
-$ # Add reminder via prompts:
-$ slack reminder add
-$
-$ # Add reminder via arguments:
-$ slack reminder add 'lunch' 1526995300
-$
-$ # Add reminder in 10 minutes, via date on macOS, via arguments:
-$ slack reminder add 'lunch' $(date -v +10M "+%s")
-$
-$ # Add reminder via options:
-$ slack reminder add --text="lunch" --time=1526995300
-```
-
-### `reminder complete`
-
-```console
-$ # Complete reminder via prompts:
-$ slack reminder complete
-$
-$ # Complete reminder via arguments:
-$ slack reminder complete Rm7MGABKT6
-$
-$ # Complete reminder via options:
-$ slack reminder complete --reminder="Rm7MGABKT6"
-```
-
-### `reminder delete`
-
-```console
-$ # Complete reminder via prompts:
-$ slack reminder delete
-$
-$ # Complete reminder via arguments:
-$ slack reminder delete "Rm7MGABKT6"
-$
-$ # Complete reminder via options:
-$ slack reminder delete --reminder="Rm7MGABKT6"
-```
-
-### `reminder info`
-
-```console
-$ # Info about reminder via prompts:
-$ slack reminder info
-$
-$ # Info about reminder via arguments:
-$ slack reminder info "Rm7MGABKT6"
-$
-$ # Info about reminder via options:
-$ slack reminder info --reminder="Rm7MGABKT6"
-```
-
-### `presence away`
-
-```console
-$ # Away presence:
-$ slack presence away
-```
-
-### `snooze start`
-
-```console
-$ # Start snooze via prompts:
-$ slack snooze start
-$
-$ # Start snooze via arguments:
-$ slack snooze start 60
-$
-$ # Start snooze via options:
-$ slack snooze start --minutes 60
-$
-$ # Start snooze via short form options:
-$ slack snooze start -mn 60
-```
-
-### `snooze info`
-
-```console
-$ # Info about your own snooze:
-$ slack snooze info
-$
-$ # Info about another user's snooze via argument:
-$ slack snooze info @slackbot
-$
-$ # Info about another user's snooze via options:
-$ slack snooze info --user @slackbot
-$
-$ # Info about another user's snooze via short form options:
-$ slack snooze info -ur @slackbot
-```
-
-### `snooze end`
-
-```console
-$ # End snooze:
-$ slack snooze end
-```
-
-### `status edit`
-
-```console
-$ # Edit status:
-$ slack status edit
-$
-$ # Edit status via arguments:
-$ slack status edit lunch :hamburger:
-$
-$ # Edit status via options:
-$ slack status edit --text lunch --emoji :hamburger:
-$
-$ # Edit status via short form options:
-$ slack status edit --tx lunch -em :hamburger:
-```
-
 
 # Verdict CLI
 
@@ -783,33 +447,6 @@ verdict snapshot -D
 + @e12 - text "Form submitted successfully"
 ```
 
-### CSS Inspection
-
-Read any computed CSS value:
-
-```bash
-verdict css @e3 padding
-verdict css @e3 font-size
-verdict css @e3 background-color
-```
-
-Get a full box model with 16 computed styles:
-
-```bash
-verdict inspect @e3
-```
-
-### Live Style Mutation
-
-Modify CSS live with undo support:
-
-```bash
-verdict style @e3 color red
-verdict style @e3 padding 20px
-verdict style --history
-verdict style --undo
-```
-
 ### Responsive Testing
 
 Screenshot at mobile, tablet, and desktop in one command:
@@ -835,31 +472,6 @@ verdict network
 verdict perf
 ```
 
-### Auth Profiles
-
-Save and reload authenticated sessions. Encrypted with AES-256-CBC.
-
-```bash
-verdict goto https://app.com/login
-verdict handoff                          # open visible Chrome
-# ... log in manually (SSO, MFA, CAPTCHA) ...
-verdict resume                           # back to headless
-verdict auth-save myapp                  # save session encrypted
-```
-
-Reload in one command:
-
-```bash
-verdict goto-auth https://app.com/dashboard --profile myapp
-```
-
-Manage profiles:
-
-```bash
-verdict auth-list
-verdict auth-delete myapp
-```
-
 ### Tabs and Frames
 
 ```bash
@@ -878,15 +490,6 @@ Run multiple commands in one call:
 ```bash
 verdict chain '[["goto","https://example.com"],["snapshot","-i"],["console"]]'
 ```
-
-### Page Diff
-
-Compare two pages:
-
-```bash
-verdict diff https://example.com https://example.com/about
-```
-
 ### Cookies
 
 ```bash
@@ -901,7 +504,3 @@ verdict cookie-import example.com
 verdict status
 verdict stop
 ```
-
-
-
-
