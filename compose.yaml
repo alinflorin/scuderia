@@ -1,6 +1,6 @@
 services:
   scuderia:
-    image: ghcr.io/alinflorin/scuderia:3.0.10
+    image: ghcr.io/alinflorin/scuderia:4.1.0
     container_name: scuderia
     environment:
       - POLYMARKET_PRIVATE_KEY=${POLYMARKET_PRIVATE_KEY}
