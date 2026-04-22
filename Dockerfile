@@ -8,6 +8,12 @@ RUN apt-get install -y curl jq yq
 RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash - && apt-get install -y nodejs
 RUN npm i -g npm
 
+# Python
+RUN apt-get install -y python3 python3-pip python3-venv && \
+    ln -s /usr/bin/python3 /usr/local/bin/python && \
+    ln -s /usr/bin/pip3 /usr/local/bin/pip
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+
 # Polymarket CLI
 RUN curl -sSL https://raw.githubusercontent.com/Polymarket/polymarket-cli/main/install.sh | sh
 
