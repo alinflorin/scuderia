@@ -7,6 +7,7 @@ Dockerfile
 run.sh
 CLI_READMES.md
 docker-compose.yaml
+docker-compose.prod.yaml
 **/*.ts
 tsconfig.json
 .gitignore
