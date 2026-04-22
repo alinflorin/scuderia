@@ -20,6 +20,11 @@ RUN curl -sSL https://raw.githubusercontent.com/Polymarket/polymarket-cli/main/i
 # Slack CLI
 RUN curl -o /usr/local/bin/slack https://raw.githubusercontent.com/rockymadden/slack-cli/master/src/slack && chmod +x /usr/local/bin/slack
 
+# Other 3rd party CLIs here
+
+# Verdict - browser CLI
+RUN npm install -g verdict-cli
+
 # Claude CLI
 RUN npm i -g @anthropic-ai/claude-code
 
@@ -31,11 +36,6 @@ RUN npm ci
 COPY . .
 RUN npm run build
 RUN chmod +x ./*.sh
-
-# Other 3rd party CLIs here
-
-# Verdict - browser CLI
-RUN npm install -g verdict-cli
 
 
 
