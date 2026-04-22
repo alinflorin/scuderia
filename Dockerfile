@@ -50,4 +50,7 @@ ENV CLAUDE_CODE_ENABLE_TELEMETRY="0"
 ENV CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="1"
 ENV IS_SANDBOX="1"
 
+VOLUME /app/persist
+RUN mkdir -p /app/persist || true
+
 CMD ["./run.sh"]

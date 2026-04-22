@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir -p /app/persist || true
+
 for var in CLAUDE_CODE_OAUTH_TOKEN POLYMARKET_PRIVATE_KEY; do
     if [ -z "${!var}" ]; then
         echo "Error: $var is not set" >&2

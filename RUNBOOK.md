@@ -15,6 +15,7 @@
 - SDKs available: python, uvx, node, npm
 - No directory is persistent between runs
 - You should run CLI tools' help menus if you need more info on how to use them
+- The directory /app/persist is persistent
 ---
 
 ## Step 0 — Send Slack Notification for trade started
