@@ -57,7 +57,7 @@ To find it:
 Polymarket runs on Polygon and only accepts USDC. Funds go into your proxy wallet.
 
 1. On Polymarket, click **Deposit** → select **Polygon** as the network
-2. Copy the deposit address shown (this is your proxy wallet address)
+2. Copy the deposit address shown (this is your deposit address, only for USDC)
 3. In MetaMask on the **Polygon** network, send USDC to that address
 
 If you only have USDC on Ethereum, bridge it first via [app.polygon.technology](https://app.polygon.technology). Sending USDC on the wrong network will result in lost funds.
