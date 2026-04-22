@@ -82,7 +82,15 @@ async function fetchLeaderboard(): Promise<Record<string, LeaderboardWallet>> {
   return wallets;
 }
 
-async function fetchMarkets(limit: number, offset: number): Promise<MarketRaw[]> {
+interface FetchMarketsOptions {
+  limit: number;
+  offset: number;
+  liquidityMin?: string;
+  volumeMin?: string;
+  order?: string;
+}
+
+async function fetchMarkets(opts: FetchMarketsOptions): Promise<MarketRaw[]> {
   const now = new Date();
   const endMin = new Date(now.getTime() + 1 * 60 * 60 * 1000).toISOString();
   const endMax = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000).toISOString();
@@ -92,12 +100,12 @@ async function fetchMarkets(limit: number, offset: number): Promise<MarketRaw[]>
     closed: 'false',
     end_date_min: endMin,
     end_date_max: endMax,
-    liquidity_num_min: '3000',
-    volume_num_min: '5000',
-    order: 'volume24hr',
+    liquidity_num_min: opts.liquidityMin ?? '3000',
+    volume_num_min: opts.volumeMin ?? '5000',
+    order: opts.order ?? 'volume24hr',
     ascending: 'false',
-    limit: String(limit),
-    offset: String(offset),
+    limit: String(opts.limit),
+    offset: String(opts.offset),
   });
 
   const res = await axios.get<MarketRaw[]>(`${GAMMA_API}/markets?${params}`);
@@ -216,12 +224,13 @@ export function makeSmartAnalysisCommand(): Command {
       const limit = parseInt(options.limit, 10);
       const offset = parseInt(options.offset, 10);
 
-      const [leaderboardWallets, rawMarkets] = await Promise.all([
+      const [leaderboardWallets, rawMarketsMain, rawMarketsSmall] = await Promise.all([
         fetchLeaderboard(),
-        fetchMarkets(limit, offset),
+        fetchMarkets({ limit, offset }),
+        fetchMarkets({ limit, offset: 0, liquidityMin: '300', volumeMin: '500', order: 'competitive' }),
       ]);
 
-      const markets = deduplicateMarkets(rawMarkets);
+      const markets = deduplicateMarkets([...rawMarketsMain, ...rawMarketsSmall]);
       if (markets.length === 0) {
         console.log(JSON.stringify({ success: false, error: 'No qualifying markets found', markets: [] }, null, 2));
         return;
