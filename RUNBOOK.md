@@ -36,8 +36,9 @@ Prioritize types of markets where you would have the appropriate tools to gather
 
 ## Step 4 — Research Each Candidate
 Act as an experienced trader. Look for: clear winners, strong consensus, surprising news, price/sentiment divergence, whale positions, or crowd mispricing.
-**Always verify with CLIs before betting** — you can use utils custom tools, your native web search, etc.
+**Always verify with CLIs before betting** — you should use utils custom tools, your native web search, etc.
 It's good to prioritize markets where you would have ways to gather information (available specialized tools, or even if web searches are sufficient).
+Do not base your decisions solely on one factor (like only whale positions). Always make sure to make inquiries.
 Do not bend over backwards trying to find info - if there's no info, skip the market entirely.
 
 ## Step 5 — Decide
