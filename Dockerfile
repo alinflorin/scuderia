@@ -17,9 +17,6 @@ RUN curl -o /usr/local/bin/slack https://raw.githubusercontent.com/rockymadden/s
 # Claude CLI
 RUN npm i -g @anthropic-ai/claude-code
 
-# Non-privileged user
-RUN useradd -m -s /bin/bash appuser
-
 # Node + Bash project
 WORKDIR /app
 COPY ./package.json ./package.json
@@ -28,6 +25,15 @@ RUN npm ci
 COPY . .
 RUN npm run build
 RUN chmod +x ./*.sh
+
+# Other 3rd party CLIs here
+
+
+
+
+
+# Non-privileged user
+RUN useradd -m -s /bin/bash appuser
 
 ENV NO_BROWSER="true"
 ENV CLAUDE_MODEL="claude-sonnet-4-6"
