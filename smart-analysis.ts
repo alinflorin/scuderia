@@ -285,7 +285,7 @@ function scoreCompetitive(competitive: number | undefined): number {
 export function makeSmartAnalysisCommand(): Command {
   return new Command('smart-analysis')
     .description('Fetch, score and rank active markets using leaderboard smart-money signals')
-    .option('-l, --limit <number>', 'number of markets to fetch', '30')
+    .option('-l, --limit <number>', 'number of markets to fetch', '10')
     .option('-o, --offset <number>', 'pagination offset', '0')
     .action(async (options) => {
       const limit = parseInt(options.limit, 10);
@@ -295,7 +295,7 @@ export function makeSmartAnalysisCommand(): Command {
         fetchLeaderboard(),
         fetchMarkets({ limit, offset }),
         fetchMarkets({ limit, offset: 0, liquidityMin: '300', volumeMin: '500', order: 'competitive' }),
-        fetchMarkets({ limit, offset: 0, liquidityMin: '1000', volumeMin: '2000', order: 'oneDayPriceChange', endMaxHours: 48, tagId: '21' }),
+        fetchMarkets({ limit, offset: 0, liquidityMin: '100', volumeMin: '300', order: 'oneDayPriceChange', endMaxHours: 48, tagId: '21' }),
       ]);
 
       const markets = deduplicateMarkets([...rawMarketsMain, ...rawMarketsSmall, ...rawMarketsCrypto]);
