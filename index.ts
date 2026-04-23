@@ -8,6 +8,7 @@ import { makeSearchRedditWithCommentsCommand } from './search-reddit-with-commen
 import { makeWaitCommand } from './wait.js';
 import { makeWeatherForecastCommand } from './weather-forecast.js';
 import { makeSportsH2HCommand } from './sports-h2h.js';
+import { makeXTrackerCommand } from './xtracker.js';
 
 const program = new Command();
 
@@ -22,6 +23,7 @@ program.addCommand(makeSearchRedditWithCommentsCommand());
 program.addCommand(makeWeatherForecastCommand());
 program.addCommand(makeWaitCommand());
 program.addCommand(makeSportsH2HCommand());
+program.addCommand(makeXTrackerCommand());
 
 program
   .command('help-all')
