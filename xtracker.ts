@@ -40,22 +40,35 @@ export function makeXTrackerCommand(): Command {
       }
     });
 
-  xtracker.command('posts')
-    .description('Get all posts for a user within a date range')
+  xtracker.command('metrics')
+    .description('Get daily post counts and metrics for a user')
     .argument('<handle>', 'User handle')
     .option('-p, --platform <platform>', 'Filter by platform: X or TRUTH_SOCIAL')
-    .option('--start-date <date>', 'Filter posts after this date (ISO date)')
-    .option('--end-date <date>', 'Filter posts before this date (ISO date)')
-    .option('--timezone <tz>', 'Timezone (e.g. EST)')
+    .option('--start-date <date>', 'Filter metrics after this date (ISO date)')
+    .option('--end-date <date>', 'Filter metrics before this date (ISO date)')
+    .option('-t, --type <type>', 'Metric type (default: daily)')
     .action(async (handle, options) => {
       try {
-        const { platform, startDate, endDate, timezone } = options;
-        const res = await axios.get(`${API_BASE}/users/${handle}/posts`, {
-          params: { platform, startDate, endDate, timezone }
+        const { platform, startDate, endDate, type } = options;
+        
+        // Get user ID first
+        const userRes = await axios.get(`${API_BASE}/users/${handle}`, {
+          params: { platform }
         });
-        console.log(JSON.stringify(res.data, null, 2));
+        
+        const userId = userRes.data?.data?.id;
+        if (!userId) {
+          throw new Error('User not found or ID missing in response');
+        }
+
+        // Fetch metrics instead of individual posts
+        const metricsRes = await axios.get(`${API_BASE}/metrics/${userId}`, {
+          params: { startDate, endDate, type }
+        });
+        
+        console.log(JSON.stringify(metricsRes.data, null, 2));
       } catch (err: any) {
-        console.error('Error fetching posts:', err.response?.data || err.message);
+        console.error('Error fetching metrics:', err.response?.data || err.message);
       }
     });
 

@@ -7,7 +7,7 @@
 
 ## Available Tools (mostly CLIs)
 - Regular tools such as command execution, web searches.
-- `polymarket` CLI. No need to import anything or create wallets, everything is set via env vars. You already have a wallet set up.
+- `polymarket` CLI. No need to import anything or create wallets, everything is set via env vars. You already have a wallet set up. Important: if the Polymarket API is down or having issues, retry 2 times and then just stop. This doesn't apply for intentional retries.
 - `slack` CLI to post messages to channel. Use threads, if possible.
 - `verdict` CLI to control your own web browser. Chromium already baked in. Use this to fetch web content that requires JavaScript, or when you need to interactively navigate.
 - `./utils.sh` (TypeScript custom scripts)
@@ -17,12 +17,13 @@
     - Get Weather info + analysis based on historical data (OpenMeteo + NOAA + NOAA CDO)
     - Wait tool
     - Head 2 Head comparison tool for sport teams - odds for upcoming game, historical data
-    - XTracker - access X and Truth Social stats (posts, users, trackings, trackings by user, users). Helps a lot with Twitter markets.
+    - XTracker - access X and Truth Social stats. Helps a lot with Twitter markets.
 - `curl`, `jq`, `yq`, common bash utils are all there
 - SDKs available: python, uvx, node, npm
 - No directory is persistent between runs
 - You should run CLI tools' help menus if you need more info on how to use them
 - The directory /app/persist is persistent
+- Important: irrespective of the tool, make sure you don't use commands that will bring massive amounts of data!!! Focus on bringing in short meaningful data, like summaries.
 ---
 
 ## Step 0 — Send Slack Notification for trade started

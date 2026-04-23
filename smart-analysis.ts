@@ -138,7 +138,7 @@ async function fetchHolders(conditionId: string): Promise<HolderResponse[]> {
 function scoreLeaderboardOverlap(
   holdersData: HolderResponse[],
   leaderboardWallets: Record<string, LeaderboardWallet>,
-): { pts: number; smartMoneyHolders: SmartMoneyHolder[] } {
+): { pts: number; smartMoneyHolders: SmartMoneyHolder[]; consensusBonus: number; smartMoneySide: string | null } {
   const smartMoneyHolders: SmartMoneyHolder[] = [];
   const seenWallets = new Set<string>();
 
@@ -163,11 +163,43 @@ function scoreLeaderboardOverlap(
   }
 
   let pts = 0;
+  let yesAmount = 0;
+  let noAmount = 0;
+
   for (const sm of smartMoneyHolders) {
     const rankBonus = sm.rank <= 10 ? 3 : sm.rank <= 25 ? 1.5 : 0;
-    pts += 10 + rankBonus;
+    const basePts = 5 + rankBonus;
+    
+    // Weight by position size
+    const amt = sm.amount ?? 0;
+    const sizeMultiplier = amt > 10000 ? 2.5 : amt > 5000 ? 2.0 : amt > 1000 ? 1.5 : amt > 250 ? 1.0 : 0.5;
+    
+    pts += basePts * sizeMultiplier;
+
+    if (sm.outcome === 0) yesAmount += amt;
+    else if (sm.outcome === 1) noAmount += amt;
   }
-  return { pts: clamp(pts, 0, 30), smartMoneyHolders };
+
+  pts = clamp(pts, 0, 40);
+
+  let smartMoneySide: string | null = null;
+  let consensusBonus = 0;
+  
+  if (yesAmount > 0 || noAmount > 0) {
+    const totalAmount = yesAmount + noAmount;
+    const maxSide = Math.max(yesAmount, noAmount);
+    const consensusRatio = maxSide / totalAmount;
+    
+    if (yesAmount > noAmount * 1.5) smartMoneySide = 'YES';
+    else if (noAmount > yesAmount * 1.5) smartMoneySide = 'NO';
+    else smartMoneySide = 'SPLIT';
+
+    if (consensusRatio > 0.75 && smartMoneyHolders.length >= 2) {
+      consensusBonus = clamp(10 * consensusRatio, 0, 10);
+    }
+  }
+
+  return { pts, smartMoneyHolders, consensusBonus, smartMoneySide };
 }
 
 function scoreTimeUrgency(endDateStr: string): number {
@@ -181,18 +213,23 @@ function scoreTimeUrgency(endDateStr: string): number {
   return 6;
 }
 
-function scoreMomentum(oneDayChange: number, oneHourChange: number): number {
+function scoreMomentum(oneDayChange: number, oneHourChange: number, volume24hr: number, volumeTotal: number): number {
   const absDay = Math.abs(oneDayChange);
   const absHour = Math.abs(oneHourChange);
   const sameDir = (oneDayChange >= 0 && oneHourChange >= 0) || (oneDayChange < 0 && oneHourChange < 0);
   const dayPts = clamp(absDay / 0.2, 0, 1) * 8;
   const hourPts = clamp(absHour / 0.1, 0, 1) * 7;
-  return clamp((dayPts + hourPts) * (sameDir ? 1.3 : 1.0), 0, 15);
+  const baseMom = (dayPts + hourPts) * (sameDir ? 1.3 : 1.0);
+
+  const spikeRatio = volumeTotal > 0 ? (volume24hr / volumeTotal) : 0;
+  const volMultiplier = clamp(spikeRatio / 0.2, 0.5, 2.0);
+  
+  return clamp(baseMom * volMultiplier, 0, 20);
 }
 
 function scoreVolumeSpike(volume24hr: number, volumeNum: number): number {
   if (!volumeNum || volumeNum <= 0) return 0;
-  return clamp((volume24hr / volumeNum) / 0.4 * 15, 0, 15);
+  return clamp((volume24hr / volumeNum) / 0.4 * 10, 0, 10);
 }
 
 function scoreLiquidity(liquidityNum: number): number {
@@ -200,14 +237,38 @@ function scoreLiquidity(liquidityNum: number): number {
   return clamp(Math.log10(clamp(liquidityNum, 1, 1e9) / 1000) / Math.log10(200) * 10, 0, 10);
 }
 
-function scorePriceBoundary(lastTradePrice: number | null | undefined, bestBid: number | null | undefined, bestAsk: number | null | undefined): number {
+function scoreSpread(spread: number | null | undefined): number {
+  if (spread == null) return -5;
+  if (spread <= 0.015) return 5;
+  if (spread <= 0.025) return 2;
+  if (spread <= 0.04) return -2;
+  if (spread <= 0.06) return -5;
+  return -10;
+}
+
+function scoreDirectionalROI(lastTradePrice: number | null | undefined, bestBid: number | null | undefined, bestAsk: number | null | undefined, smartMoneySide: string | null): number {
   const price = lastTradePrice ?? ((bestBid != null && bestAsk != null) ? (bestBid + bestAsk) / 2 : null);
-  if (price === null) return 0;
-  if (price <= 0.05 || price >= 0.95) return 2;
-  if (price <= 0.15 || price >= 0.85) return 5;
-  if (price <= 0.25 || price >= 0.75) return 3;
-  if (price <= 0.4 || price >= 0.6) return 2;
-  return 1;
+  if (price === null || smartMoneySide === 'SPLIT' || smartMoneySide === null) {
+    if (price && (price <= 0.1 || price >= 0.9)) return 1;
+    return 0;
+  }
+
+  let riskRewardRatio = 0;
+  if (smartMoneySide === 'YES') {
+    if (price >= 0.98) return -5;
+    riskRewardRatio = (1 - price) / price;
+  } else if (smartMoneySide === 'NO') {
+    if (price <= 0.02) return -5;
+    const noPrice = 1 - price;
+    riskRewardRatio = (1 - noPrice) / noPrice;
+  }
+
+  if (riskRewardRatio > 4) return 10;
+  if (riskRewardRatio > 2) return 7;
+  if (riskRewardRatio > 1) return 4;
+  if (riskRewardRatio > 0.5) return 2;
+  if (riskRewardRatio < 0.2) return -2;
+  return 0;
 }
 
 function scoreCompetitive(competitive: number | undefined): number {
@@ -246,12 +307,13 @@ export function makeSmartAnalysisCommand(): Command {
         const holdersData = holdersPerMarket[i];
         const lb = scoreLeaderboardOverlap(holdersData, leaderboardWallets);
         const time = scoreTimeUrgency(market.endDate!);
-        const mom = scoreMomentum(market.oneDayPriceChange ?? 0, market.oneHourPriceChange ?? 0);
+        const mom = scoreMomentum(market.oneDayPriceChange ?? 0, market.oneHourPriceChange ?? 0, market.volume24hr ?? 0, market.volumeNum ?? 0);
         const vol = scoreVolumeSpike(market.volume24hr ?? 0, market.volumeNum ?? 0);
         const liq = scoreLiquidity(market.liquidityNum ?? 0);
-        const edge = scorePriceBoundary(market.lastTradePrice, market.bestBid, market.bestAsk);
+        const spreadScore = scoreSpread(market.spread);
+        const roiScore = scoreDirectionalROI(market.lastTradePrice, market.bestBid, market.bestAsk, lb.smartMoneySide);
         const comp = scoreCompetitive(market.competitive);
-        const totalScore = lb.pts + time + mom + vol + liq + edge + comp;
+        const totalScore = lb.pts + lb.consensusBonus + time + mom + vol + liq + spreadScore + roiScore + comp;
         const hoursLeft = Math.round((new Date(market.endDate!).getTime() - now) / 3_600_000);
 
         let outcomesParsed: string[] | null = null;
@@ -278,14 +340,17 @@ export function makeSmartAnalysisCommand(): Command {
           liquidityNum: market.liquidityNum,
           smartMoneyHolders: lb.smartMoneyHolders,
           smartMoneyCount: lb.smartMoneyHolders.length,
+          smartMoneySide: lb.smartMoneySide,
           score: Math.round(totalScore * 10) / 10,
           scoreBreakdown: {
             leaderboardOverlap: Math.round(lb.pts * 10) / 10,
+            consensusBonus: Math.round(lb.consensusBonus * 10) / 10,
             timeUrgency: Math.round(time * 10) / 10,
-            priceMomentum: Math.round(mom * 10) / 10,
+            volumeWeightedMomentum: Math.round(mom * 10) / 10,
             volumeSpike: Math.round(vol * 10) / 10,
             liquidity: Math.round(liq * 10) / 10,
-            priceBoundary: Math.round(edge * 10) / 10,
+            spreadScore: Math.round(spreadScore * 10) / 10,
+            directionalROI: Math.round(roiScore * 10) / 10,
             competitive: Math.round(comp * 10) / 10,
           },
         };
@@ -300,13 +365,6 @@ export function makeSmartAnalysisCommand(): Command {
         if (Math.abs(dc) > 0.15) momentumSignal = dc > 0 ? 'STRONG_UP' : 'STRONG_DOWN';
         else if (dc > 0.05 && hc >= 0) momentumSignal = 'TRENDING_UP';
         else if (dc < -0.05 && hc <= 0) momentumSignal = 'TRENDING_DOWN';
-
-        const yesCount = m.smartMoneyHolders.filter(h => h.outcome === 0).length;
-        const noCount = m.smartMoneyHolders.filter(h => h.outcome === 1).length;
-        let smartMoneySide: string | null = null;
-        if (yesCount > noCount) smartMoneySide = 'YES';
-        else if (noCount > yesCount) smartMoneySide = 'NO';
-        else if (yesCount > 0) smartMoneySide = 'SPLIT';
 
         const spikeRatio = (m.volumeTotal ?? 0) > 0 ? (m.volume24hr ?? 0) / m.volumeTotal! : 0;
         const activityLevel = spikeRatio > 0.5 ? 'HOT' : spikeRatio > 0.25 ? 'ACTIVE' : 'NORMAL';
@@ -338,7 +396,7 @@ export function makeSmartAnalysisCommand(): Command {
           },
           signals: {
             momentumSignal,
-            smartMoneySide,
+            smartMoneySide: m.smartMoneySide,
             smartMoneyCount: m.smartMoneyCount,
             smartMoneyHolders: m.smartMoneyHolders,
           },
