@@ -48,15 +48,6 @@ jobs:
           echo "tag=v${NEW_VERSION}-exp-${EXP_NUM}" >> $GITHUB_OUTPUT
           echo "version=${NEW_VERSION}-exp-${EXP_NUM}" >> $GITHUB_OUTPUT
 
-      - name: Update run title
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh api \
-            --method PATCH \
-            /repos/${{ github.repository }}/actions/runs/${{ github.run_id }} \
-            -f name="main build ${{ steps.version.outputs.version }}"
-
   build:
     name: Build (${{ matrix.platform }})
     permissions:
