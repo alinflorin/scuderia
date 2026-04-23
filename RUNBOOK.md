@@ -33,15 +33,15 @@ Fetch USDC balance via Polymarket CLI.
 If balance is 0 or tools are failing → skip to Step 7.
 
 ## Step 3 — Find Candidate Markets
-Use the Utils **Polymarket Get Markets with Smart Analysis** as the primary tool to search for markets (a good limit parameter value is 5-15). It will return 5-15 markets each from 3 categories: main, competitive and crypto. This tool will include smart whales positions data, too. Fall back to Polymarket CLI search, only if really unsatisfied with the results. Target only a handful of candidates. Skip any markets where you already have a position.
+Use the Utils **Polymarket Get Markets with Smart Analysis** as the primary tool to search for markets (a good limit parameter value is 10-15). This tool will include smart whales positions data, too. Fall back to Polymarket CLI search, only if really unsatisfied with the results. Target only a handful of candidates. Skip buying any markets where you already have a position.
 Prioritize types of markets where you would have the appropriate tools to gather information.  
-For short run Crypto markets, do arbitrage. Use the binance-momentum tool to find delays in Polymarket's crypto prices.
 
 ## Step 4 — Research Each Candidate
 Act as an experienced trader. Look for: clear winners, strong consensus, surprising news, price/sentiment divergence, whale positions, or crowd mispricing.
 **Always verify with CLIs before betting** — you should use utils custom tools, your native web search, etc.
 Do not base your decisions solely on one factor (like only whale positions), unless it's very obvious.
 Even if whale positions are not very strong for a market, if it's a market where acquiring data would be a more powerful signal (such as weather markets, X tweets, etc), you can go for the analysis and maybe pick them.
+For short run Crypto markets use the crypto-coin-indicators and binance-momentum tool to get insights.
 Do not bend over backwards trying to find info - if there's no info or little info, skip the market entirely.
 
 ## Step 5 — Decide
