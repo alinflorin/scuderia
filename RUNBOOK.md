@@ -47,10 +47,10 @@ Prioritize types of markets where you would have the appropriate tools to gather
 Act as an experienced trader. Look for: clear winners, strong consensus, surprising news, price/sentiment divergence, whale positions, or crowd mispricing.
 **Always verify with CLIs before betting** — you should use utils custom tools, your native web search, etc.
 It's good to prioritize markets where you would have ways to gather information (available specialized tools, or even if web searches are sufficient).
-Do not base your decisions solely on one factor (like only whale positions). Always make sure to make inquiries.
+Do not base your decisions solely on one factor (like only whale positions), unless it's very obvious. Always make sure to make inquiries.
 Even if whale positions are not very strong for a market, if it's a market where acquiring data would be a more powerful signal (such as weather markets, X tweets, etc), you can go for them.
 The utils you have are very powerful - they will also do good analysis for weather, crypto, etc.
-Do not bend over backwards trying to find info - if there's no info, skip the market entirely.
+Do not bend over backwards trying to find info - if there's no info or little info, skip the market entirely.
 
 ## Step 5 — Decide
 Make independent trading decisions — no approval needed. Calculated risk is acceptable.
@@ -67,7 +67,7 @@ Make independent trading decisions — no approval needed. Calculated risk is ac
 Post to Slack channel mentioned in the initial prompt. Always include:
 - Open positions, their status, and the redeems summary
 - Number of trades placed (if any)
-    - Per trade: market name, chosen outcome, amount, price, reasoning for choice
+    - Per trade: market name, chosen outcome, amount, price, reasoning for choice. Also include a summary of the tools used to gather information, and how many times they were called.
 - Current balance after trades
 - Any errors
 
