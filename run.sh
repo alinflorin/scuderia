@@ -13,10 +13,18 @@ PROMPT="$(cat ./RUNBOOK.md)
 
 ---
 
-## CLI Readmes
+## Third Party CLI Readmes
 
-$(cat ./CLI_READMES.md)
+$(cat ./THIRD_PARTY_CLI_READMES.md)
+
+---
+
+## ./utils.sh help menu
+
+\`\`\`
 $(./utils.sh help-all)
+\`\`\`
+
 ---
 
 Current command is the following!

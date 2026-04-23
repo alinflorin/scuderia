@@ -307,7 +307,7 @@ export function makeWeatherForecastCommand(): Command {
   return new Command("weather-forecast")
     .description(
       "Get weather forecast + historical comparison for Polymarket weather market analysis. " +
-        "Sources: Open-Meteo, NOAA NWS (US only), NOAA CDO (requires NOAA_CDO_API_KEY env var).",
+        "Sources: Open-Meteo, NOAA NWS (US only), NOAA CDO",
     )
     .argument(
       "<location>",
