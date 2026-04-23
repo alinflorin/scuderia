@@ -84,20 +84,18 @@ async function fetchLeaderboard(): Promise<Record<string, LeaderboardWallet>> {
 
 interface FetchMarketsOptions {
   limit: number;
-  offset?: number;
+  offset: number;
   liquidityMin?: string;
   volumeMin?: string;
   order?: string;
-  ascending?: boolean;
-  endMaxHours?: number;
-  tagId?: string;
+  endMin?: string;
+  endMax?: string;
 }
 
 async function fetchMarkets(opts: FetchMarketsOptions): Promise<MarketRaw[]> {
   const now = new Date();
-  const endMin = new Date(now.getTime() + 1 * 60 * 60 * 1000).toISOString();
-  const endMaxHours = opts.endMaxHours ?? 7 * 24;
-  const endMax = new Date(now.getTime() + endMaxHours * 60 * 60 * 1000).toISOString();
+  const endMin = opts.endMin ?? new Date(now.getTime() + 1 * 60 * 60 * 1000).toISOString();
+  const endMax = opts.endMax ?? new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000).toISOString();
 
   const params = new URLSearchParams({
     active: 'true',
@@ -107,12 +105,10 @@ async function fetchMarkets(opts: FetchMarketsOptions): Promise<MarketRaw[]> {
     liquidity_num_min: opts.liquidityMin ?? '3000',
     volume_num_min: opts.volumeMin ?? '5000',
     order: opts.order ?? 'volume24hr',
-    ascending: String(opts.ascending ?? false),
+    ascending: 'false',
     limit: String(opts.limit),
-    offset: String(opts.offset ?? 0),
+    offset: String(opts.offset),
   });
-
-  if (opts.tagId) params.set('tag_id', opts.tagId);
 
   const res = await axios.get<MarketRaw[]>(`${GAMMA_API}/markets?${params}`);
   return res.data;
@@ -285,20 +281,29 @@ function scoreCompetitive(competitive: number | undefined): number {
 export function makeSmartAnalysisCommand(): Command {
   return new Command('smart-analysis')
     .description('Fetch, score and rank active markets using leaderboard smart-money signals')
-    .option('-l, --limit <number>', 'number of markets to fetch', '15')
+    .option('-l, --limit <number>', 'number of markets to fetch', '10')
     .option('-o, --offset <number>', 'pagination offset', '0')
     .action(async (options) => {
       const limit = parseInt(options.limit, 10);
       const offset = parseInt(options.offset, 10);
 
-      const [leaderboardWallets, rawMarketsMain, rawMarketsSmall, rawMarketsCrypto] = await Promise.all([
+      const nowMs = Date.now();
+      const [leaderboardWallets, rawMarketsMain, rawMarketsSmall, rawMarketsExpiringSoon] = await Promise.all([
         fetchLeaderboard(),
         fetchMarkets({ limit, offset }),
-        fetchMarkets({ limit, liquidityMin: '300', volumeMin: '500', order: 'competitive' }),
-        fetchMarkets({ limit, liquidityMin: '100', volumeMin: '300', order: 'oneDayPriceChange', endMaxHours: 48, tagId: '21' }),
+        fetchMarkets({ limit, offset: 0, liquidityMin: '300', volumeMin: '500', order: 'competitive' }),
+        fetchMarkets({
+          limit,
+          offset: 0,
+          liquidityMin: '100',
+          volumeMin: '200',
+          order: 'volume24hr',
+          endMin: new Date(nowMs).toISOString(),
+          endMax: new Date(nowMs + 60 * 60 * 1000).toISOString(),
+        }),
       ]);
 
-      const markets = deduplicateMarkets([...rawMarketsMain, ...rawMarketsSmall, ...rawMarketsCrypto]);
+      const markets = deduplicateMarkets([...rawMarketsMain, ...rawMarketsSmall, ...rawMarketsExpiringSoon]);
       if (markets.length === 0) {
         console.log(JSON.stringify({ success: false, error: 'No qualifying markets found', markets: [] }, null, 2));
         return;
