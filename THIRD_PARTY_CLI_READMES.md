@@ -504,15 +504,3 @@ verdict cookie-import example.com
 verdict status
 verdict stop
 ```
-
-
-
-
-
-
-
-
-
-
-# ./utils.sh custom tools
-
