@@ -41,12 +41,12 @@ async function fetchKlines(symbol: string, interval: string, limit: number): Pro
   return res.data;
 }
 
-function calculateMomentum(klines: Kline[]): { changePct: number; isUp: boolean } {
-  if (klines.length === 0) return { changePct: 0, isUp: false };
+function calculateMomentum(klines: Kline[]): { changePct: number } {
+  if (klines.length === 0) return { changePct: 0 };
   const firstOpen = parseFloat(klines[0][1]);
   const lastClose = parseFloat(klines[klines.length - 1][4]);
   const changePct = ((lastClose - firstOpen) / firstOpen) * 100;
-  return { changePct, isUp: changePct >= 0 };
+  return { changePct };
 }
 
 export function makeBinanceMomentumCommand(): Command {
@@ -60,16 +60,15 @@ export function makeBinanceMomentumCommand(): Command {
         const interval = options.interval;
 
         const tickers = await fetch24hrTickers(symbols);
-        const results = [];
 
-        for (const ticker of tickers) {
+        const results = await Promise.all(tickers.map(async (ticker) => {
           const symbol = ticker.symbol;
-          // Fetch 1 kline for current momentum and 4 klines for broader momentum (e.g. 1 hour if 15m)
-          const klinesCurrent = await fetchKlines(symbol, interval, 1);
-          const klinesPast4 = await fetchKlines(symbol, interval, 4);
+          // limit=5: last element is the live candle, [0..3] are completed — use [3] for current completed candle
+          const klines = await fetchKlines(symbol, interval, 5);
+          const completedKlines = klines.slice(0, -1);
 
-          const currentMomentum = calculateMomentum(klinesCurrent);
-          const past4Momentum = calculateMomentum(klinesPast4);
+          const currentMomentum = calculateMomentum(completedKlines.slice(-1));
+          const past4Momentum = calculateMomentum(completedKlines);
 
           const lastPrice = parseFloat(ticker.lastPrice);
           const volume = parseFloat(ticker.quoteVolume);
@@ -86,7 +85,7 @@ export function makeBinanceMomentumCommand(): Command {
              signal = 'DOWN';
           }
 
-          results.push({
+          return {
             symbol,
             price: lastPrice,
             priceChange24hPct: priceChangePercent24h,
@@ -97,8 +96,8 @@ export function makeBinanceMomentumCommand(): Command {
                 past4IntervalsPct: Number(past4Momentum.changePct.toFixed(3)),
             },
             signal
-          });
-        }
+          };
+        }));
 
         console.log(JSON.stringify({
             success: true,

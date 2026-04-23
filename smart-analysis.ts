@@ -88,12 +88,16 @@ interface FetchMarketsOptions {
   liquidityMin?: string;
   volumeMin?: string;
   order?: string;
+  ascending?: boolean;
+  endMaxHours?: number;
+  tagId?: string;
 }
 
 async function fetchMarkets(opts: FetchMarketsOptions): Promise<MarketRaw[]> {
   const now = new Date();
   const endMin = new Date(now.getTime() + 1 * 60 * 60 * 1000).toISOString();
-  const endMax = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000).toISOString();
+  const endMaxHours = opts.endMaxHours ?? 7 * 24;
+  const endMax = new Date(now.getTime() + endMaxHours * 60 * 60 * 1000).toISOString();
 
   const params = new URLSearchParams({
     active: 'true',
@@ -103,10 +107,12 @@ async function fetchMarkets(opts: FetchMarketsOptions): Promise<MarketRaw[]> {
     liquidity_num_min: opts.liquidityMin ?? '3000',
     volume_num_min: opts.volumeMin ?? '5000',
     order: opts.order ?? 'volume24hr',
-    ascending: 'false',
+    ascending: String(opts.ascending ?? false),
     limit: String(opts.limit),
     offset: String(opts.offset),
   });
+
+  if (opts.tagId) params.set('tag_id', opts.tagId);
 
   const res = await axios.get<MarketRaw[]>(`${GAMMA_API}/markets?${params}`);
   return res.data;
@@ -285,13 +291,14 @@ export function makeSmartAnalysisCommand(): Command {
       const limit = parseInt(options.limit, 10);
       const offset = parseInt(options.offset, 10);
 
-      const [leaderboardWallets, rawMarketsMain, rawMarketsSmall] = await Promise.all([
+      const [leaderboardWallets, rawMarketsMain, rawMarketsSmall, rawMarketsCrypto] = await Promise.all([
         fetchLeaderboard(),
         fetchMarkets({ limit, offset }),
         fetchMarkets({ limit, offset: 0, liquidityMin: '300', volumeMin: '500', order: 'competitive' }),
+        fetchMarkets({ limit, offset: 0, liquidityMin: '1000', volumeMin: '2000', order: 'oneDayPriceChange', endMaxHours: 48, tagId: '21' }),
       ]);
 
-      const markets = deduplicateMarkets([...rawMarketsMain, ...rawMarketsSmall]);
+      const markets = deduplicateMarkets([...rawMarketsMain, ...rawMarketsSmall, ...rawMarketsCrypto]);
       if (markets.length === 0) {
         console.log(JSON.stringify({ success: false, error: 'No qualifying markets found', markets: [] }, null, 2));
         return;
