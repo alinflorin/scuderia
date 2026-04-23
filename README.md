@@ -134,6 +134,7 @@ Public channels work without an invite if you added the `chat:write.public` scop
 | `SLACK_CLI_TOKEN` | - | |
 | `SLACK_CHANNEL` | `trading` | |
 | `DEBUG` | `0` | `1` |
+| `NOAA_CDO_API_KEY` | - | |
 | `CLAUDE_MODEL` | `claude-sonnet-4-6` | |
 | `CLAUDE_EFFORT` | `medium` | |
 | `REDDIT_CLIENT_ID` | — | |
