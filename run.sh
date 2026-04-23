@@ -22,7 +22,7 @@ $(cat ./CLI_GUIDE.md)
 ## ./utils.sh help menu
 
 \`\`\`
-$(./utils.sh)
+$(./utils.sh 2>&1)
 \`\`\`
 
 ---
