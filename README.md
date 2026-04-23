@@ -179,4 +179,3 @@ Add a line to run the container on your desired schedule. The example below runs
   -e OTHER_ENV_VARS=values \
   ghcr.io/alinflorin/scuderia:latest
 ```
-
