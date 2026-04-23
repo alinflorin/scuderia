@@ -88,14 +88,12 @@ interface FetchMarketsOptions {
   liquidityMin?: string;
   volumeMin?: string;
   order?: string;
-  endMin?: string;
-  endMax?: string;
 }
 
 async function fetchMarkets(opts: FetchMarketsOptions): Promise<MarketRaw[]> {
   const now = new Date();
-  const endMin = opts.endMin ?? new Date(now.getTime() + 1 * 60 * 60 * 1000).toISOString();
-  const endMax = opts.endMax ?? new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000).toISOString();
+  const endMin = new Date(now.getTime() + 1 * 60 * 60 * 1000).toISOString();
+  const endMax = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000).toISOString();
 
   const params = new URLSearchParams({
     active: 'true',
@@ -281,29 +279,19 @@ function scoreCompetitive(competitive: number | undefined): number {
 export function makeSmartAnalysisCommand(): Command {
   return new Command('smart-analysis')
     .description('Fetch, score and rank active markets using leaderboard smart-money signals')
-    .option('-l, --limit <number>', 'number of markets to fetch', '10')
+    .option('-l, --limit <number>', 'number of markets to fetch', '30')
     .option('-o, --offset <number>', 'pagination offset', '0')
     .action(async (options) => {
       const limit = parseInt(options.limit, 10);
       const offset = parseInt(options.offset, 10);
 
-      const nowMs = Date.now();
-      const [leaderboardWallets, rawMarketsMain, rawMarketsSmall, rawMarketsExpiringSoon] = await Promise.all([
+      const [leaderboardWallets, rawMarketsMain, rawMarketsSmall] = await Promise.all([
         fetchLeaderboard(),
         fetchMarkets({ limit, offset }),
         fetchMarkets({ limit, offset: 0, liquidityMin: '300', volumeMin: '500', order: 'competitive' }),
-        fetchMarkets({
-          limit,
-          offset: 0,
-          liquidityMin: '100',
-          volumeMin: '200',
-          order: 'volume24hr',
-          endMin: new Date(nowMs).toISOString(),
-          endMax: new Date(nowMs + 60 * 60 * 1000).toISOString(),
-        }),
       ]);
 
-      const markets = deduplicateMarkets([...rawMarketsMain, ...rawMarketsSmall, ...rawMarketsExpiringSoon]);
+      const markets = deduplicateMarkets([...rawMarketsMain, ...rawMarketsSmall]);
       if (markets.length === 0) {
         console.log(JSON.stringify({ success: false, error: 'No qualifying markets found', markets: [] }, null, 2));
         return;
