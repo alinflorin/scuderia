@@ -65,20 +65,35 @@ function clamp(v: number, lo: number, hi: number): number {
 }
 
 async function fetchLeaderboard(): Promise<Record<string, LeaderboardWallet>> {
-  const url = `${DATA_API}/v1/leaderboard?timePeriod=WEEK&orderBy=PNL&limit=50`;
-  const res = await axios.get<LeaderboardEntry[]>(url);
-  const data = res.data;
+  const periods = ['WEEK', 'MONTH', 'ALL_TIME'];
   const wallets: Record<string, LeaderboardWallet> = {};
-  for (const e of data) {
-    if (e.proxyWallet) {
-      wallets[e.proxyWallet.toLowerCase()] = {
-        rank: parseInt(String(e.rank ?? 999)) || 999,
-        userName: e.userName ?? e.xUsername ?? null,
-        pnl: e.pnl ?? 0,
-        vol: e.vol ?? 0,
-      };
+
+  await Promise.all(periods.map(async (period) => {
+    try {
+      const url = `${DATA_API}/v1/leaderboard?timePeriod=${period}&orderBy=PNL&limit=50`;
+      const res = await axios.get<LeaderboardEntry[]>(url);
+      const data = res.data;
+      for (const e of data) {
+        if (e.proxyWallet) {
+          const addr = e.proxyWallet.toLowerCase();
+          const rank = parseInt(String(e.rank ?? 999)) || 999;
+          const pnl = e.pnl ?? 0;
+          const vol = e.vol ?? 0;
+          const userName = e.userName ?? e.xUsername ?? null;
+
+          if (!wallets[addr]) {
+            wallets[addr] = { rank, userName, pnl, vol };
+          } else {
+            if (rank < wallets[addr].rank) wallets[addr].rank = rank;
+            if (pnl > wallets[addr].pnl) wallets[addr].pnl = pnl;
+            if (vol > wallets[addr].vol) wallets[addr].vol = vol;
+          }
+        }
+      }
+    } catch (err) {
+      // Ignore failures for specific periods
     }
-  }
+  }));
   return wallets;
 }
 
@@ -126,7 +141,7 @@ function deduplicateMarkets(raw: MarketRaw[]): MarketRaw[] {
 }
 
 async function fetchHolders(conditionId: string): Promise<HolderResponse[]> {
-  const params = new URLSearchParams({ market: conditionId, limit: '20', minBalance: '50' });
+  const params = new URLSearchParams({ market: conditionId, limit: '50', minBalance: '50' });
   try {
     const res = await axios.get<HolderResponse[]>(`${DATA_API}/holders?${params}`);
     return res.data;
@@ -169,11 +184,11 @@ function scoreLeaderboardOverlap(
   for (const sm of smartMoneyHolders) {
     const rankBonus = sm.rank <= 10 ? 3 : sm.rank <= 25 ? 1.5 : 0;
     const basePts = 5 + rankBonus;
-    
+
     // Weight by position size
     const amt = sm.amount ?? 0;
     const sizeMultiplier = amt > 10000 ? 2.5 : amt > 5000 ? 2.0 : amt > 1000 ? 1.5 : amt > 250 ? 1.0 : 0.5;
-    
+
     pts += basePts * sizeMultiplier;
 
     if (sm.outcome === 0) yesAmount += amt;
@@ -184,12 +199,12 @@ function scoreLeaderboardOverlap(
 
   let smartMoneySide: string | null = null;
   let consensusBonus = 0;
-  
+
   if (yesAmount > 0 || noAmount > 0) {
     const totalAmount = yesAmount + noAmount;
     const maxSide = Math.max(yesAmount, noAmount);
     const consensusRatio = maxSide / totalAmount;
-    
+
     if (yesAmount > noAmount * 1.5) smartMoneySide = 'YES';
     else if (noAmount > yesAmount * 1.5) smartMoneySide = 'NO';
     else smartMoneySide = 'SPLIT';
@@ -213,17 +228,29 @@ function scoreTimeUrgency(endDateStr: string): number {
   return 6;
 }
 
-function scoreMomentum(oneDayChange: number, oneHourChange: number, volume24hr: number, volumeTotal: number): number {
+function scoreMomentum(oneDayChange: number, oneHourChange: number, oneWeekChange: number, volume24hr: number, volumeTotal: number, smartMoneySide: string | null): number {
   const absDay = Math.abs(oneDayChange);
   const absHour = Math.abs(oneHourChange);
+  const absWeek = Math.abs(oneWeekChange);
+
   const sameDir = (oneDayChange >= 0 && oneHourChange >= 0) || (oneDayChange < 0 && oneHourChange < 0);
   const dayPts = clamp(absDay / 0.2, 0, 1) * 8;
   const hourPts = clamp(absHour / 0.1, 0, 1) * 7;
-  const baseMom = (dayPts + hourPts) * (sameDir ? 1.3 : 1.0);
+  const weekPts = clamp(absWeek / 0.4, 0, 1) * 5;
+
+  let baseMom = (dayPts + hourPts + weekPts) * (sameDir ? 1.2 : 1.0);
+
+  if (smartMoneySide === 'YES') {
+    if (oneDayChange > 0 || oneHourChange > 0) baseMom *= 1.2;
+    if (oneDayChange < -0.05) baseMom *= 0.5;
+  } else if (smartMoneySide === 'NO') {
+    if (oneDayChange < 0 || oneHourChange < 0) baseMom *= 1.2;
+    if (oneDayChange > 0.05) baseMom *= 0.5;
+  }
 
   const spikeRatio = volumeTotal > 0 ? (volume24hr / volumeTotal) : 0;
   const volMultiplier = clamp(spikeRatio / 0.2, 0.5, 2.0);
-  
+
   return clamp(baseMom * volMultiplier, 0, 20);
 }
 
@@ -279,19 +306,18 @@ function scoreCompetitive(competitive: number | undefined): number {
 export function makeSmartAnalysisCommand(): Command {
   return new Command('smart-analysis')
     .description('Fetch, score and rank active markets using leaderboard smart-money signals')
-    .option('-l, --limit <number>', 'number of markets to fetch', '30')
+    .option('-l, --limit <number>', 'number of markets to fetch', '10')
     .option('-o, --offset <number>', 'pagination offset', '0')
     .action(async (options) => {
       const limit = parseInt(options.limit, 10);
       const offset = parseInt(options.offset, 10);
 
-      const [leaderboardWallets, rawMarketsMain, rawMarketsSmall] = await Promise.all([
+      const [leaderboardWallets, rawMarketsMain] = await Promise.all([
         fetchLeaderboard(),
         fetchMarkets({ limit, offset }),
-        fetchMarkets({ limit, offset: 0, liquidityMin: '300', volumeMin: '500', order: 'competitive' }),
       ]);
 
-      const markets = deduplicateMarkets([...rawMarketsMain, ...rawMarketsSmall]);
+      const markets = deduplicateMarkets(rawMarketsMain);
       if (markets.length === 0) {
         console.log(JSON.stringify({ success: false, error: 'No qualifying markets found', markets: [] }, null, 2));
         return;
@@ -307,14 +333,31 @@ export function makeSmartAnalysisCommand(): Command {
         const holdersData = holdersPerMarket[i];
         const lb = scoreLeaderboardOverlap(holdersData, leaderboardWallets);
         const time = scoreTimeUrgency(market.endDate!);
-        const mom = scoreMomentum(market.oneDayPriceChange ?? 0, market.oneHourPriceChange ?? 0, market.volume24hr ?? 0, market.volumeNum ?? 0);
+        const mom = scoreMomentum(market.oneDayPriceChange ?? 0, market.oneHourPriceChange ?? 0, market.oneWeekPriceChange ?? 0, market.volume24hr ?? 0, market.volumeNum ?? 0, lb.smartMoneySide);
         const vol = scoreVolumeSpike(market.volume24hr ?? 0, market.volumeNum ?? 0);
         const liq = scoreLiquidity(market.liquidityNum ?? 0);
         const spreadScore = scoreSpread(market.spread);
         const roiScore = scoreDirectionalROI(market.lastTradePrice, market.bestBid, market.bestAsk, lb.smartMoneySide);
         const comp = scoreCompetitive(market.competitive);
-        const totalScore = lb.pts + lb.consensusBonus + time + mom + vol + liq + spreadScore + roiScore + comp;
+
+        const price = market.lastTradePrice ?? ((market.bestBid != null && market.bestAsk != null) ? (market.bestBid + market.bestAsk) / 2 : null);
+        let probabilityPenalty = 0;
+        if (price !== null && (price >= 0.95 || price <= 0.05)) {
+          const spikeRatio = (market.volumeNum ?? 0) > 0 ? (market.volume24hr ?? 0) / market.volumeNum! : 0;
+          if (spikeRatio < 0.3) {
+            probabilityPenalty = -15;
+          }
+        }
+
+        const totalScore = lb.pts + lb.consensusBonus + time + mom + vol + liq + spreadScore + roiScore + comp + probabilityPenalty;
         const hoursLeft = Math.round((new Date(market.endDate!).getTime() - now) / 3_600_000);
+
+        const isInefficient = (market.spread ?? 0) > 0.04 && (market.liquidityNum ?? 0) > 10000;
+        const isDislocated = Math.abs(market.oneHourPriceChange ?? 0) > 0.1 && Math.abs(market.oneDayPriceChange ?? 0) < 0.05;
+
+        let confidenceRating = 'SPECULATIVE';
+        if (totalScore >= 50) confidenceRating = 'HIGH CONVICTION';
+        else if (totalScore >= 35) confidenceRating = 'WATCHLIST';
 
         let outcomesParsed: string[] | null = null;
         let outcomePricesParsed: string[] | null = null;
@@ -335,6 +378,7 @@ export function makeSmartAnalysisCommand(): Command {
           outcomePrices: outcomePricesParsed,
           oneDayPriceChange: market.oneDayPriceChange,
           oneHourPriceChange: market.oneHourPriceChange,
+          oneWeekPriceChange: market.oneWeekPriceChange,
           volume24hr: market.volume24hr,
           volumeTotal: market.volumeNum,
           liquidityNum: market.liquidityNum,
@@ -342,6 +386,9 @@ export function makeSmartAnalysisCommand(): Command {
           smartMoneyCount: lb.smartMoneyHolders.length,
           smartMoneySide: lb.smartMoneySide,
           score: Math.round(totalScore * 10) / 10,
+          confidenceRating,
+          isInefficient,
+          isDislocated,
           scoreBreakdown: {
             leaderboardOverlap: Math.round(lb.pts * 10) / 10,
             consensusBonus: Math.round(lb.consensusBonus * 10) / 10,
@@ -352,6 +399,7 @@ export function makeSmartAnalysisCommand(): Command {
             spreadScore: Math.round(spreadScore * 10) / 10,
             directionalROI: Math.round(roiScore * 10) / 10,
             competitive: Math.round(comp * 10) / 10,
+            probabilityPenalty: Math.round(probabilityPenalty * 10) / 10,
           },
         };
       });
@@ -372,6 +420,9 @@ export function makeSmartAnalysisCommand(): Command {
         return {
           rank: idx + 1,
           score: m.score,
+          confidenceRating: m.confidenceRating,
+          isInefficient: m.isInefficient,
+          isDislocated: m.isDislocated,
           question: m.question,
           conditionId: m.conditionId,
           url: `https://polymarket.com/event/${m.slug}`,
@@ -386,6 +437,7 @@ export function makeSmartAnalysisCommand(): Command {
             outcomePrices: m.outcomePrices,
             oneDayPriceChange: m.oneDayPriceChange,
             oneHourPriceChange: m.oneHourPriceChange,
+            oneWeekPriceChange: m.oneWeekPriceChange,
           },
           activity: {
             volume24hr: m.volume24hr,
