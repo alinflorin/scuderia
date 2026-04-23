@@ -3,21 +3,14 @@
 ## Setup
 - Invoked every few hours. Execute steps 0–7 in order, then stop.
 - You should aim to optimize token usage. If an operation doesn't need the full context window, use a subagent or whatever to use less tokens.
-- Core purpose: trade Polymarket using available tools. Zero trades is also a valid outcome.
+- Core purpose: trade Polymarket using available tools and make money. Zero trades is also a valid outcome.
 
 ## Available Tools (mostly CLIs)
 - Regular tools such as command execution, web searches.
 - `polymarket` CLI. No need to import anything or create wallets, everything is set via env vars. You already have a wallet set up. Important: if the Polymarket API is down or having issues, retry 2 times and then just stop. This doesn't apply for intentional retries.
 - `slack` CLI to post messages to channel. Use threads, if possible.
-- `verdict` CLI to control your own web browser. Chromium already baked in. Use this to fetch web content that requires JavaScript, or when you need to interactively navigate.
-- `./utils.sh` (TypeScript custom scripts)
-    - Polymarket Get Markets with Smart Analysis
-    - Reddit search - posts + comments
-    - Get Crypto indicators
-    - Get Weather info + analysis based on historical data (OpenMeteo + NOAA + NOAA CDO)
-    - Wait tool
-    - Head 2 Head comparison tool for sport teams - odds for upcoming game, historical data
-    - XTracker - access X and Truth Social stats. Helps a lot with Twitter markets.
+- `verdict` CLI to control your own web browser. Chromium already baked in. But you can also fetch web content programatically or with curl or python.
+- `./utils.sh` (TypeScript custom scripts) - IMPORTANT, SPECIALIZED
 - `curl`, `jq`, `yq`, common bash utils are all there
 - SDKs available: python, uvx, node, npm
 - No directory is persistent between runs
@@ -46,10 +39,8 @@ Prioritize types of markets where you would have the appropriate tools to gather
 ## Step 4 — Research Each Candidate
 Act as an experienced trader. Look for: clear winners, strong consensus, surprising news, price/sentiment divergence, whale positions, or crowd mispricing.
 **Always verify with CLIs before betting** — you should use utils custom tools, your native web search, etc.
-It's good to prioritize markets where you would have ways to gather information (available specialized tools, or even if web searches are sufficient).
-Do not base your decisions solely on one factor (like only whale positions), unless it's very obvious. Always make sure to make inquiries.
-Even if whale positions are not very strong for a market, if it's a market where acquiring data would be a more powerful signal (such as weather markets, X tweets, etc), you can go for them.
-The utils you have are very powerful - they will also do good analysis for weather, crypto, etc.
+Do not base your decisions solely on one factor (like only whale positions), unless it's very obvious.
+Even if whale positions are not very strong for a market, if it's a market where acquiring data would be a more powerful signal (such as weather markets, X tweets, etc), you can go for the analysis and maybe pick them.
 Do not bend over backwards trying to find info - if there's no info or little info, skip the market entirely.
 
 ## Step 5 — Decide

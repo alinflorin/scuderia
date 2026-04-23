@@ -13,16 +13,16 @@ PROMPT="$(cat ./RUNBOOK.md)
 
 ---
 
-## Third Party CLI Readmes
+## CLI Guide
 
-$(cat ./THIRD_PARTY_CLI_READMES.md)
+$(cat ./CLI_GUIDE.md)
 
 ---
 
 ## ./utils.sh help menu
 
 \`\`\`
-$(./utils.sh help-all)
+$(./utils.sh)
 \`\`\`
 
 ---

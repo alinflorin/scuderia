@@ -5,7 +5,7 @@ dist
 Dockerfile
 .dockerignore
 run.sh
-THIRD_PARTY_CLI_READMES.md
+CLI_GUIDE.md
 docker-compose.yaml
 docker-compose.prod.yaml
 **/*.ts
