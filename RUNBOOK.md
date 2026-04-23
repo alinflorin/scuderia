@@ -10,7 +10,7 @@
 - `polymarket` CLI. No need to import anything or create wallets, everything is set via env vars. You already have a wallet set up.
 - `slack` CLI to post messages to channel. Use threads, if possible.
 - `verdict` CLI to control your own web browser. Chromium already baked in. Use this to fetch web content that requires JavaScript, or when you need to interactively navigate.
-- `./utils.sh` (TypeScript custom scripts) - Polymarket Get Markets with Smart Analysis, Reddit search, get Crypto indicators, get Weather info + historical data, Wait tool, etc.
+- `./utils.sh` (TypeScript custom scripts) - Polymarket Get Markets with Smart Analysis, Reddit search, get Crypto indicators, get Weather info + historical data (OpenMeteo + NOAA + NOAA CDO), Wait tool, etc.
 - `curl`, `jq`, `yq`, common bash utils are all there
 - SDKs available: python, uvx, node, npm
 - No directory is persistent between runs
