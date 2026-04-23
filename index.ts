@@ -9,6 +9,7 @@ import { makeWaitCommand } from './wait.js';
 import { makeWeatherForecastCommand } from './weather-forecast.js';
 import { makeSportsH2HCommand } from './sports-h2h.js';
 import { makeXTrackerCommand } from './xtracker.js';
+import { makeBinanceMomentumCommand } from './binance-momentum.js';
 
 const program = new Command();
 
@@ -24,6 +25,7 @@ program.addCommand(makeWeatherForecastCommand());
 program.addCommand(makeWaitCommand());
 program.addCommand(makeSportsH2HCommand());
 program.addCommand(makeXTrackerCommand());
+program.addCommand(makeBinanceMomentumCommand());
 
 program
   .command('help-all')
