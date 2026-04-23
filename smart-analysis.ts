@@ -84,7 +84,7 @@ async function fetchLeaderboard(): Promise<Record<string, LeaderboardWallet>> {
 
 interface FetchMarketsOptions {
   limit: number;
-  offset: number;
+  offset?: number;
   liquidityMin?: string;
   volumeMin?: string;
   order?: string;
@@ -109,7 +109,7 @@ async function fetchMarkets(opts: FetchMarketsOptions): Promise<MarketRaw[]> {
     order: opts.order ?? 'volume24hr',
     ascending: String(opts.ascending ?? false),
     limit: String(opts.limit),
-    offset: String(opts.offset),
+    offset: String(opts.offset ?? 0),
   });
 
   if (opts.tagId) params.set('tag_id', opts.tagId);
@@ -294,8 +294,8 @@ export function makeSmartAnalysisCommand(): Command {
       const [leaderboardWallets, rawMarketsMain, rawMarketsSmall, rawMarketsCrypto] = await Promise.all([
         fetchLeaderboard(),
         fetchMarkets({ limit, offset }),
-        fetchMarkets({ limit, offset: 0, liquidityMin: '300', volumeMin: '500', order: 'competitive' }),
-        fetchMarkets({ limit, offset: 0, liquidityMin: '100', volumeMin: '300', order: 'oneDayPriceChange', endMaxHours: 48, tagId: '21' }),
+        fetchMarkets({ limit, liquidityMin: '300', volumeMin: '500', order: 'competitive' }),
+        fetchMarkets({ limit, liquidityMin: '100', volumeMin: '300', order: 'oneDayPriceChange', endMaxHours: 48, tagId: '21' }),
       ]);
 
       const markets = deduplicateMarkets([...rawMarketsMain, ...rawMarketsSmall, ...rawMarketsCrypto]);

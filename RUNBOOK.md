@@ -33,7 +33,7 @@ Fetch USDC balance via Polymarket CLI.
 If balance is 0 or tools are failing → skip to Step 7.
 
 ## Step 3 — Find Candidate Markets
-Use the Utils **Polymarket Get Markets with Smart Analysis** as the primary tool to search for markets (a good limit parameter value is 15). It will return 15 markets each from 3 categories: main, competitive and crypto. This tool will include smart whales positions data, too. Fall back to Polymarket CLI search, only if really unsatisfied with the results. Target only a handful of candidates. Skip any markets where you already have a position.
+Use the Utils **Polymarket Get Markets with Smart Analysis** as the primary tool to search for markets (a good limit parameter value is 5-15). It will return 5-15 markets each from 3 categories: main, competitive and crypto. This tool will include smart whales positions data, too. Fall back to Polymarket CLI search, only if really unsatisfied with the results. Target only a handful of candidates. Skip any markets where you already have a position.
 Prioritize types of markets where you would have the appropriate tools to gather information.  
 For short run Crypto markets, do arbitrage. Use the binance-momentum tool to find delays in Polymarket's crypto prices. If the price on Polymarket is too different from the price on Binance, bet on the lower price (on Polymarket) for the direction that Polymarket has not yet priced in. This can make you quick money.
 You can experiment with searching for short-term crypto markets, too. Use the polymarket CLI tool for that.
