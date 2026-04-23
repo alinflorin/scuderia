@@ -34,7 +34,8 @@ if [ "${DEBUG}" = "1" ]; then
   echo DEBUGSLEEPING
   sleep infinity
 else
-  claude \
+  slack chat send --text "Trading run starting... $(date -u +%Y-%m-%dT%H:%M:%SZ)" --channel "#${SLACK_CHANNEL}"
+  CLAUDE_ERROR=$(claude \
     --verbose \
     --allow-dangerously-skip-permissions \
     --dangerously-skip-permissions \
@@ -45,5 +46,10 @@ else
     --model "${CLAUDE_MODEL}" \
     --effort "${CLAUDE_EFFORT}" \
     --output-format stream-json \
-    -p "$PROMPT"
+    -p "$PROMPT" 2>&1)
+  CLAUDE_EXIT=$?
+  if [ $CLAUDE_EXIT -ne 0 ]; then
+    slack chat send --text "Claude command failed (exit $CLAUDE_EXIT): $CLAUDE_ERROR" --channel "#${SLACK_CHANNEL}"
+    exit $CLAUDE_EXIT
+  fi
 fi
