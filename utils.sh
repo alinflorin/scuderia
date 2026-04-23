@@ -1,2 +1,2 @@
 #!/bin/bash
-npm --prefix "$(dirname "$0")" start -- "$@"
+npm --prefix "$(dirname "$0")" run exec -- "$@"

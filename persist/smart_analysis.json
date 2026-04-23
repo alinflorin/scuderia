@@ -1,0 +1,1152 @@
+
+> scuderia@1.0.0 start
+> tsx index.ts smart-analysis --limit 20
+
+{
+  "success": true,
+  "generatedAt": "2026-04-22T14:21:46.167Z",
+  "totalMarketsEvaluated": 20,
+  "markets": [
+    {
+      "rank": 1,
+      "score": 84.8,
+      "question": "Suns vs. Thunder",
+      "conditionId": "0xbd6aec3013ba4a88e99c696a468fc5dfff6194a92a670d7c429149e5e7993ba2",
+      "url": "https://polymarket.com/event/nba-phx-okc-2026-04-22",
+      "hoursLeft": 11,
+      "endDate": "2026-04-23T01:30:00Z",
+      "pricing": {
+        "lastTradePrice": 0.09,
+        "bestBid": 0.08,
+        "bestAsk": 0.09,
+        "spread": 0.01,
+        "outcomes": [
+          "Suns",
+          "Thunder"
+        ],
+        "outcomePrices": [
+          "0.085",
+          "0.915"
+        ],
+        "oneDayPriceChange": 0.01
+      },
+      "activity": {
+        "volume24hr": 417784.76950599987,
+        "volumeTotal": 478813.69586400135,
+        "liquidity": 2039990.3621,
+        "volume24hrPct": "87.3%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 5,
+        "smartMoneyHolders": [
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 9,
+            "pnl": 1901178.3681983917,
+            "amount": 38138.5736,
+            "outcome": 0
+          },
+          {
+            "address": "0x84dbb7103982e3617704a2ed7d5b39691952aeeb",
+            "userName": "Soarin22",
+            "rank": 38,
+            "pnl": 638352.865795454,
+            "amount": 40760.84,
+            "outcome": 1
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 32,
+            "pnl": 725116.0053464869,
+            "amount": 37044.350757,
+            "outcome": 1
+          },
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2796303.6549333967,
+            "amount": 13731.31,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 8,
+            "pnl": 1972926.880499172,
+            "amount": 6509.991317,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 20,
+        "priceMomentum": 0.5,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 5,
+        "competitive": 4.3
+      }
+    },
+    {
+      "rank": 2,
+      "score": 81.4,
+      "question": "LoL: Hanwha Life Esports vs Nongshim Red Force (BO3) - LCK Rounds 1-2",
+      "conditionId": "0x697153750b6eda22a967f138534ed9cb1c5f6e289447888d2b5b515cb7c1488f",
+      "url": "https://polymarket.com/event/lol-hle1-ns-2026-04-22",
+      "hoursLeft": 2,
+      "endDate": "2026-04-22T16:10:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "Hanwha Life Esports",
+          "Nongshim Red Force"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneDayPriceChange": 0.2145
+      },
+      "activity": {
+        "volume24hr": 1370074.8957660005,
+        "volumeTotal": 1387429.8664170038,
+        "liquidity": 547858.77213,
+        "volume24hrPct": "98.7%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_UP",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 3,
+        "smartMoneyHolders": [
+          {
+            "address": "0xa5ea13a81d2b7e8e424b182bdc1db08e756bd96a",
+            "userName": "bossoskil1",
+            "rank": 29,
+            "pnl": 806615.5268550066,
+            "amount": 77576.000184,
+            "outcome": 0
+          },
+          {
+            "address": "0x57cd939930fd119067ca9dc42b22b3e15708a0fb",
+            "userName": "Supah9ga",
+            "rank": 36,
+            "pnl": 678928.5751243286,
+            "amount": 13253.625387,
+            "outcome": 1
+          },
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 815461.1148150974,
+            "amount": 12599.870659,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 10,
+        "priceMomentum": 10.4,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 3,
+      "score": 75,
+      "question": "Madrid Open: Zizou Bergs vs Marin Cilic",
+      "conditionId": "0x1eca1f3e2754d3dc744d30de255aa36e7b2c41f4545e0527f09ef339f0b48c96",
+      "url": "https://polymarket.com/event/atp-bergs-cilic-2026-04-22",
+      "hoursLeft": 163,
+      "endDate": "2026-04-29T09:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Zizou Bergs",
+          "Marin Cilic"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneDayPriceChange": -0.4845
+      },
+      "activity": {
+        "volume24hr": 347531.4542859998,
+        "volumeTotal": 348507.09768899955,
+        "liquidity": 369982.75689,
+        "volume24hrPct": "99.7%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 3,
+        "smartMoneyHolders": [
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 815461.1148150974,
+            "amount": 1766.695721,
+            "outcome": 0
+          },
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2796303.6549333967,
+            "amount": 27847.392353,
+            "outcome": 1
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 7,
+            "pnl": 2136561.0458625704,
+            "amount": 17216.063958,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 8,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 4,
+      "score": 72,
+      "question": "Will AFC Bournemouth win on 2026-04-22?",
+      "conditionId": "0xe068813cdcbd7f933818fa8ee81b4609a99238febf2c363ab9fc0d893ca7469d",
+      "url": "https://polymarket.com/event/epl-bou-lee-2026-04-22-bou",
+      "hoursLeft": 5,
+      "endDate": "2026-04-22T19:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.5,
+        "bestBid": 0.49,
+        "bestAsk": 0.5,
+        "spread": 0.01,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.495",
+          "0.505"
+        ],
+        "oneDayPriceChange": 0.02
+      },
+      "activity": {
+        "volume24hr": 396014.055251,
+        "volumeTotal": 402228.66369,
+        "liquidity": 1080472.5862,
+        "volume24hrPct": "98.5%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 5,
+        "smartMoneyHolders": [
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 9,
+            "pnl": 1901178.3681983917,
+            "amount": 17227.02608,
+            "outcome": 0
+          },
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 815461.1148150974,
+            "amount": 18568.645812,
+            "outcome": 1
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 10,
+            "pnl": 1710331.1036035214,
+            "amount": 7097.51047,
+            "outcome": 1
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 7,
+            "pnl": 2136561.0458625704,
+            "amount": 7000.22,
+            "outcome": 1
+          },
+          {
+            "address": "0x7ea571c40408f340c1c8fc8eaacebab53c1bde7b",
+            "userName": "Cannae",
+            "rank": 39,
+            "pnl": 620852.4087036074,
+            "amount": 6990.982564,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 10,
+        "priceMomentum": 1,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 5,
+      "score": 67.4,
+      "question": "Madrid Open: Daria Snigur vs Daria Kasatkina",
+      "conditionId": "0xff1cb2ae5368bfcf6e602290d33a836046951635fadb0384bf7b4c946d829b37",
+      "url": "https://polymarket.com/event/wta-snigur-kasatki-2026-04-22",
+      "hoursLeft": 164,
+      "endDate": "2026-04-29T10:30:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "Daria Snigur",
+          "Daria Kasatkina"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneHourPriceChange": 0.0045
+      },
+      "activity": {
+        "volume24hr": 681993.7335809994,
+        "volumeTotal": 681993.7335809995,
+        "liquidity": 248911.91427,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 3,
+        "smartMoneyHolders": [
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2796303.6549333967,
+            "amount": 9456.901977,
+            "outcome": 0
+          },
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 815461.1148150974,
+            "amount": 4436.871327,
+            "outcome": 0
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 7,
+            "pnl": 2136561.0458625704,
+            "amount": 13412.414687,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 0.4,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 6,
+      "score": 66,
+      "question": "Will Donald Trump announce that the United States blockade of the Strait of Hormuz has been lifted by April 23, 2026?",
+      "conditionId": "0xd839785e6d4e4fdd44ef0e90f315eecccde47578924491e6ae74499e9f62d29e",
+      "url": "https://polymarket.com/event/will-donald-trump-announce-that-the-united-states-blockade-of-the-strait-of-hormuz-has-been-lifted-by-april-23-2026",
+      "hoursLeft": 10,
+      "endDate": "2026-04-23T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.08,
+        "bestBid": 0.08,
+        "bestAsk": 0.09,
+        "spread": 0.01,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.085",
+          "0.915"
+        ],
+        "oneDayPriceChange": -0.205,
+        "oneHourPriceChange": -0.05
+      },
+      "activity": {
+        "volume24hr": 677965.0777109992,
+        "volumeTotal": 921310.5368889974,
+        "liquidity": 36663.1994,
+        "volume24hrPct": "73.6%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 20,
+        "priceMomentum": 15,
+        "volumeSpike": 15,
+        "liquidity": 6.8,
+        "priceBoundary": 5,
+        "competitive": 4.3
+      }
+    },
+    {
+      "rank": 7,
+      "score": 65.4,
+      "question": "Madrid Open: Anastasia Pavlyuchenkova vs Alexandra Eala",
+      "conditionId": "0xcc7fce17f0c811efe5fe58d9d03f8105395748d8189387b113013307307f6cd6",
+      "url": "https://polymarket.com/event/wta-pavlyuc-eala-2026-04-22",
+      "hoursLeft": 165,
+      "endDate": "2026-04-29T11:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Anastasia Pavlyuchenkova",
+          "Alexandra Eala"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneHourPriceChange": -0.0035
+      },
+      "activity": {
+        "volume24hr": 996552.2793550018,
+        "volumeTotal": 996552.2793550006,
+        "liquidity": 73508.17129,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 3,
+        "smartMoneyHolders": [
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 7,
+            "pnl": 2136561.0458625704,
+            "amount": 21623.990365,
+            "outcome": 0
+          },
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2796303.6549333967,
+            "amount": 12209.088617,
+            "outcome": 0
+          },
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 815461.1148150974,
+            "amount": 4273.82784,
+            "outcome": 0
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 0.2,
+        "volumeSpike": 15,
+        "liquidity": 8.1,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 8,
+      "score": 59.8,
+      "question": "US x Iran diplomatic meeting by April 23, 2026?",
+      "conditionId": "0x747a380bab6e04278667e1e881cc62bd2a6a6090d295678f426249d06ca79712",
+      "url": "https://polymarket.com/event/us-x-iran-diplomatic-meeting-by-april-23-2026",
+      "hoursLeft": 10,
+      "endDate": "2026-04-23T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.033,
+        "bestBid": 0.033,
+        "bestAsk": 0.034,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.0335",
+          "0.9665"
+        ],
+        "oneDayPriceChange": -0.7415,
+        "oneHourPriceChange": -0.0115
+      },
+      "activity": {
+        "volume24hr": 586367.2491019994,
+        "volumeTotal": 680201.5357630017,
+        "liquidity": 45918.89413,
+        "volume24hrPct": "86.2%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 20,
+        "priceMomentum": 11.4,
+        "volumeSpike": 15,
+        "liquidity": 7.2,
+        "priceBoundary": 2,
+        "competitive": 4.1
+      }
+    },
+    {
+      "rank": 9,
+      "score": 59,
+      "question": "LoL: Hanwha Life Esports vs Nongshim Red Force - Game 2 Winner",
+      "conditionId": "0xf4fb7a8cb42ee302ddfc41aa1233705011e90ec0d7ed12fc6afd2b37749d58ca",
+      "url": "https://polymarket.com/event/lol-hle1-ns-2026-04-22-game2",
+      "hoursLeft": 2,
+      "endDate": "2026-04-22T16:10:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Hanwha Life Esports",
+          "Nongshim Red Force"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneDayPriceChange": -0.7145
+      },
+      "activity": {
+        "volume24hr": 1130114.8784550007,
+        "volumeTotal": 1130297.0702319986,
+        "liquidity": 604467.00321,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 1,
+        "smartMoneyHolders": [
+          {
+            "address": "0xa5ea13a81d2b7e8e424b182bdc1db08e756bd96a",
+            "userName": "bossoskil1",
+            "rank": 29,
+            "pnl": 806615.5268550066,
+            "amount": 202492.182457,
+            "outcome": 0
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 10,
+        "timeUrgency": 10,
+        "priceMomentum": 8,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 10,
+      "score": 57.8,
+      "question": "Dota 2: Xtreme Gaming vs Team Spirit (BO3) - PGL Wallachia Group Stage",
+      "conditionId": "0x304b92ec09b501f7103b14fea08a9e277dde78ff0fe816beb94b8590c8cd5e41",
+      "url": "https://polymarket.com/event/dota2-xtreme-ts8-2026-04-22",
+      "hoursLeft": 5,
+      "endDate": "2026-04-22T19:40:00Z",
+      "pricing": {
+        "lastTradePrice": 0.67,
+        "bestBid": 0.66,
+        "bestAsk": 0.68,
+        "spread": 0.02,
+        "outcomes": [
+          "Xtreme Gaming",
+          "Team Spirit"
+        ],
+        "outcomePrices": [
+          "0.67",
+          "0.33"
+        ],
+        "oneHourPriceChange": 0.105
+      },
+      "activity": {
+        "volume24hr": 591912.2325779996,
+        "volumeTotal": 591912.2325779987,
+        "liquidity": 37401.3484,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 1,
+        "smartMoneyHolders": [
+          {
+            "address": "0xa5ea13a81d2b7e8e424b182bdc1db08e756bd96a",
+            "userName": "bossoskil1",
+            "rank": 29,
+            "pnl": 806615.5268550066,
+            "amount": 6134.507289,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 10,
+        "timeUrgency": 10,
+        "priceMomentum": 9.1,
+        "volumeSpike": 15,
+        "liquidity": 6.8,
+        "priceBoundary": 2,
+        "competitive": 4.9
+      }
+    },
+    {
+      "rank": 11,
+      "score": 54.1,
+      "question": "Dota 2: South America Rejects vs MOUZ (BO3) - PGL Wallachia Group Stage",
+      "conditionId": "0xfed0123acce8e427be20352635d4af1dd494c1c2bb68a94701b0208cc4fb7d89",
+      "url": "https://polymarket.com/event/dota2-sar1-mouz-2026-04-22",
+      "hoursLeft": 1,
+      "endDate": "2026-04-22T15:45:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "South America Rejects",
+          "MOUZ"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneHourPriceChange": 0.0345
+      },
+      "activity": {
+        "volume24hr": 1400829.181652,
+        "volumeTotal": 1400829.1816519997,
+        "liquidity": 651378.69769,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 1,
+        "smartMoneyHolders": [
+          {
+            "address": "0xa5ea13a81d2b7e8e424b182bdc1db08e756bd96a",
+            "userName": "bossoskil1",
+            "rank": 29,
+            "pnl": 806615.5268550066,
+            "amount": 70650.118825,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 10,
+        "timeUrgency": 10,
+        "priceMomentum": 3.1,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 12,
+      "score": 51,
+      "question": "Dota 2: South America Rejects vs MOUZ - Game 2 Winner",
+      "conditionId": "0x4d580888a0eee38a2da1f0517fef6e297420c3ee1c5c7664ab0291626726e413",
+      "url": "https://polymarket.com/event/dota2-sar1-mouz-2026-04-22-game2",
+      "hoursLeft": 1,
+      "endDate": "2026-04-22T15:45:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "South America Rejects",
+          "MOUZ"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ]
+      },
+      "activity": {
+        "volume24hr": 1044173.70864,
+        "volumeTotal": 1044173.7086399967,
+        "liquidity": 788864.78138,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 1,
+        "smartMoneyHolders": [
+          {
+            "address": "0xa5ea13a81d2b7e8e424b182bdc1db08e756bd96a",
+            "userName": "bossoskil1",
+            "rank": 29,
+            "pnl": 806615.5268550066,
+            "amount": 215419.927807,
+            "outcome": 0
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 10,
+        "timeUrgency": 10,
+        "priceMomentum": 0,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 13,
+      "score": 49.4,
+      "question": "US x Iran permanent peace deal by April 24, 2026?",
+      "conditionId": "0x084a4aac9da433824013ad192196193d7d1bd8293c0fedc9eb7e687909fd1d0f",
+      "url": "https://polymarket.com/event/us-x-iran-permanent-peace-deal-by-april-24-2026",
+      "hoursLeft": 34,
+      "endDate": "2026-04-24T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.028,
+        "bestBid": 0.026,
+        "bestAsk": 0.028,
+        "spread": 0.002,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.027",
+          "0.973"
+        ],
+        "oneHourPriceChange": -0.004
+      },
+      "activity": {
+        "volume24hr": 427431.5074290002,
+        "volumeTotal": 427431.50742900005,
+        "liquidity": 375995.4738,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 18,
+        "priceMomentum": 0.3,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4.1
+      }
+    },
+    {
+      "rank": 14,
+      "score": 46,
+      "question": "Dota 2: Xtreme Gaming vs Team Spirit - Game 1 Winner",
+      "conditionId": "0x2678e92afe42714cd1c2ef7a0cf42009b0c3dd0a7029549ccf93e3b8329e28b2",
+      "url": "https://polymarket.com/event/dota2-xtreme-ts8-2026-04-22-game1",
+      "hoursLeft": 5,
+      "endDate": "2026-04-22T19:40:00Z",
+      "pricing": {
+        "lastTradePrice": 0.73,
+        "bestBid": 0.72,
+        "bestAsk": 0.74,
+        "spread": 0.02,
+        "outcomes": [
+          "Xtreme Gaming",
+          "Team Spirit"
+        ],
+        "outcomePrices": [
+          "0.73",
+          "0.27"
+        ],
+        "oneHourPriceChange": 0.195
+      },
+      "activity": {
+        "volume24hr": 423106.93128199974,
+        "volumeTotal": 423091.9612820001,
+        "liquidity": 15463.75,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 10,
+        "priceMomentum": 9.1,
+        "volumeSpike": 15,
+        "liquidity": 5.2,
+        "priceBoundary": 2,
+        "competitive": 4.7
+      }
+    },
+    {
+      "rank": 15,
+      "score": 38.4,
+      "question": "Will the price of Bitcoin be above $82,000 on April 22?",
+      "conditionId": "0xe8907dd08f51266cea2be27627084d44820a0a3db91abcadf104ae992ad5def2",
+      "url": "https://polymarket.com/event/bitcoin-above-82k-on-april-22",
+      "hoursLeft": 2,
+      "endDate": "2026-04-22T16:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.008,
+        "bestBid": 0.002,
+        "bestAsk": 0.004,
+        "spread": 0.002,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.003",
+          "0.997"
+        ],
+        "oneDayPriceChange": -0.002,
+        "oneHourPriceChange": 0.0015
+      },
+      "activity": {
+        "volume24hr": 430234.51063900016,
+        "volumeTotal": 466834.59316400025,
+        "liquidity": 44761.09999,
+        "volume24hrPct": "92.2%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 10,
+        "priceMomentum": 0.2,
+        "volumeSpike": 15,
+        "liquidity": 7.2,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 16,
+      "score": 34.1,
+      "question": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
+      "conditionId": "0xd4d00e5bf8b960cc37c74c1ec19e41e00b0706add203ddcfbb65ad006c5c223a",
+      "url": "https://polymarket.com/event/will-the-fed-increase-interest-rates-by-25-bps-after-the-april-2026-meeting",
+      "hoursLeft": 154,
+      "endDate": "2026-04-29T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.002,
+        "bestBid": 0.002,
+        "bestAsk": 0.003,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.0025",
+          "0.9975"
+        ]
+      },
+      "activity": {
+        "volume24hr": 514491.3666430002,
+        "volumeTotal": 30697574.30302525,
+        "liquidity": 1682389.8571,
+        "volume24hrPct": "1.7%",
+        "activityLevel": "NORMAL"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 1,
+        "smartMoneyHolders": [
+          {
+            "address": "0x93abbc022ce98d6f45d4444b594791cc4b7a9723",
+            "userName": "gatorr",
+            "rank": 24,
+            "pnl": 936713.7449118758,
+            "amount": 1600000,
+            "outcome": 0
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 11.5,
+        "timeUrgency": 6,
+        "priceMomentum": 0,
+        "volumeSpike": 0.6,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 17,
+      "score": 34.1,
+      "question": "Will Elon Musk post 500-519 tweets from April 21 to April 28, 2026?",
+      "conditionId": "0x57def33c8fe6d15a3e1bd48a0c5474cad79c6127cef8bf55ece63b853dbdb042",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-april-21-april-28-500-519",
+      "hoursLeft": 146,
+      "endDate": "2026-04-28T16:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestBid": 0.001,
+        "bestAsk": 0.002,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.0015",
+          "0.9985"
+        ],
+        "oneDayPriceChange": -0.001
+      },
+      "activity": {
+        "volume24hr": 475318.293333,
+        "volumeTotal": 502715.531332,
+        "liquidity": 42224.36999,
+        "volume24hrPct": "94.6%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 6,
+        "priceMomentum": 0,
+        "volumeSpike": 15,
+        "liquidity": 7.1,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 18,
+      "score": 24.2,
+      "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
+      "conditionId": "0x36e8ca24d2a13435f519f15580d42b45cdbe3bc425fb39a7c2733260357af0fa",
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-april-2026-meeting",
+      "hoursLeft": 154,
+      "endDate": "2026-04-29T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.993,
+        "bestBid": 0.993,
+        "bestAsk": 0.994,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.9935",
+          "0.0065"
+        ]
+      },
+      "activity": {
+        "volume24hr": 1534934.0575169993,
+        "volumeTotal": 26616159.478954017,
+        "liquidity": 2129774.37593,
+        "volume24hrPct": "5.8%",
+        "activityLevel": "NORMAL"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 6,
+        "priceMomentum": 0,
+        "volumeSpike": 2.2,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 19,
+      "score": 23.7,
+      "question": "Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?",
+      "conditionId": "0x0d14f5dc9fb3250ec888b1ac8d9fe9a0ce06f9d3ea60fdf138e8690622fea84c",
+      "url": "https://polymarket.com/event/will-the-fed-decrease-interest-rates-by-25-bps-after-the-april-2026-meeting",
+      "hoursLeft": 154,
+      "endDate": "2026-04-29T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.003,
+        "bestBid": 0.003,
+        "bestAsk": 0.004,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.0035",
+          "0.9965"
+        ]
+      },
+      "activity": {
+        "volume24hr": 1173027.5526539998,
+        "volumeTotal": 25888612.340776008,
+        "liquidity": 871679.54232,
+        "volume24hrPct": "4.5%",
+        "activityLevel": "NORMAL"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 6,
+        "priceMomentum": 0,
+        "volumeSpike": 1.7,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 20,
+      "score": 22.3,
+      "question": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
+      "conditionId": "0xd72622d154dfe65b9c019d6afcfe75a55717e5c502db611f555b101aafbf6ec5",
+      "url": "https://polymarket.com/event/will-the-fed-decrease-interest-rates-by-50-bps-after-the-april-2026-meeting",
+      "hoursLeft": 154,
+      "endDate": "2026-04-29T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.002,
+        "bestBid": 0.001,
+        "bestAsk": 0.002,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.0015",
+          "0.9985"
+        ]
+      },
+      "activity": {
+        "volume24hr": 389450.71199999994,
+        "volumeTotal": 44884580.95600033,
+        "liquidity": 8904792.09867,
+        "volume24hrPct": "0.9%",
+        "activityLevel": "NORMAL"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 6,
+        "priceMomentum": 0,
+        "volumeSpike": 0.3,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    }
+  ]
+}

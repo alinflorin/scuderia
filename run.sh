@@ -1,113 +1,29 @@
 #!/bin/bash
 
-if [ "$LLM" != "claude" ] && [ "$LLM" != "gemini" ]; then
-  echo "Error: LLM must be 'claude' or 'gemini' (got: '$LLM')"
-  exit 1
-fi
+mkdir -p /app/persist || true
 
-mkdir -p /home/appuser/.claude /home/appuser/.gemini /app/persist || true
-
-touch -a /app/persist/NOTES.md || true
-
-write_if_missing() {
-  local path="$1"; shift
-  [ -f "$path" ] || cat > "$path" <<< "$@"
-}
-
-if [ ! -f "/home/appuser/.gemini/settings.json" ]; then
-  cat > /home/appuser/.gemini/settings.json << 'EOF'
-{
-  "security": {
-    "auth": {
-      "selectedType": "oauth-personal"
-    },
-    "enablePermanentToolApproval": true,
-    "folderTrust": {
-      "enabled": false
-    }
-  },
-  "general": {
-    "defaultApprovalMode": "default"
-  },
-  "ui": {
-    "inlineThinkingMode": "full",
-    "showHomeDirectoryWarning": false,
-    "showCompatibilityWarnings": false,
-    "hideTips": true,
-    "compactToolOutput": false,
-    "showShortcutsHint": false,
-    "footer": {
-      "hideContextPercentage": false
-    },
-    "showMemoryUsage": true,
-    "showModelInfoInChat": true,
-    "errorVerbosity": "full",
-    "accessibility": {
-      "screenReader": false
-    }
-  },
-  "billing": {
-    "overageStrategy": "never"
-  },
-  "model": {
-    "compressionThreshold": 0.8
-  }
-}
-EOF
-fi
-
-if [ ! -f "/home/appuser/.gemini/trustedFolders.json" ]; then
-  cat > /home/appuser/.gemini/trustedFolders.json << 'EOF'
-{
-  "/app": "TRUST_FOLDER"
-}
-EOF
-fi
-
-if [ ! -f "/home/appuser/.gemini/projects.json" ]; then
-  cat > /home/appuser/.gemini/projects.json << 'EOF'
-{
-  "projects": {
-    "/app": "app"
-  }
-}
-EOF
-fi
-
-claude_logged_in() {
-  claude auth status 2>/dev/null | jq -e '.loggedIn' > /dev/null 2>&1
-}
-
-if [ "$LLM" = "claude" ]; then
-  if ! claude_logged_in; then
-    echo "Not logged in. SSH into this container and run 'exec gosu appuser claude' to authenticate interactively."
-    until claude_logged_in; do sleep 5; done
-    echo "Logged in. Exiting."
-    exit 0
-  fi
-else
-  GEMINI_CREDS_FILE="/home/appuser/.gemini/oauth_creds.json"
-  if [ ! -f "$GEMINI_CREDS_FILE" ]; then
-    echo "Credentials not found. SSH into this container and run 'exec gosu appuser gemini' to authenticate."
-    until [ -f "$GEMINI_CREDS_FILE" ]; do sleep 5; done
-    echo "Credentials detected. Exiting."
-    exit 0
-  fi
-fi
+for var in CLAUDE_CODE_OAUTH_TOKEN POLYMARKET_PRIVATE_KEY; do
+    if [ -z "${!var}" ]; then
+        echo "Error: $var is not set" >&2
+        exit 1
+    fi
+done
 
 PROMPT="$(cat ./RUNBOOK.md)
 
 ---
 
-## CLI Readmes
+## Third Party CLI Readmes
 
-$(cat ./CLI_READMES.md)
+$(cat ./THIRD_PARTY_CLI_READMES.md)
 
 ---
 
-## Your Previous Notes
+## ./utils.sh help menu
 
-$(cat ./persist/NOTES.md 2>/dev/null)
+\`\`\`
+$(./utils.sh help-all)
+\`\`\`
 
 ---
 
@@ -118,21 +34,16 @@ if [ "${DEBUG}" = "1" ]; then
   echo DEBUGSLEEPING
   sleep infinity
 else
-  MODEL="${CLAUDE_MODEL:-${GEMINI_MODEL}}"
-  if [ "$LLM" = "claude" ]; then
-    claude \
-      --verbose \
-      --allow-dangerously-skip-permissions \
-      --dangerously-skip-permissions \
-      --permission-mode bypassPermissions \
-      --no-chrome \
-      --no-session-persistence \
-      --add-dir /home/appuser \
-      --model "${CLAUDE_MODEL}" \
-      --effort "${CLAUDE_EFFORT}" \
-      --output-format stream-json \
-      -p "$PROMPT"
-  else
-    gemini -o stream-json --include-directories /home/appuser -m "${GEMINI_MODEL}" -y -p "$PROMPT"
-  fi
+  claude \
+    --verbose \
+    --allow-dangerously-skip-permissions \
+    --dangerously-skip-permissions \
+    --permission-mode bypassPermissions \
+    --no-chrome \
+    --no-session-persistence \
+    --add-dir /root \
+    --model "${CLAUDE_MODEL}" \
+    --effort "${CLAUDE_EFFORT}" \
+    --output-format stream-json \
+    -p "$PROMPT"
 fi

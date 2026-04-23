@@ -1,0 +1,2212 @@
+
+> scuderia@1.0.0 start
+> tsx index.ts smart-analysis --limit 30
+
+{
+  "success": true,
+  "generatedAt": "2026-04-22T02:21:23.291Z",
+  "totalMarketsEvaluated": 30,
+  "markets": [
+    {
+      "rank": 1,
+      "score": 84.4,
+      "question": "Will Manchester City FC win on 2026-04-22?",
+      "conditionId": "0x4025f79326722dc11741d0fc491fed0a68231492216933a8b4957dcea4eac3d4",
+      "url": "https://polymarket.com/event/epl-bur-mac-2026-04-22-mac",
+      "hoursLeft": 17,
+      "endDate": "2026-04-22T19:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.86,
+        "bestBid": 0.85,
+        "bestAsk": 0.86,
+        "spread": 0.01,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.855",
+          "0.145"
+        ]
+      },
+      "activity": {
+        "volume24hr": 147936.30647200005,
+        "volumeTotal": 223802.2283049998,
+        "liquidity": 510268.3863,
+        "volume24hrPct": "66.1%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 3,
+        "smartMoneyHolders": [
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 8,
+            "pnl": 1753381.67327672,
+            "amount": 25009.38017,
+            "outcome": 0
+          },
+          {
+            "address": "0x7ea571c40408f340c1c8fc8eaacebab53c1bde7b",
+            "userName": "Cannae",
+            "rank": 37,
+            "pnl": 619615.3655369403,
+            "amount": 20692.031358,
+            "outcome": 1
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 10,
+            "pnl": 1666053.9956266107,
+            "amount": 7719.399493,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 20,
+        "priceMomentum": 0,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 5,
+        "competitive": 4.4
+      }
+    },
+    {
+      "rank": 2,
+      "score": 84.1,
+      "question": "Will Elche CF win on 2026-04-22?",
+      "conditionId": "0xb397b0688ee327cd88443c19d9172e94ba6c2c1d7bdd257fe8f41f168116d180",
+      "url": "https://polymarket.com/event/lal-elc-mad-2026-04-22-elc",
+      "hoursLeft": 15,
+      "endDate": "2026-04-22T17:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.39,
+        "bestBid": 0.38,
+        "bestAsk": 0.39,
+        "spread": 0.01,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.385",
+          "0.615"
+        ],
+        "oneDayPriceChange": 0.02,
+        "oneHourPriceChange": -0.02
+      },
+      "activity": {
+        "volume24hr": 157549.39666099998,
+        "volumeTotal": 189258.04832700005,
+        "liquidity": 845023.2026,
+        "volume24hrPct": "83.2%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 4,
+        "smartMoneyHolders": [
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 28,
+            "pnl": 823020.5074032081,
+            "amount": 8335.993626,
+            "outcome": 0
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 10,
+            "pnl": 1666053.9956266107,
+            "amount": 7940.68729,
+            "outcome": 0
+          },
+          {
+            "address": "0x7ea571c40408f340c1c8fc8eaacebab53c1bde7b",
+            "userName": "Cannae",
+            "rank": 37,
+            "pnl": 619615.3655369403,
+            "amount": 2281.194819,
+            "outcome": 0
+          },
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 8,
+            "pnl": 1753381.67327672,
+            "amount": 754.33239,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 20,
+        "priceMomentum": 2.2,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4.9
+      }
+    },
+    {
+      "rank": 3,
+      "score": 82.4,
+      "question": "Spread: FC Bayern München (-1.5)",
+      "conditionId": "0x5ed0494de4c6e341a7ecfc160f4720f2c8baf86d63b5a65409e6b113b5d69553",
+      "url": "https://polymarket.com/event/dfb-lev-bay-2026-04-22-spread-away-1pt5",
+      "hoursLeft": 16,
+      "endDate": "2026-04-22T18:45:00Z",
+      "pricing": {
+        "lastTradePrice": 0.4,
+        "bestBid": 0.39,
+        "bestAsk": 0.41,
+        "spread": 0.02,
+        "outcomes": [
+          "FC Bayern München",
+          "Bayer 04 Leverkusen"
+        ],
+        "outcomePrices": [
+          "0.4",
+          "0.6"
+        ],
+        "oneDayPriceChange": -0.02,
+        "oneHourPriceChange": -0.015
+      },
+      "activity": {
+        "volume24hr": 145708.781736,
+        "volumeTotal": 146097.818426,
+        "liquidity": 70463.8696,
+        "volume24hrPct": "99.7%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 3,
+        "smartMoneyHolders": [
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 10,
+            "pnl": 1666053.9956266107,
+            "amount": 22664.42336,
+            "outcome": 0
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2200219.211397862,
+            "amount": 7954.487376,
+            "outcome": 0
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 9,
+            "pnl": 1684264.8053409231,
+            "amount": 5950.25904,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 20,
+        "priceMomentum": 2.4,
+        "volumeSpike": 15,
+        "liquidity": 8,
+        "priceBoundary": 2,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 4,
+      "score": 82,
+      "question": "Atlanta Braves vs. Washington Nationals",
+      "conditionId": "0xb2e14e405d3ceb259d29bc96b58f14aed47129af92dd6c5a0229e1fd39f12380",
+      "url": "https://polymarket.com/event/mlb-atl-wsh-2026-04-21",
+      "hoursLeft": 164,
+      "endDate": "2026-04-28T22:45:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Atlanta Braves",
+          "Washington Nationals"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneDayPriceChange": -0.5645,
+        "oneHourPriceChange": -0.075
+      },
+      "activity": {
+        "volume24hr": 676249.1834120001,
+        "volumeTotal": 677225.3557800003,
+        "liquidity": 395061.90243,
+        "volume24hrPct": "99.9%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 7,
+        "smartMoneyHolders": [
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 8,
+            "pnl": 1753381.67327672,
+            "amount": 98012.64426,
+            "outcome": 0
+          },
+          {
+            "address": "0xb45a797faa52b0fd8adc56d30382022b7b12192c",
+            "userName": "bcda",
+            "rank": 24,
+            "pnl": 943664.0285190698,
+            "amount": 25421.72,
+            "outcome": 0
+          },
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2913946.184874371,
+            "amount": 12377.283006,
+            "outcome": 0
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 10,
+            "pnl": 1666053.9956266107,
+            "amount": 11514.640728,
+            "outcome": 1
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 33,
+            "pnl": 701923.7170136134,
+            "amount": 8786.36479,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1961503.6883128001,
+            "amount": 7648.741632,
+            "outcome": 1
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2200219.211397862,
+            "amount": 3670.006197,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 15,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 5,
+      "score": 82,
+      "question": "Minnesota Twins vs. New York Mets",
+      "conditionId": "0x9efd4d8fe6ee5a3ba66e9c0ef1051da15c6e5c77bf4e467f8f2ac3ebd4a7e531",
+      "url": "https://polymarket.com/event/mlb-min-nym-2026-04-21",
+      "hoursLeft": 165,
+      "endDate": "2026-04-28T23:10:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "Minnesota Twins",
+          "New York Mets"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneDayPriceChange": 0.6245,
+        "oneHourPriceChange": 0.5345
+      },
+      "activity": {
+        "volume24hr": 563910.8051970002,
+        "volumeTotal": 566417.4013590009,
+        "liquidity": 593358.68962,
+        "volume24hrPct": "99.6%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_UP",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 8,
+        "smartMoneyHolders": [
+          {
+            "address": "0x777d9f00c2b4f7b829c9de0049ca3e707db05143",
+            "userName": "CarlosMC",
+            "rank": 12,
+            "pnl": 1551377.9062193758,
+            "amount": 58740.27436,
+            "outcome": 0
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 9,
+            "pnl": 1684264.8053409231,
+            "amount": 27545.325613,
+            "outcome": 0
+          },
+          {
+            "address": "0xa5ea13a81d2b7e8e424b182bdc1db08e756bd96a",
+            "userName": "bossoskil1",
+            "rank": 26,
+            "pnl": 854606.7930380793,
+            "amount": 21443.396665,
+            "outcome": 0
+          },
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 8,
+            "pnl": 1753381.67327672,
+            "amount": 20573.120499,
+            "outcome": 0
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 33,
+            "pnl": 701923.7170136134,
+            "amount": 5214.072489,
+            "outcome": 0
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 10,
+            "pnl": 1666053.9956266107,
+            "amount": 4019.419284,
+            "outcome": 1
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2200219.211397862,
+            "amount": 3095.802025,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1961503.6883128001,
+            "amount": 2723.29195,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 15,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 6,
+      "score": 80.5,
+      "question": "St. Louis Cardinals vs. Miami Marlins",
+      "conditionId": "0x93251fc856a6daeb9e6563ba962c3ab72462aefdc549dabf2808a7d9052f6306",
+      "url": "https://polymarket.com/event/mlb-stl-mia-2026-04-21",
+      "hoursLeft": 164,
+      "endDate": "2026-04-28T22:40:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "St. Louis Cardinals",
+          "Miami Marlins"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneDayPriceChange": 0.5145,
+        "oneHourPriceChange": 0.0345
+      },
+      "activity": {
+        "volume24hr": 339014.0403719995,
+        "volumeTotal": 340694.89444700006,
+        "liquidity": 383641.45315,
+        "volume24hrPct": "99.5%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_UP",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 6,
+        "smartMoneyHolders": [
+          {
+            "address": "0xc8075693f48668a264b9fa313b47f52712fcc12b",
+            "userName": "texaskid",
+            "rank": 11,
+            "pnl": 1558223.3681477031,
+            "amount": 9428.06147,
+            "outcome": 0
+          },
+          {
+            "address": "0x32ed517a571c01b6e9adecf61ba81ca48ff2f960",
+            "userName": "sportmaster777",
+            "rank": 34,
+            "pnl": 690721.3574362729,
+            "amount": 6236.598258,
+            "outcome": 0
+          },
+          {
+            "address": "0x777d9f00c2b4f7b829c9de0049ca3e707db05143",
+            "userName": "CarlosMC",
+            "rank": 12,
+            "pnl": 1551377.9062193758,
+            "amount": 21099.61639,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1961503.6883128001,
+            "amount": 2762.859705,
+            "outcome": 1
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 33,
+            "pnl": 701923.7170136134,
+            "amount": 2287.72625,
+            "outcome": 1
+          },
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2913946.184874371,
+            "amount": 1707,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 13.5,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 7,
+      "score": 80.3,
+      "question": "Chicago White Sox vs. Arizona Diamondbacks",
+      "conditionId": "0x5c39036de93ed17335e4b6c91fa1ed44178728ec232bf21c2b4309221d2d4eed",
+      "url": "https://polymarket.com/event/mlb-cws-ari-2026-04-21",
+      "hoursLeft": 167,
+      "endDate": "2026-04-29T01:40:00Z",
+      "pricing": {
+        "lastTradePrice": 0.88,
+        "bestBid": 0.91,
+        "bestAsk": 0.92,
+        "spread": 0.01,
+        "outcomes": [
+          "Chicago White Sox",
+          "Arizona Diamondbacks"
+        ],
+        "outcomePrices": [
+          "0.915",
+          "0.085"
+        ],
+        "oneDayPriceChange": 0.49,
+        "oneHourPriceChange": 0.5
+      },
+      "activity": {
+        "volume24hr": 523764.8497420002,
+        "volumeTotal": 523812.3315559998,
+        "liquidity": 14382.7646,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_UP",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 6,
+        "smartMoneyHolders": [
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 8,
+            "pnl": 1753381.67327672,
+            "amount": 160302.08847,
+            "outcome": 0
+          },
+          {
+            "address": "0x777d9f00c2b4f7b829c9de0049ca3e707db05143",
+            "userName": "CarlosMC",
+            "rank": 12,
+            "pnl": 1551377.9062193758,
+            "amount": 115098.52142,
+            "outcome": 0
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 9,
+            "pnl": 1684264.8053409231,
+            "amount": 11134.168625,
+            "outcome": 0
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 33,
+            "pnl": 701923.7170136134,
+            "amount": 3866.78925,
+            "outcome": 0
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2200219.211397862,
+            "amount": 2808.604202,
+            "outcome": 0
+          },
+          {
+            "address": "0xb45a797faa52b0fd8adc56d30382022b7b12192c",
+            "userName": "bcda",
+            "rank": 24,
+            "pnl": 943664.0285190698,
+            "amount": 100000,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 15,
+        "volumeSpike": 15,
+        "liquidity": 5,
+        "priceBoundary": 5,
+        "competitive": 4.3
+      }
+    },
+    {
+      "rank": 8,
+      "score": 80.3,
+      "question": "Los Angeles Dodgers vs. San Francisco Giants",
+      "conditionId": "0x0b770fe2a8948862e4ef484d90b01a04c325efba840e15d6f0d4a7cc1e634315",
+      "url": "https://polymarket.com/event/mlb-lad-sf-2026-04-21",
+      "hoursLeft": 167,
+      "endDate": "2026-04-29T01:45:00Z",
+      "pricing": {
+        "lastTradePrice": 0.28,
+        "bestBid": 0.26,
+        "bestAsk": 0.27,
+        "spread": 0.01,
+        "outcomes": [
+          "Los Angeles Dodgers",
+          "San Francisco Giants"
+        ],
+        "outcomePrices": [
+          "0.265",
+          "0.735"
+        ],
+        "oneDayPriceChange": -0.36,
+        "oneHourPriceChange": -0.36
+      },
+      "activity": {
+        "volume24hr": 404909.7807119996,
+        "volumeTotal": 406463.75242300006,
+        "liquidity": 56219.3559,
+        "volume24hrPct": "99.6%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 8,
+        "smartMoneyHolders": [
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2913946.184874371,
+            "amount": 8456.027931,
+            "outcome": 0
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2200219.211397862,
+            "amount": 4906.067858,
+            "outcome": 0
+          },
+          {
+            "address": "0x777d9f00c2b4f7b829c9de0049ca3e707db05143",
+            "userName": "CarlosMC",
+            "rank": 12,
+            "pnl": 1551377.9062193758,
+            "amount": 67284.077399,
+            "outcome": 1
+          },
+          {
+            "address": "0xa5ea13a81d2b7e8e424b182bdc1db08e756bd96a",
+            "userName": "bossoskil1",
+            "rank": 26,
+            "pnl": 854606.7930380793,
+            "amount": 39888.112431,
+            "outcome": 1
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 33,
+            "pnl": 701923.7170136134,
+            "amount": 17511.428673,
+            "outcome": 1
+          },
+          {
+            "address": "0x32ed517a571c01b6e9adecf61ba81ca48ff2f960",
+            "userName": "sportmaster777",
+            "rank": 34,
+            "pnl": 690721.3574362729,
+            "amount": 12368.476047,
+            "outcome": 1
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 10,
+            "pnl": 1666053.9956266107,
+            "amount": 8424.413076,
+            "outcome": 1
+          },
+          {
+            "address": "0xc8075693f48668a264b9fa313b47f52712fcc12b",
+            "userName": "texaskid",
+            "rank": 11,
+            "pnl": 1558223.3681477031,
+            "amount": 4545.648209,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 15,
+        "volumeSpike": 15,
+        "liquidity": 7.6,
+        "priceBoundary": 2,
+        "competitive": 4.7
+      }
+    },
+    {
+      "rank": 9,
+      "score": 78.7,
+      "question": "Pittsburgh Pirates vs. Texas Rangers",
+      "conditionId": "0xfe371b00ba65ae47b7a64310d3010cdf83199dcfea3273e969d7c4d591639be6",
+      "url": "https://polymarket.com/event/mlb-pit-tex-2026-04-21",
+      "hoursLeft": 166,
+      "endDate": "2026-04-29T00:05:00Z",
+      "pricing": {
+        "lastTradePrice": 0.029,
+        "bestBid": 0.031,
+        "bestAsk": 0.034,
+        "spread": 0.003,
+        "outcomes": [
+          "Pittsburgh Pirates",
+          "Texas Rangers"
+        ],
+        "outcomePrices": [
+          "0.0325",
+          "0.9675"
+        ],
+        "oneDayPriceChange": -0.4725,
+        "oneHourPriceChange": -0.3225
+      },
+      "activity": {
+        "volume24hr": 189756.65107700037,
+        "volumeTotal": 189863.7874139986,
+        "liquidity": 33377.93132,
+        "volume24hrPct": "99.9%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 5,
+        "smartMoneyHolders": [
+          {
+            "address": "0xa5ea13a81d2b7e8e424b182bdc1db08e756bd96a",
+            "userName": "bossoskil1",
+            "rank": 26,
+            "pnl": 854606.7930380793,
+            "amount": 9642.373652,
+            "outcome": 0
+          },
+          {
+            "address": "0x32ed517a571c01b6e9adecf61ba81ca48ff2f960",
+            "userName": "sportmaster777",
+            "rank": 34,
+            "pnl": 690721.3574362729,
+            "amount": 5295.358402,
+            "outcome": 0
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 33,
+            "pnl": 701923.7170136134,
+            "amount": 3077.57179,
+            "outcome": 0
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2200219.211397862,
+            "amount": 743.545791,
+            "outcome": 0
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 10,
+            "pnl": 1666053.9956266107,
+            "amount": 5707.09141,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 15,
+        "volumeSpike": 15,
+        "liquidity": 6.6,
+        "priceBoundary": 2,
+        "competitive": 4.1
+      }
+    },
+    {
+      "rank": 10,
+      "score": 78.6,
+      "question": "New York Yankees vs. Boston Red Sox",
+      "conditionId": "0x51aea6a28a5e2cc78e3f502eced9912086d71c1be1c4f5e86ded783e9c610397",
+      "url": "https://polymarket.com/event/mlb-nyy-bos-2026-04-21",
+      "hoursLeft": 164,
+      "endDate": "2026-04-28T22:45:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "New York Yankees",
+          "Boston Red Sox"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneDayPriceChange": 0.4845,
+        "oneHourPriceChange": 0.013
+      },
+      "activity": {
+        "volume24hr": 631949.0479889995,
+        "volumeTotal": 634867.7915210014,
+        "liquidity": 604125.49288,
+        "volume24hrPct": "99.5%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_UP",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 8,
+        "smartMoneyHolders": [
+          {
+            "address": "0xb45a797faa52b0fd8adc56d30382022b7b12192c",
+            "userName": "bcda",
+            "rank": 24,
+            "pnl": 943664.0285190698,
+            "amount": 220232.658376,
+            "outcome": 0
+          },
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2913946.184874371,
+            "amount": 3242.26,
+            "outcome": 0
+          },
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 28,
+            "pnl": 823020.5074032081,
+            "amount": 3178.430395,
+            "outcome": 0
+          },
+          {
+            "address": "0xc8075693f48668a264b9fa313b47f52712fcc12b",
+            "userName": "texaskid",
+            "rank": 11,
+            "pnl": 1558223.3681477031,
+            "amount": 77475.331181,
+            "outcome": 1
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 9,
+            "pnl": 1684264.8053409231,
+            "amount": 57170.9063,
+            "outcome": 1
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 33,
+            "pnl": 701923.7170136134,
+            "amount": 8954.945887,
+            "outcome": 1
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2200219.211397862,
+            "amount": 6584.814367,
+            "outcome": 1
+          },
+          {
+            "address": "0x32ed517a571c01b6e9adecf61ba81ca48ff2f960",
+            "userName": "sportmaster777",
+            "rank": 34,
+            "pnl": 690721.3574362729,
+            "amount": 4009.73814,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 11.6,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 11,
+      "score": 77.9,
+      "question": "Athletics vs. Seattle Mariners",
+      "conditionId": "0xde71439ebda5ca0835ba965557784983e09db6631df5f092868aa128c1717eee",
+      "url": "https://polymarket.com/event/mlb-oak-sea-2026-04-21",
+      "hoursLeft": 167,
+      "endDate": "2026-04-29T01:40:00Z",
+      "pricing": {
+        "lastTradePrice": 0.5,
+        "bestBid": 0.51,
+        "bestAsk": 0.52,
+        "spread": 0.01,
+        "outcomes": [
+          "Athletics",
+          "Seattle Mariners"
+        ],
+        "outcomePrices": [
+          "0.515",
+          "0.485"
+        ],
+        "oneDayPriceChange": 0.12,
+        "oneHourPriceChange": 0.11
+      },
+      "activity": {
+        "volume24hr": 261175.82246799988,
+        "volumeTotal": 262289.0551419998,
+        "liquidity": 22366.7827,
+        "volume24hrPct": "99.6%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "TRENDING_UP",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 7,
+        "smartMoneyHolders": [
+          {
+            "address": "0xa5ea13a81d2b7e8e424b182bdc1db08e756bd96a",
+            "userName": "bossoskil1",
+            "rank": 26,
+            "pnl": 854606.7930380793,
+            "amount": 13254.169977,
+            "outcome": 0
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 9,
+            "pnl": 1684264.8053409231,
+            "amount": 8397.94999,
+            "outcome": 0
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 33,
+            "pnl": 701923.7170136134,
+            "amount": 7981.86007,
+            "outcome": 0
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 10,
+            "pnl": 1666053.9956266107,
+            "amount": 3354.39857,
+            "outcome": 0
+          },
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 8,
+            "pnl": 1753381.67327672,
+            "amount": 2470.88025,
+            "outcome": 0
+          },
+          {
+            "address": "0xb45a797faa52b0fd8adc56d30382022b7b12192c",
+            "userName": "bcda",
+            "rank": 24,
+            "pnl": 943664.0285190698,
+            "amount": 99999.997559,
+            "outcome": 1
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2200219.211397862,
+            "amount": 11898.013962,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 15,
+        "volumeSpike": 15,
+        "liquidity": 5.9,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 12,
+      "score": 77.6,
+      "question": "Milwaukee Brewers vs. Detroit Tigers",
+      "conditionId": "0xef4c89ccc971304dd4fd623d87dff1dc1c932cb6ec7685660f6c63fb9d942309",
+      "url": "https://polymarket.com/event/mlb-mil-det-2026-04-21",
+      "hoursLeft": 164,
+      "endDate": "2026-04-28T22:40:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "Milwaukee Brewers",
+          "Detroit Tigers"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneDayPriceChange": 0.5245,
+        "oneHourPriceChange": 0.0025
+      },
+      "activity": {
+        "volume24hr": 220828.251925,
+        "volumeTotal": 229561.13633499996,
+        "liquidity": 475249.20507,
+        "volume24hrPct": "96.2%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_UP",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 6,
+        "smartMoneyHolders": [
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2200219.211397862,
+            "amount": 7786.687792,
+            "outcome": 1
+          },
+          {
+            "address": "0x32ed517a571c01b6e9adecf61ba81ca48ff2f960",
+            "userName": "sportmaster777",
+            "rank": 34,
+            "pnl": 690721.3574362729,
+            "amount": 7320.728324,
+            "outcome": 1
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 33,
+            "pnl": 701923.7170136134,
+            "amount": 3355.59316,
+            "outcome": 1
+          },
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 8,
+            "pnl": 1753381.67327672,
+            "amount": 3301.77639,
+            "outcome": 1
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 10,
+            "pnl": 1666053.9956266107,
+            "amount": 2814.1018,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1961503.6883128001,
+            "amount": 1612,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 10.6,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 13,
+      "score": 77.4,
+      "question": "Cincinnati Reds vs. Tampa Bay Rays",
+      "conditionId": "0x6401c6ef788346e456325faa6cfa24cc160a0af345f70c8868bdd2f7522172ec",
+      "url": "https://polymarket.com/event/mlb-cin-tb-2026-04-21",
+      "hoursLeft": 164,
+      "endDate": "2026-04-28T22:40:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "Cincinnati Reds",
+          "Tampa Bay Rays"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneDayPriceChange": 0.5045,
+        "oneHourPriceChange": 0.0005
+      },
+      "activity": {
+        "volume24hr": 162348.28966599997,
+        "volumeTotal": 163793.01092599984,
+        "liquidity": 436706.43947,
+        "volume24hrPct": "99.1%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_UP",
+        "smartMoneySide": "SPLIT",
+        "smartMoneyCount": 4,
+        "smartMoneyHolders": [
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 33,
+            "pnl": 701923.7170136134,
+            "amount": 4049.2086,
+            "outcome": 0
+          },
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 8,
+            "pnl": 1753381.67327672,
+            "amount": 1837.00554,
+            "outcome": 0
+          },
+          {
+            "address": "0xb45a797faa52b0fd8adc56d30382022b7b12192c",
+            "userName": "bcda",
+            "rank": 24,
+            "pnl": 943664.0285190698,
+            "amount": 24726.490382,
+            "outcome": 1
+          },
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2913946.184874371,
+            "amount": 3237.173702,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 10.4,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 14,
+      "score": 76.8,
+      "question": "Philadelphia Phillies vs. Chicago Cubs",
+      "conditionId": "0xe2b535c3bb13965c181284a29de57c976e60895bc0a020fe483a50f3bc573c39",
+      "url": "https://polymarket.com/event/mlb-phi-chc-2026-04-21",
+      "hoursLeft": 165,
+      "endDate": "2026-04-28T23:40:00Z",
+      "pricing": {
+        "lastTradePrice": 0.003,
+        "bestBid": 0.003,
+        "bestAsk": 0.004,
+        "spread": 0.001,
+        "outcomes": [
+          "Philadelphia Phillies",
+          "Chicago Cubs"
+        ],
+        "outcomePrices": [
+          "0.0035",
+          "0.9965"
+        ],
+        "oneDayPriceChange": -0.4715,
+        "oneHourPriceChange": -0.3515
+      },
+      "activity": {
+        "volume24hr": 410600.53576499986,
+        "volumeTotal": 418766.48017299984,
+        "liquidity": 12718.54177,
+        "volume24hrPct": "98.1%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 5,
+        "smartMoneyHolders": [
+          {
+            "address": "0xc8075693f48668a264b9fa313b47f52712fcc12b",
+            "userName": "texaskid",
+            "rank": 11,
+            "pnl": 1558223.3681477031,
+            "amount": 49204.103875,
+            "outcome": 1
+          },
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 8,
+            "pnl": 1753381.67327672,
+            "amount": 6260.858162,
+            "outcome": 1
+          },
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2913946.184874371,
+            "amount": 6517.84544,
+            "outcome": 0
+          },
+          {
+            "address": "0x32ed517a571c01b6e9adecf61ba81ca48ff2f960",
+            "userName": "sportmaster777",
+            "rank": 34,
+            "pnl": 690721.3574362729,
+            "amount": 2364.707602,
+            "outcome": 0
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 33,
+            "pnl": 701923.7170136134,
+            "amount": 2073.67645,
+            "outcome": 0
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 15,
+        "volumeSpike": 15,
+        "liquidity": 4.8,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 15,
+      "score": 75,
+      "question": "Houston Astros vs. Cleveland Guardians",
+      "conditionId": "0xee64fbf357d404c0ad0f44c6c4eaf976035dad7aee615e656aeeb80dc5d7dfd3",
+      "url": "https://polymarket.com/event/mlb-hou-cle-2026-04-21",
+      "hoursLeft": 164,
+      "endDate": "2026-04-28T22:10:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Houston Astros",
+          "Cleveland Guardians"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneDayPriceChange": -0.4445
+      },
+      "activity": {
+        "volume24hr": 774644.8826449995,
+        "volumeTotal": 777090.0876579996,
+        "liquidity": 591248.02898,
+        "volume24hrPct": "99.7%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": "SPLIT",
+        "smartMoneyCount": 6,
+        "smartMoneyHolders": [
+          {
+            "address": "0xa5ea13a81d2b7e8e424b182bdc1db08e756bd96a",
+            "userName": "bossoskil1",
+            "rank": 26,
+            "pnl": 854606.7930380793,
+            "amount": 69999.843728,
+            "outcome": 0
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 9,
+            "pnl": 1684264.8053409231,
+            "amount": 14393.824039,
+            "outcome": 0
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1961503.6883128001,
+            "amount": 5759.52,
+            "outcome": 0
+          },
+          {
+            "address": "0xc8075693f48668a264b9fa313b47f52712fcc12b",
+            "userName": "texaskid",
+            "rank": 11,
+            "pnl": 1558223.3681477031,
+            "amount": 95970.31338,
+            "outcome": 1
+          },
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2913946.184874371,
+            "amount": 10017.654582,
+            "outcome": 1
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 10,
+            "pnl": 1666053.9956266107,
+            "amount": 4419.729636,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 8,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 16,
+      "score": 73.4,
+      "question": "Toronto Blue Jays vs. Los Angeles Angels",
+      "conditionId": "0x2e1c057c6edd415f03f11c532fcafa0315a8b00134cf2f354614b278a014765e",
+      "url": "https://polymarket.com/event/mlb-tor-laa-2026-04-21",
+      "hoursLeft": 167,
+      "endDate": "2026-04-29T01:38:00Z",
+      "pricing": {
+        "lastTradePrice": 0.47,
+        "bestBid": 0.43,
+        "bestAsk": 0.44,
+        "spread": 0.01,
+        "outcomes": [
+          "Toronto Blue Jays",
+          "Los Angeles Angels"
+        ],
+        "outcomePrices": [
+          "0.435",
+          "0.565"
+        ],
+        "oneDayPriceChange": -0.06,
+        "oneHourPriceChange": -0.06
+      },
+      "activity": {
+        "volume24hr": 152020.71618199992,
+        "volumeTotal": 152668.84796400002,
+        "liquidity": 62650.8891,
+        "volume24hrPct": "99.6%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "TRENDING_DOWN",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 5,
+        "smartMoneyHolders": [
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 9,
+            "pnl": 1684264.8053409231,
+            "amount": 38626.103979,
+            "outcome": 0
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 33,
+            "pnl": 701923.7170136134,
+            "amount": 3778.5472,
+            "outcome": 1
+          },
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 8,
+            "pnl": 1753381.67327672,
+            "amount": 2531.1993,
+            "outcome": 1
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2200219.211397862,
+            "amount": 1745.421526,
+            "outcome": 1
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 10,
+            "pnl": 1666053.9956266107,
+            "amount": 1176.74416,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 8.6,
+        "volumeSpike": 15,
+        "liquidity": 7.8,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 17,
+      "score": 69.3,
+      "question": "Baltimore Orioles vs. Kansas City Royals",
+      "conditionId": "0xb6dbbd034d67b028a5acc8246b51affaa5c6fc2ce94a4593cfde55af354306b4",
+      "url": "https://polymarket.com/event/mlb-bal-kc-2026-04-21",
+      "hoursLeft": 165,
+      "endDate": "2026-04-28T23:40:00Z",
+      "pricing": {
+        "lastTradePrice": 0.46,
+        "bestBid": 0.49,
+        "bestAsk": 0.5,
+        "spread": 0.01,
+        "outcomes": [
+          "Baltimore Orioles",
+          "Kansas City Royals"
+        ],
+        "outcomePrices": [
+          "0.495",
+          "0.505"
+        ],
+        "oneDayPriceChange": 0.04,
+        "oneHourPriceChange": 0.03
+      },
+      "activity": {
+        "volume24hr": 247289.49939899985,
+        "volumeTotal": 248523.6844909996,
+        "liquidity": 51898.2261,
+        "volume24hrPct": "99.5%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 7,
+        "smartMoneyHolders": [
+          {
+            "address": "0xa5ea13a81d2b7e8e424b182bdc1db08e756bd96a",
+            "userName": "bossoskil1",
+            "rank": 26,
+            "pnl": 854606.7930380793,
+            "amount": 12601.386292,
+            "outcome": 0
+          },
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2913946.184874371,
+            "amount": 6528.774706,
+            "outcome": 0
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 10,
+            "pnl": 1666053.9956266107,
+            "amount": 5257.902297,
+            "outcome": 0
+          },
+          {
+            "address": "0xc8075693f48668a264b9fa313b47f52712fcc12b",
+            "userName": "texaskid",
+            "rank": 11,
+            "pnl": 1558223.3681477031,
+            "amount": 4349.58139,
+            "outcome": 0
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 9,
+            "pnl": 1684264.8053409231,
+            "amount": 18301.746552,
+            "outcome": 1
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2200219.211397862,
+            "amount": 9609.46107,
+            "outcome": 1
+          },
+          {
+            "address": "0x32ed517a571c01b6e9adecf61ba81ca48ff2f960",
+            "userName": "sportmaster777",
+            "rank": 34,
+            "pnl": 690721.3574362729,
+            "amount": 8128.611726,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 4.8,
+        "volumeSpike": 15,
+        "liquidity": 7.5,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 18,
+      "score": 62.7,
+      "question": "US x Iran diplomatic meeting by April 23, 2026?",
+      "conditionId": "0x747a380bab6e04278667e1e881cc62bd2a6a6090d295678f426249d06ca79712",
+      "url": "https://polymarket.com/event/us-x-iran-diplomatic-meeting-by-april-23-2026",
+      "hoursLeft": 22,
+      "endDate": "2026-04-23T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.14,
+        "bestBid": 0.13,
+        "bestAsk": 0.15,
+        "spread": 0.02,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.14",
+          "0.86"
+        ],
+        "oneDayPriceChange": -0.745,
+        "oneHourPriceChange": -0.015
+      },
+      "activity": {
+        "volume24hr": 517434.5950310003,
+        "volumeTotal": 540280.3747130014,
+        "liquidity": 31461.3199,
+        "volume24hrPct": "95.8%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 20,
+        "priceMomentum": 11.8,
+        "volumeSpike": 15,
+        "liquidity": 6.5,
+        "priceBoundary": 5,
+        "competitive": 4.4
+      }
+    },
+    {
+      "rank": 19,
+      "score": 62.6,
+      "question": "Will Elon Musk post <40 tweets from April 20 to April 22, 2026?",
+      "conditionId": "0xb295f8b30d32c810f2850f52eeca0a700dfed402f099a9f50e39fcf98e09ab7b",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-april-20-april-22-0-39",
+      "hoursLeft": 14,
+      "endDate": "2026-04-22T16:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.247,
+        "bestBid": 0.242,
+        "bestAsk": 0.25,
+        "spread": 0.008,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.246",
+          "0.754"
+        ],
+        "oneDayPriceChange": 0.203,
+        "oneHourPriceChange": 0.0635
+      },
+      "activity": {
+        "volume24hr": 201957.51550100016,
+        "volumeTotal": 260886.2620649996,
+        "liquidity": 13343.36742,
+        "volume24hrPct": "77.4%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_UP",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 20,
+        "priceMomentum": 15,
+        "volumeSpike": 15,
+        "liquidity": 4.9,
+        "priceBoundary": 3,
+        "competitive": 4.7
+      }
+    },
+    {
+      "rank": 20,
+      "score": 61.5,
+      "question": "Will Donald Trump announce that the United States blockade of the Strait of Hormuz has been lifted by April 23, 2026?",
+      "conditionId": "0xd839785e6d4e4fdd44ef0e90f315eecccde47578924491e6ae74499e9f62d29e",
+      "url": "https://polymarket.com/event/will-donald-trump-announce-that-the-united-states-blockade-of-the-strait-of-hormuz-has-been-lifted-by-april-23-2026",
+      "hoursLeft": 22,
+      "endDate": "2026-04-23T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.17,
+        "bestBid": 0.17,
+        "bestAsk": 0.19,
+        "spread": 0.02,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.18",
+          "0.82"
+        ],
+        "oneDayPriceChange": -0.19,
+        "oneHourPriceChange": -0.025
+      },
+      "activity": {
+        "volume24hr": 431990.762713,
+        "volumeTotal": 630184.7931889996,
+        "liquidity": 36796.1595,
+        "volume24hrPct": "68.5%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 20,
+        "priceMomentum": 12.2,
+        "volumeSpike": 15,
+        "liquidity": 6.8,
+        "priceBoundary": 3,
+        "competitive": 4.5
+      }
+    },
+    {
+      "rank": 21,
+      "score": 60.8,
+      "question": "US x Iran diplomatic meeting by April 24, 2026?",
+      "conditionId": "0xe0ae0ae2866b5b6c2af93da2147022c19f92d807e92594a74f868a4c8a1c359d",
+      "url": "https://polymarket.com/event/us-x-iran-diplomatic-meeting-by-april-24-2026",
+      "hoursLeft": 46,
+      "endDate": "2026-04-24T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.18,
+        "bestBid": 0.18,
+        "bestAsk": 0.19,
+        "spread": 0.01,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.185",
+          "0.815"
+        ],
+        "oneDayPriceChange": -0.7,
+        "oneHourPriceChange": -0.04
+      },
+      "activity": {
+        "volume24hr": 250384.6455629995,
+        "volumeTotal": 278249.5381410002,
+        "liquidity": 27123.5985,
+        "volume24hrPct": "90%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 18,
+        "priceMomentum": 14,
+        "volumeSpike": 15,
+        "liquidity": 6.2,
+        "priceBoundary": 3,
+        "competitive": 4.5
+      }
+    },
+    {
+      "rank": 22,
+      "score": 49.8,
+      "question": "US x Iran permanent peace deal by April 24, 2026?",
+      "conditionId": "0x084a4aac9da433824013ad192196193d7d1bd8293c0fedc9eb7e687909fd1d0f",
+      "url": "https://polymarket.com/event/us-x-iran-permanent-peace-deal-by-april-24-2026",
+      "hoursLeft": 46,
+      "endDate": "2026-04-24T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.04,
+        "bestBid": 0.04,
+        "bestAsk": 0.05,
+        "spread": 0.01,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.045",
+          "0.955"
+        ],
+        "oneHourPriceChange": -0.01
+      },
+      "activity": {
+        "volume24hr": 144509.29755300004,
+        "volumeTotal": 144509.29755299963,
+        "liquidity": 264787.1018,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 18,
+        "priceMomentum": 0.7,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4.1
+      }
+    },
+    {
+      "rank": 23,
+      "score": 48.8,
+      "question": "Dota 2: South America Rejects vs MOUZ (BO3) - PGL Wallachia Group Stage",
+      "conditionId": "0xfed0123acce8e427be20352635d4af1dd494c1c2bb68a94701b0208cc4fb7d89",
+      "url": "https://polymarket.com/event/dota2-sar1-mouz-2026-04-22",
+      "hoursLeft": 14,
+      "endDate": "2026-04-22T16:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.48,
+        "bestBid": 0.47,
+        "bestAsk": 0.48,
+        "spread": 0.01,
+        "outcomes": [
+          "South America Rejects",
+          "MOUZ"
+        ],
+        "outcomePrices": [
+          "0.475",
+          "0.525"
+        ]
+      },
+      "activity": {
+        "volume24hr": 195127.93061800004,
+        "volumeTotal": 195127.930618,
+        "liquidity": 61554.0647,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 20,
+        "priceMomentum": 0,
+        "volumeSpike": 15,
+        "liquidity": 7.8,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 24,
+      "score": 48.4,
+      "question": "Will the price of Bitcoin be above $68,000 on April 22?",
+      "conditionId": "0xf6105f8c7a469f55174e0930282e53be1f8954d463a291d566329019c6c7cd88",
+      "url": "https://polymarket.com/event/bitcoin-above-68k-on-april-22",
+      "hoursLeft": 14,
+      "endDate": "2026-04-22T16:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneDayPriceChange": 0.002
+      },
+      "activity": {
+        "volume24hr": 380306.343196,
+        "volumeTotal": 409643.7795340002,
+        "liquidity": 48167.96882,
+        "volume24hrPct": "92.8%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 20,
+        "priceMomentum": 0.1,
+        "volumeSpike": 15,
+        "liquidity": 7.3,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 25,
+      "score": 47.9,
+      "question": "Will the price of Bitcoin be between $66,000 and $68,000 on April 22?",
+      "conditionId": "0x81a14b37ca2316308bad01709613a91291687d1c834f0dea55c4238a812abace",
+      "url": "https://polymarket.com/event/will-the-price-of-bitcoin-be-between-66000-68000-on-april-22",
+      "hoursLeft": 14,
+      "endDate": "2026-04-22T16:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.002,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneDayPriceChange": -0.004
+      },
+      "activity": {
+        "volume24hr": 222350.565166,
+        "volumeTotal": 229231.901796,
+        "liquidity": 34902.55992,
+        "volume24hrPct": "97%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 20,
+        "priceMomentum": 0.2,
+        "volumeSpike": 15,
+        "liquidity": 6.7,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 26,
+      "score": 43.8,
+      "question": "Will Elon Musk post 360-379 tweets from April 17 to April 24, 2026?",
+      "conditionId": "0xc064713aaa1d127fb6fddd052bf06f97724dd65e23699e45d0ae101502205d95",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-april-17-april-24-360-379",
+      "hoursLeft": 62,
+      "endDate": "2026-04-24T16:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestBid": 0.001,
+        "bestAsk": 0.002,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.0015",
+          "0.9985"
+        ],
+        "oneDayPriceChange": -0.005
+      },
+      "activity": {
+        "volume24hr": 157612.256119,
+        "volumeTotal": 217166.1922029999,
+        "liquidity": 55064.65709,
+        "volume24hrPct": "72.6%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 15,
+        "priceMomentum": 0.2,
+        "volumeSpike": 15,
+        "liquidity": 7.6,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 27,
+      "score": 34.5,
+      "question": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
+      "conditionId": "0xd4d00e5bf8b960cc37c74c1ec19e41e00b0706add203ddcfbb65ad006c5c223a",
+      "url": "https://polymarket.com/event/will-the-fed-increase-interest-rates-by-25-bps-after-the-april-2026-meeting",
+      "hoursLeft": 166,
+      "endDate": "2026-04-29T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.003,
+        "bestBid": 0.002,
+        "bestAsk": 0.003,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.0025",
+          "0.9975"
+        ]
+      },
+      "activity": {
+        "volume24hr": 829550.4683120005,
+        "volumeTotal": 30542275.78920322,
+        "liquidity": 1615028.97709,
+        "volume24hrPct": "2.7%",
+        "activityLevel": "NORMAL"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 1,
+        "smartMoneyHolders": [
+          {
+            "address": "0x93abbc022ce98d6f45d4444b594791cc4b7a9723",
+            "userName": "gatorr",
+            "rank": 19,
+            "pnl": 1063362.9207363548,
+            "amount": 1600000,
+            "outcome": 0
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 11.5,
+        "timeUrgency": 6,
+        "priceMomentum": 0,
+        "volumeSpike": 1,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 28,
+      "score": 25.1,
+      "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
+      "conditionId": "0x36e8ca24d2a13435f519f15580d42b45cdbe3bc425fb39a7c2733260357af0fa",
+      "url": "https://polymarket.com/event/will-there-be-no-change-in-fed-interest-rates-after-the-april-2026-meeting",
+      "hoursLeft": 166,
+      "endDate": "2026-04-29T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.994,
+        "bestBid": 0.993,
+        "bestAsk": 0.994,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.9935",
+          "0.0065"
+        ]
+      },
+      "activity": {
+        "volume24hr": 2177320.2779680006,
+        "volumeTotal": 26129203.42313702,
+        "liquidity": 1944362.32519,
+        "volume24hrPct": "8.3%",
+        "activityLevel": "NORMAL"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 6,
+        "priceMomentum": 0,
+        "volumeSpike": 3.1,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 29,
+      "score": 23.3,
+      "question": "Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?",
+      "conditionId": "0x0d14f5dc9fb3250ec888b1ac8d9fe9a0ce06f9d3ea60fdf138e8690622fea84c",
+      "url": "https://polymarket.com/event/will-the-fed-decrease-interest-rates-by-25-bps-after-the-april-2026-meeting",
+      "hoursLeft": 166,
+      "endDate": "2026-04-29T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.003,
+        "bestBid": 0.002,
+        "bestAsk": 0.003,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.0025",
+          "0.9975"
+        ],
+        "oneDayPriceChange": -0.001
+      },
+      "activity": {
+        "volume24hr": 866871.8301369994,
+        "volumeTotal": 25022728.333453998,
+        "liquidity": 1056770.43328,
+        "volume24hrPct": "3.5%",
+        "activityLevel": "NORMAL"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 6,
+        "priceMomentum": 0,
+        "volumeSpike": 1.3,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 30,
+      "score": 22.8,
+      "question": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
+      "conditionId": "0xd72622d154dfe65b9c019d6afcfe75a55717e5c502db611f555b101aafbf6ec5",
+      "url": "https://polymarket.com/event/will-the-fed-decrease-interest-rates-by-50-bps-after-the-april-2026-meeting",
+      "hoursLeft": 166,
+      "endDate": "2026-04-29T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.002,
+        "bestBid": 0.001,
+        "bestAsk": 0.002,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.0015",
+          "0.9985"
+        ]
+      },
+      "activity": {
+        "volume24hr": 977370.48,
+        "volumeTotal": 44710776.73100031,
+        "liquidity": 8664475.57158,
+        "volume24hrPct": "2.2%",
+        "activityLevel": "NORMAL"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 6,
+        "priceMomentum": 0,
+        "volumeSpike": 0.8,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    }
+  ]
+}

@@ -1,11 +1,12 @@
 services:
   scuderia:
-    image: ghcr.io/alinflorin/scuderia:4.1.0
+    image: ghcr.io/alinflorin/scuderia:4.3.3
     container_name: scuderia
     environment:
       - POLYMARKET_PRIVATE_KEY=${POLYMARKET_PRIVATE_KEY}
       - SLACK_CLI_TOKEN=${SLACK_CLI_TOKEN}
       - BUDGETCAPPERCENT=20
+      - CLAUDE_CODE_OAUTH_TOKEN=${CLAUDE_CODE_OAUTH_TOKEN}
     volumes:
       - type: bind
         source: ./data

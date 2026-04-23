@@ -1,0 +1,2624 @@
+
+> scuderia@1.0.0 start
+> tsx index.ts smart-analysis --limit 40
+
+{
+  "success": true,
+  "generatedAt": "2026-04-21T19:21:32.927Z",
+  "totalMarketsEvaluated": 40,
+  "markets": [
+    {
+      "rank": 1,
+      "score": 83.5,
+      "question": "Rockets vs. Lakers",
+      "conditionId": "0xd57db42dc26f8cdd6f26e9148ba5b40775af15ea104b6d0068ebfd4c7342d7aa",
+      "url": "https://polymarket.com/event/nba-hou-lal-2026-04-21",
+      "hoursLeft": 7,
+      "endDate": "2026-04-22T02:30:00Z",
+      "pricing": {
+        "lastTradePrice": 0.65,
+        "bestBid": 0.64,
+        "bestAsk": 0.65,
+        "spread": 0.01,
+        "outcomes": [
+          "Rockets",
+          "Lakers"
+        ],
+        "outcomePrices": [
+          "0.645",
+          "0.355"
+        ],
+        "oneDayPriceChange": 0.03
+      },
+      "activity": {
+        "volume24hr": 621555.4075609993,
+        "volumeTotal": 781194.296715998,
+        "liquidity": 981175.9187,
+        "volume24hrPct": "79.6%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "SPLIT",
+        "smartMoneyCount": 6,
+        "smartMoneyHolders": [
+          {
+            "address": "0x93abbc022ce98d6f45d4444b594791cc4b7a9723",
+            "userName": "gatorr",
+            "rank": 18,
+            "pnl": 1087259.464866242,
+            "amount": 90389.980524,
+            "outcome": 0
+          },
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 817907.7594108625,
+            "amount": 4765.09147,
+            "outcome": 0
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 34,
+            "pnl": 682924.3957387606,
+            "amount": 4009.26912,
+            "outcome": 0
+          },
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 9,
+            "pnl": 1539983.2462493358,
+            "amount": 161676.53107,
+            "outcome": 1
+          },
+          {
+            "address": "0xbddf61af533ff524d27154e589d2d7a81510c684",
+            "userName": "Countryside",
+            "rank": 15,
+            "pnl": 1211139.4174300109,
+            "amount": 86095.868602,
+            "outcome": 1
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 10,
+            "pnl": 1494254.6773096446,
+            "amount": 5443.4302,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 20,
+        "priceMomentum": 1.6,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4.9
+      }
+    },
+    {
+      "rank": 2,
+      "score": 83.1,
+      "question": "Will Club Atlético de Madrid win on 2026-04-22?",
+      "conditionId": "0x8aa2f0b3b9edd1b07163286d3159c3a501d94cf0808841d5274336c68b1f7d44",
+      "url": "https://polymarket.com/event/lal-elc-mad-2026-04-22-mad",
+      "hoursLeft": 22,
+      "endDate": "2026-04-22T17:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.36,
+        "bestBid": 0.35,
+        "bestAsk": 0.36,
+        "spread": 0.01,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.355",
+          "0.645"
+        ],
+        "oneDayPriceChange": -0.03
+      },
+      "activity": {
+        "volume24hr": 150031.40226999973,
+        "volumeTotal": 228519.84299399992,
+        "liquidity": 932588.3642,
+        "volume24hrPct": "65.7%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 5,
+        "smartMoneyHolders": [
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 9,
+            "pnl": 1539983.2462493358,
+            "amount": 110754.33525,
+            "outcome": 0
+          },
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 817907.7594108625,
+            "amount": 23890.340475,
+            "outcome": 1
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 8,
+            "pnl": 1708848.4225487271,
+            "amount": 12996.788312,
+            "outcome": 1
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2216584.871732354,
+            "amount": 7000.22,
+            "outcome": 1
+          },
+          {
+            "address": "0x7ea571c40408f340c1c8fc8eaacebab53c1bde7b",
+            "userName": "Cannae",
+            "rank": 36,
+            "pnl": 622049.1488653299,
+            "amount": 3088.147172,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 20,
+        "priceMomentum": 1.2,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4.9
+      }
+    },
+    {
+      "rank": 3,
+      "score": 81.1,
+      "question": "Spread: Rockets (-4.5)",
+      "conditionId": "0x62dee78c2621684e9475a39d0f9181dfe24b5d13cc01c3201eb6a9287c8cc8dd",
+      "url": "https://polymarket.com/event/nba-hou-lal-2026-04-21-spread-away-4pt5",
+      "hoursLeft": 7,
+      "endDate": "2026-04-22T02:30:00Z",
+      "pricing": {
+        "lastTradePrice": 0.52,
+        "bestBid": 0.51,
+        "bestAsk": 0.52,
+        "spread": 0.01,
+        "outcomes": [
+          "Rockets",
+          "Lakers"
+        ],
+        "outcomePrices": [
+          "0.515",
+          "0.485"
+        ],
+        "oneDayPriceChange": 0.01
+      },
+      "activity": {
+        "volume24hr": 732665.1392099999,
+        "volumeTotal": 742072.8283200029,
+        "liquidity": 157632.7996,
+        "volume24hrPct": "98.7%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 5,
+        "smartMoneyHolders": [
+          {
+            "address": "0x93abbc022ce98d6f45d4444b594791cc4b7a9723",
+            "userName": "gatorr",
+            "rank": 18,
+            "pnl": 1087259.464866242,
+            "amount": 135999.99333,
+            "outcome": 0
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 10,
+            "pnl": 1494254.6773096446,
+            "amount": 254182.550714,
+            "outcome": 1
+          },
+          {
+            "address": "0xa71093cafc0c099b4ccab24c3cb8018d817923c4",
+            "userName": "Talvez10",
+            "rank": 37,
+            "pnl": 618295.7150981834,
+            "amount": 127490.422185,
+            "outcome": 1
+          },
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 9,
+            "pnl": 1539983.2462493358,
+            "amount": 2928.521,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 2403.430583,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 20,
+        "priceMomentum": 0.5,
+        "volumeSpike": 15,
+        "liquidity": 9.6,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 4,
+      "score": 79.8,
+      "question": "Spread: Rockets (-5.5)",
+      "conditionId": "0x09ad3ebd93fc9fcd06a3cdf3ef87e455680df700819f9152091c871e3eeb3a0d",
+      "url": "https://polymarket.com/event/nba-hou-lal-2026-04-21-spread-away-5pt5",
+      "hoursLeft": 7,
+      "endDate": "2026-04-22T02:30:00Z",
+      "pricing": {
+        "lastTradePrice": 0.48,
+        "bestBid": 0.47,
+        "bestAsk": 0.48,
+        "spread": 0.01,
+        "outcomes": [
+          "Rockets",
+          "Lakers"
+        ],
+        "outcomePrices": [
+          "0.475",
+          "0.525"
+        ]
+      },
+      "activity": {
+        "volume24hr": 142749.32876499995,
+        "volumeTotal": 142749.3287650004,
+        "liquidity": 107433.2716,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 3,
+        "smartMoneyHolders": [
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 10,
+            "pnl": 1494254.6773096446,
+            "amount": 33825.043671,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 6130.153963,
+            "outcome": 1
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 34,
+            "pnl": 682924.3957387606,
+            "amount": 2848.02841,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 20,
+        "priceMomentum": 0,
+        "volumeSpike": 15,
+        "liquidity": 8.8,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 5,
+      "score": 77.4,
+      "question": "Madrid Open: Kaitlin Quevedo vs Venus Williams",
+      "conditionId": "0x51007078c1f6dfb695aaedd6f2d251ca43ef117747d9525443fdae80953bc6a1",
+      "url": "https://polymarket.com/event/wta-quevedo-william-2026-04-21",
+      "hoursLeft": 158,
+      "endDate": "2026-04-28T09:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "Kaitlin Quevedo",
+          "Venus Williams"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneDayPriceChange": 0.1995
+      },
+      "activity": {
+        "volume24hr": 323865.45971499995,
+        "volumeTotal": 327163.9066060002,
+        "liquidity": 257289.60869,
+        "volume24hrPct": "99%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_UP",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 3,
+        "smartMoneyHolders": [
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 8,
+            "pnl": 1708848.4225487271,
+            "amount": 10767.730292,
+            "outcome": 0
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 9467.416145,
+            "outcome": 1
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2216584.871732354,
+            "amount": 1238.817936,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 10.4,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 6,
+      "score": 76.3,
+      "question": "Madrid Open, Qualification: Dalma Galfi vs Darja Vidmanova",
+      "conditionId": "0xf587dbb3bd3f5acaccd99e7ecf57fc3e89bdb48d1fc308e94da4d41a893f97a8",
+      "url": "https://polymarket.com/event/wta-galfi-vidmano-2026-04-21",
+      "hoursLeft": 157,
+      "endDate": "2026-04-28T08:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "Dalma Galfi",
+          "Darja Vidmanova"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneDayPriceChange": 0.4245
+      },
+      "activity": {
+        "volume24hr": 159141.19174399995,
+        "volumeTotal": 159494.60524899978,
+        "liquidity": 113819.13397,
+        "volume24hrPct": "99.8%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_UP",
+        "smartMoneySide": "SPLIT",
+        "smartMoneyCount": 4,
+        "smartMoneyHolders": [
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 3285.210386,
+            "outcome": 0
+          },
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2771352.9224352124,
+            "amount": 2146.441354,
+            "outcome": 0
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2216584.871732354,
+            "amount": 6267.609758,
+            "outcome": 1
+          },
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 817907.7594108625,
+            "amount": 671.639919,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 10.4,
+        "volumeSpike": 15,
+        "liquidity": 8.9,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 7,
+      "score": 75,
+      "question": "Madrid Open: Paula Badosa vs Julia Grabher",
+      "conditionId": "0xa3fb400943cc97ce8fd2396f7186505064a67ce6aa8bf7def49a63df84dc6190",
+      "url": "https://polymarket.com/event/wta-badosa-grabher-2026-04-21",
+      "hoursLeft": 158,
+      "endDate": "2026-04-28T09:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Paula Badosa",
+          "Julia Grabher"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneDayPriceChange": -0.8295
+      },
+      "activity": {
+        "volume24hr": 430526.9895870006,
+        "volumeTotal": 431342.9854640007,
+        "liquidity": 343927.6831,
+        "volume24hrPct": "99.8%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": "SPLIT",
+        "smartMoneyCount": 4,
+        "smartMoneyHolders": [
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 817907.7594108625,
+            "amount": 4789.742855,
+            "outcome": 0
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 1898.712321,
+            "outcome": 0
+          },
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2771352.9224352124,
+            "amount": 9431.630343,
+            "outcome": 1
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 8,
+            "pnl": 1708848.4225487271,
+            "amount": 1378.854745,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 8,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 8,
+      "score": 75,
+      "question": "Madrid Open, Qualification: Yulia Starodubtseva vs Anastasia Pavlyuchenkova",
+      "conditionId": "0x7fd88811a81d545baac869bd204bedb206ae0b2691eee1fd6dccbd5a84344a7f",
+      "url": "https://polymarket.com/event/wta-starodu-pavlyuc-2026-04-21",
+      "hoursLeft": 158,
+      "endDate": "2026-04-28T09:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Yulia Starodubtseva",
+          "Anastasia Pavlyuchenkova"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneDayPriceChange": -0.7395
+      },
+      "activity": {
+        "volume24hr": 254885.59159400006,
+        "volumeTotal": 255068.76492599983,
+        "liquidity": 350207.52954,
+        "volume24hrPct": "99.9%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 3,
+        "smartMoneyHolders": [
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2216584.871732354,
+            "amount": 15449.079939,
+            "outcome": 0
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 984.95947,
+            "outcome": 0
+          },
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 817907.7594108625,
+            "amount": 1959.990477,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 8,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 9,
+      "score": 75,
+      "question": "Rome: Dan Added vs Arthur Fery",
+      "conditionId": "0xadd624dd9f932358ad850c2add249de0488d7c67c95b36c26f165cf1c296b5e4",
+      "url": "https://polymarket.com/event/atp-added-fery-2026-04-21",
+      "hoursLeft": 157,
+      "endDate": "2026-04-28T08:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Dan Added",
+          "Arthur Fery"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneDayPriceChange": -0.2545
+      },
+      "activity": {
+        "volume24hr": 141107.02445700002,
+        "volumeTotal": 141888.90912999993,
+        "liquidity": 356587.9375,
+        "volume24hrPct": "99.4%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 4,
+        "smartMoneyHolders": [
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 8,
+            "pnl": 1708848.4225487271,
+            "amount": 2443.613849,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 2309.58214,
+            "outcome": 1
+          },
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 817907.7594108625,
+            "amount": 747.538594,
+            "outcome": 1
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2216584.871732354,
+            "amount": 735.785713,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 8,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 10,
+      "score": 74.4,
+      "question": "Madrid Open, Qualification: Alycia Parks vs Ksenia Efremova",
+      "conditionId": "0xa23fae76685b2694f92178f018ddcd837f41ea6ff20b6715fcf2cada0d695028",
+      "url": "https://polymarket.com/event/wta-parks-efremov-2026-04-21",
+      "hoursLeft": 162,
+      "endDate": "2026-04-28T13:30:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "Alycia Parks",
+          "Ksenia Efremova"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneHourPriceChange": 0.0845
+      },
+      "activity": {
+        "volume24hr": 177314.69861300002,
+        "volumeTotal": 177314.69861300034,
+        "liquidity": 169622.79106,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 3,
+        "smartMoneyHolders": [
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 817907.7594108625,
+            "amount": 3562.141211,
+            "outcome": 0
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 2050.767833,
+            "outcome": 1
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2216584.871732354,
+            "amount": 1088.555621,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 7.7,
+        "volumeSpike": 15,
+        "liquidity": 9.7,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 11,
+      "score": 74.4,
+      "question": "76ers vs. Celtics: O/U 216.5",
+      "conditionId": "0x93ec518ba60783ca763315bed8bff43f754868078f6a305914104af0bccdb8c3",
+      "url": "https://polymarket.com/event/nba-phi-bos-2026-04-21-total-216pt5",
+      "hoursLeft": 4,
+      "endDate": "2026-04-21T23:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.55,
+        "bestBid": 0.54,
+        "bestAsk": 0.55,
+        "spread": 0.01,
+        "outcomes": [
+          "Over",
+          "Under"
+        ],
+        "outcomePrices": [
+          "0.545",
+          "0.455"
+        ],
+        "oneDayPriceChange": 0.07
+      },
+      "activity": {
+        "volume24hr": 142324.17035500004,
+        "volumeTotal": 144662.47549100014,
+        "liquidity": 174699.3194,
+        "volume24hrPct": "98.4%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "TRENDING_UP",
+        "smartMoneySide": "SPLIT",
+        "smartMoneyCount": 4,
+        "smartMoneyHolders": [
+          {
+            "address": "0x492442eab586f242b53bda933fd5de859c8a3782",
+            "userName": "0x492442EaB586F242B53bDa933fD5dE859c8A3782-1766317541188",
+            "rank": 1,
+            "pnl": 7299939.470142925,
+            "amount": 22924.727382,
+            "outcome": 0
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 10,
+            "pnl": 1494254.6773096446,
+            "amount": 782.1,
+            "outcome": 0
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 8607.364359,
+            "outcome": 1
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 34,
+            "pnl": 682924.3957387606,
+            "amount": 6011.577044,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 10,
+        "priceMomentum": 3.6,
+        "volumeSpike": 15,
+        "liquidity": 9.7,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 12,
+      "score": 74.1,
+      "question": "76ers vs. Celtics: O/U 217.5",
+      "conditionId": "0x48dedf79ee636cd8284504a6e4ba61ecec975a3b286745ce8fe95ee2a101b5cb",
+      "url": "https://polymarket.com/event/nba-phi-bos-2026-04-21-total-217pt5",
+      "hoursLeft": 4,
+      "endDate": "2026-04-21T23:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.52,
+        "bestBid": 0.51,
+        "bestAsk": 0.52,
+        "spread": 0.01,
+        "outcomes": [
+          "Over",
+          "Under"
+        ],
+        "outcomePrices": [
+          "0.515",
+          "0.485"
+        ],
+        "oneDayPriceChange": 0.06
+      },
+      "activity": {
+        "volume24hr": 189269.18661800004,
+        "volumeTotal": 190907.440839,
+        "liquidity": 375791.7998,
+        "volume24hrPct": "99.1%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "TRENDING_UP",
+        "smartMoneySide": "SPLIT",
+        "smartMoneyCount": 4,
+        "smartMoneyHolders": [
+          {
+            "address": "0x492442eab586f242b53bda933fd5de859c8a3782",
+            "userName": "0x492442EaB586F242B53bDa933fD5dE859c8A3782-1766317541188",
+            "rank": 1,
+            "pnl": 7299939.470142925,
+            "amount": 90578.38112,
+            "outcome": 0
+          },
+          {
+            "address": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+            "userName": "swisstony",
+            "rank": 8,
+            "pnl": 1708848.4225487271,
+            "amount": 473.80792,
+            "outcome": 0
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 10,
+            "pnl": 1494254.6773096446,
+            "amount": 48077.78602,
+            "outcome": 1
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 34,
+            "pnl": 682924.3957387606,
+            "amount": 3044.498029,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 10,
+        "priceMomentum": 3.1,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 13,
+      "score": 74,
+      "question": "Madrid Open, Qualification: Anastasia Potapova vs Sinja Kraus",
+      "conditionId": "0x0b0d79642357dff9e6bad23ab32e24b412b6aab2ae367c3b0d581f4f9d088ced",
+      "url": "https://polymarket.com/event/wta-potapov-kraus-2026-04-21",
+      "hoursLeft": 162,
+      "endDate": "2026-04-28T13:30:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Anastasia Potapova",
+          "Sinja Kraus"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneHourPriceChange": -0.7095
+      },
+      "activity": {
+        "volume24hr": 556687.2967670008,
+        "volumeTotal": 556687.2967669999,
+        "liquidity": 209542.40517,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 3,
+        "smartMoneyHolders": [
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2216584.871732354,
+            "amount": 21938.592373,
+            "outcome": 1
+          },
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2771352.9224352124,
+            "amount": 16793.114341,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 6609.873785,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 7,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 14,
+      "score": 73.4,
+      "question": "Abidjan: Massimo Giunta vs Andrew Fenty",
+      "conditionId": "0x88142152c5269f9a907cb5d22cee8cc38687c4a7fa4b6bff3befa7bf3043d7b7",
+      "url": "https://polymarket.com/event/atp-giunta-fenty-2026-04-21",
+      "hoursLeft": 159,
+      "endDate": "2026-04-28T10:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "Massimo Giunta",
+          "Andrew Fenty"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneDayPriceChange": 0.5245
+      },
+      "activity": {
+        "volume24hr": 181848.68973900002,
+        "volumeTotal": 190173.36334499982,
+        "liquidity": 326804.84377,
+        "volume24hrPct": "95.6%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_UP",
+        "smartMoneySide": "SPLIT",
+        "smartMoneyCount": 2,
+        "smartMoneyHolders": [
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 1120.910352,
+            "outcome": 0
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2216584.871732354,
+            "amount": 1401.4138,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 26,
+        "timeUrgency": 6,
+        "priceMomentum": 10.4,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 15,
+      "score": 73,
+      "question": "Trail Blazers vs. Spurs",
+      "conditionId": "0xbfe5dd0ac5320447e48b1944366025ba23b1f7cd69ff55e6ec3f4c3c57c26dd6",
+      "url": "https://polymarket.com/event/nba-por-sas-2026-04-21",
+      "hoursLeft": 5,
+      "endDate": "2026-04-22T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.16,
+        "bestBid": 0.15,
+        "bestAsk": 0.16,
+        "spread": 0.01,
+        "outcomes": [
+          "Trail Blazers",
+          "Spurs"
+        ],
+        "outcomePrices": [
+          "0.155",
+          "0.845"
+        ],
+        "oneDayPriceChange": 0.01
+      },
+      "activity": {
+        "volume24hr": 584783.1963039999,
+        "volumeTotal": 663404.7316820018,
+        "liquidity": 2548172.3043,
+        "volume24hrPct": "88.1%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 5,
+        "smartMoneyHolders": [
+          {
+            "address": "0xa5ea13a81d2b7e8e424b182bdc1db08e756bd96a",
+            "userName": "bossoskil1",
+            "rank": 25,
+            "pnl": 853290.095543782,
+            "amount": 88986.985829,
+            "outcome": 0
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 10,
+            "pnl": 1494254.6773096446,
+            "amount": 14447.083021,
+            "outcome": 0
+          },
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 9,
+            "pnl": 1539983.2462493358,
+            "amount": 11553.32963,
+            "outcome": 0
+          },
+          {
+            "address": "0xbddf61af533ff524d27154e589d2d7a81510c684",
+            "userName": "Countryside",
+            "rank": 15,
+            "pnl": 1211139.4174300109,
+            "amount": 43033.595,
+            "outcome": 1
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 34,
+            "pnl": 682924.3957387606,
+            "amount": 8274.57105,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 10,
+        "priceMomentum": 0.5,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 3,
+        "competitive": 4.5
+      }
+    },
+    {
+      "rank": 16,
+      "score": 72.6,
+      "question": "Spread: Celtics (-13.5)",
+      "conditionId": "0x0bc3ed61794fffa362af7c41d8c9185e2a1e436efb72cfebda678477cabd9a55",
+      "url": "https://polymarket.com/event/nba-phi-bos-2026-04-21-spread-home-13pt5",
+      "hoursLeft": 4,
+      "endDate": "2026-04-21T23:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.53,
+        "bestBid": 0.52,
+        "bestAsk": 0.53,
+        "spread": 0.01,
+        "outcomes": [
+          "Celtics",
+          "76ers"
+        ],
+        "outcomePrices": [
+          "0.525",
+          "0.475"
+        ],
+        "oneDayPriceChange": 0.03
+      },
+      "activity": {
+        "volume24hr": 431776.30529600015,
+        "volumeTotal": 438541.0456560006,
+        "liquidity": 506770.7446,
+        "volume24hrPct": "98.5%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 4,
+        "smartMoneyHolders": [
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 10,
+            "pnl": 1494254.6773096446,
+            "amount": 135154.598276,
+            "outcome": 1
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 34,
+            "pnl": 682924.3957387606,
+            "amount": 11505.262595,
+            "outcome": 1
+          },
+          {
+            "address": "0xa71093cafc0c099b4ccab24c3cb8018d817923c4",
+            "userName": "Talvez10",
+            "rank": 37,
+            "pnl": 618295.7150981834,
+            "amount": 7369.39624,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 5098.271885,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 10,
+        "priceMomentum": 1.6,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 17,
+      "score": 72.3,
+      "question": "Bruins vs. Sabres",
+      "conditionId": "0xc6786942d5d1e3530c2b0de4f9f5f6875ba9a793838f1ac988e4d0cb9670917d",
+      "url": "https://polymarket.com/event/nhl-bos-buf-2026-04-21",
+      "hoursLeft": 4,
+      "endDate": "2026-04-21T23:30:00Z",
+      "pricing": {
+        "lastTradePrice": 0.4,
+        "bestBid": 0.39,
+        "bestAsk": 0.4,
+        "spread": 0.01,
+        "outcomes": [
+          "Bruins",
+          "Sabres"
+        ],
+        "outcomePrices": [
+          "0.395",
+          "0.605"
+        ],
+        "oneDayPriceChange": -0.01
+      },
+      "activity": {
+        "volume24hr": 159989.52053899984,
+        "volumeTotal": 167182.52372299982,
+        "liquidity": 437219.6487,
+        "volume24hrPct": "95.7%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "SPLIT",
+        "smartMoneyCount": 4,
+        "smartMoneyHolders": [
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 34,
+            "pnl": 682924.3957387606,
+            "amount": 1663.08006,
+            "outcome": 1
+          },
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 817907.7594108625,
+            "amount": 977.063638,
+            "outcome": 1
+          },
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 9,
+            "pnl": 1539983.2462493358,
+            "amount": 1797.85232,
+            "outcome": 0
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 615.22,
+            "outcome": 0
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 10,
+        "priceMomentum": 0.4,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4.9
+      }
+    },
+    {
+      "rank": 18,
+      "score": 71.8,
+      "question": "Spread: Spurs (-11.5)",
+      "conditionId": "0x15468fdfc91c3f74d2f0099031bc8d786dfd4f571254e600f656411e605f5dac",
+      "url": "https://polymarket.com/event/nba-por-sas-2026-04-21-spread-home-11pt5",
+      "hoursLeft": 5,
+      "endDate": "2026-04-22T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.49,
+        "bestBid": 0.48,
+        "bestAsk": 0.49,
+        "spread": 0.01,
+        "outcomes": [
+          "Spurs",
+          "Trail Blazers"
+        ],
+        "outcomePrices": [
+          "0.485",
+          "0.515"
+        ],
+        "oneDayPriceChange": -0.02
+      },
+      "activity": {
+        "volume24hr": 184243.030055,
+        "volumeTotal": 186288.93675499994,
+        "liquidity": 1415605.7923,
+        "volume24hrPct": "98.9%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 4,
+        "smartMoneyHolders": [
+          {
+            "address": "0xbddf61af533ff524d27154e589d2d7a81510c684",
+            "userName": "Countryside",
+            "rank": 15,
+            "pnl": 1211139.4174300109,
+            "amount": 4490.016888,
+            "outcome": 0
+          },
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 9,
+            "pnl": 1539983.2462493358,
+            "amount": 25996.16212,
+            "outcome": 1
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 10,
+            "pnl": 1494254.6773096446,
+            "amount": 22828.798211,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 1324.468825,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 10,
+        "priceMomentum": 0.8,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 19,
+      "score": 71.5,
+      "question": "Trail Blazers vs. Spurs: O/U 220.5",
+      "conditionId": "0x030a2ab7b9de05745047007c2081dabbb86d81149713404817b8c1c037fc7985",
+      "url": "https://polymarket.com/event/nba-por-sas-2026-04-21-total-220pt5",
+      "hoursLeft": 5,
+      "endDate": "2026-04-22T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.51,
+        "bestBid": 0.5,
+        "bestAsk": 0.51,
+        "spread": 0.01,
+        "outcomes": [
+          "Over",
+          "Under"
+        ],
+        "outcomePrices": [
+          "0.505",
+          "0.495"
+        ],
+        "oneDayPriceChange": 0.01
+      },
+      "activity": {
+        "volume24hr": 487501.6428919999,
+        "volumeTotal": 489537.3234170004,
+        "liquidity": 284297.5305,
+        "volume24hrPct": "99.6%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 3,
+        "smartMoneyHolders": [
+          {
+            "address": "0x492442eab586f242b53bda933fd5de859c8a3782",
+            "userName": "0x492442EaB586F242B53bDa933fD5dE859c8A3782-1766317541188",
+            "rank": 1,
+            "pnl": 7299939.470142925,
+            "amount": 371399.07223,
+            "outcome": 0
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 10,
+            "pnl": 1494254.6773096446,
+            "amount": 291124.019878,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 20194.774818,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 10,
+        "priceMomentum": 0.5,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 20,
+      "score": 70,
+      "question": "Abidjan: Aziz Dougaz vs Paul Jubb",
+      "conditionId": "0x6ee0227011592f18cd416db2aae3a885f640e8748971045c5b799bdd645d271d",
+      "url": "https://polymarket.com/event/atp-dougaz-jubb-2026-04-21",
+      "hoursLeft": 159,
+      "endDate": "2026-04-28T10:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Aziz Dougaz",
+          "Paul Jubb"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneDayPriceChange": -0.2845
+      },
+      "activity": {
+        "volume24hr": 239430.907805,
+        "volumeTotal": 248627.69434899982,
+        "liquidity": 117549.89025,
+        "volume24hrPct": "96.3%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": "SPLIT",
+        "smartMoneyCount": 2,
+        "smartMoneyHolders": [
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2216584.871732354,
+            "amount": 17329.817689,
+            "outcome": 0
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 1759.224891,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 26,
+        "timeUrgency": 6,
+        "priceMomentum": 8,
+        "volumeSpike": 15,
+        "liquidity": 9,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 21,
+      "score": 69.9,
+      "question": "Trail Blazers vs. Spurs: O/U 219.5",
+      "conditionId": "0x56655f59fb251d6b8fe544ddd43046ba56518555398fff3e8913d94bbbdc03f4",
+      "url": "https://polymarket.com/event/nba-por-sas-2026-04-21-total-219pt5",
+      "hoursLeft": 5,
+      "endDate": "2026-04-22T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.53,
+        "bestBid": 0.53,
+        "bestAsk": 0.54,
+        "spread": 0.01,
+        "outcomes": [
+          "Over",
+          "Under"
+        ],
+        "outcomePrices": [
+          "0.535",
+          "0.465"
+        ],
+        "oneHourPriceChange": 0.01
+      },
+      "activity": {
+        "volume24hr": 145932.5045209999,
+        "volumeTotal": 145932.5045209999,
+        "liquidity": 70547.1725,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "SPLIT",
+        "smartMoneyCount": 4,
+        "smartMoneyHolders": [
+          {
+            "address": "0x492442eab586f242b53bda933fd5de859c8a3782",
+            "userName": "0x492442EaB586F242B53bDa933fD5dE859c8A3782-1766317541188",
+            "rank": 1,
+            "pnl": 7299939.470142925,
+            "amount": 44315.81864,
+            "outcome": 0
+          },
+          {
+            "address": "0xd106952ebf30a3125affd8a23b6c1f30c35fc79c",
+            "userName": "Herdonia",
+            "rank": 34,
+            "pnl": 682924.3957387606,
+            "amount": 462.25945,
+            "outcome": 0
+          },
+          {
+            "address": "0x37c1874a60d348903594a96703e0507c518fc53a",
+            "userName": "CemeterySun",
+            "rank": 10,
+            "pnl": 1494254.6773096446,
+            "amount": 80952.197118,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 19163.269631,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 10,
+        "priceMomentum": 0.9,
+        "volumeSpike": 15,
+        "liquidity": 8,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 22,
+      "score": 68.7,
+      "question": "Madrid Open, Qualification: Sloane Stephens vs Anhelina Kalinina",
+      "conditionId": "0x6a08a54d27f7af8a88f6ace455c80adecfcb80afec235644382b50020607e7b8",
+      "url": "https://polymarket.com/event/wta-stephen-kalinin-2026-04-21",
+      "hoursLeft": 161,
+      "endDate": "2026-04-28T12:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Sloane Stephens",
+          "Anhelina Kalinina"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneHourPriceChange": -0.0245
+      },
+      "activity": {
+        "volume24hr": 1332505.2497520011,
+        "volumeTotal": 1332505.249752004,
+        "liquidity": 196516.72044,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 3,
+        "smartMoneyHolders": [
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2771352.9224352124,
+            "amount": 330715.255012,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 18429.366905,
+            "outcome": 1
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2216584.871732354,
+            "amount": 16647.953394,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 1.7,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 23,
+      "score": 67.4,
+      "question": "Indian Premier League: Sunrisers Hyderabad vs Delhi Capitals",
+      "conditionId": "0xd41eb0fded36a8cba2aabe8479640a31237fa34d1cbec37b055f71603454ea2c",
+      "url": "https://polymarket.com/event/cricipl-sun-del-2026-04-21",
+      "hoursLeft": 159,
+      "endDate": "2026-04-28T10:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "Sunrisers Hyderabad",
+          "Delhi Capitals"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneDayPriceChange": 0.4645
+      },
+      "activity": {
+        "volume24hr": 2638223.1169750025,
+        "volumeTotal": 2648733.645909997,
+        "liquidity": 660561.35308,
+        "volume24hrPct": "99.6%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_UP",
+        "smartMoneySide": "SPLIT",
+        "smartMoneyCount": 2,
+        "smartMoneyHolders": [
+          {
+            "address": "0x9f2fe025f84839ca81dd8e0338892605702d2ca8",
+            "userName": "surfandturf",
+            "rank": 38,
+            "pnl": 612072.3574800466,
+            "amount": 165762.578241,
+            "outcome": 0
+          },
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 817907.7594108625,
+            "amount": 12771.006748,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 20,
+        "timeUrgency": 6,
+        "priceMomentum": 10.4,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 24,
+      "score": 67,
+      "question": "Madrid Open, Qualification: Adolfo Vallejo vs Henrique Rocha",
+      "conditionId": "0xc76f09dfa9b4bb16735f3732691680c10d16f19501fe29d84890bb17ab968492",
+      "url": "https://polymarket.com/event/atp-vallejo-rocha-2026-04-21",
+      "hoursLeft": 161,
+      "endDate": "2026-04-28T12:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "Adolfo Vallejo",
+          "Henrique Rocha"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ]
+      },
+      "activity": {
+        "volume24hr": 201200.9059370001,
+        "volumeTotal": 201200.90593700024,
+        "liquidity": 367068.9378,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "YES",
+        "smartMoneyCount": 3,
+        "smartMoneyHolders": [
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2216584.871732354,
+            "amount": 10956.816272,
+            "outcome": 0
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 6318.175674,
+            "outcome": 0
+          },
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 817907.7594108625,
+            "amount": 5288.046453,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 0,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 25,
+      "score": 66.7,
+      "question": "Madrid Open, Qualification: Patrick Kypson vs Nikoloz Basilashvili",
+      "conditionId": "0xfc7da00fe5628653e4277225865447df7838e334a285ccf132e1506f53cd9b56",
+      "url": "https://polymarket.com/event/atp-kypson-basilas-2026-04-21",
+      "hoursLeft": 162,
+      "endDate": "2026-04-28T13:30:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Patrick Kypson",
+          "Nikoloz Basilashvili"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ]
+      },
+      "activity": {
+        "volume24hr": 339087.79233200016,
+        "volumeTotal": 339087.79233200045,
+        "liquidity": 169240.42908,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "SPLIT",
+        "smartMoneyCount": 4,
+        "smartMoneyHolders": [
+          {
+            "address": "0x507e52ef684ca2dd91f90a9d26d149dd3288beae",
+            "userName": "GamblingIsAllYouNeed",
+            "rank": 27,
+            "pnl": 817907.7594108625,
+            "amount": 5621.84549,
+            "outcome": 1
+          },
+          {
+            "address": "0xee613b3fc183ee44f9da9c05f53e2da107e3debf",
+            "userName": "sovereign2013",
+            "rank": 7,
+            "pnl": 1950669.0499464723,
+            "amount": 5529.150065,
+            "outcome": 1
+          },
+          {
+            "address": "0x2a2c53bd278c04da9962fcf96490e17f3dfb9bc1",
+            "userName": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1-1772479215461",
+            "rank": 4,
+            "pnl": 2771352.9224352124,
+            "amount": 9909.075906,
+            "outcome": 0
+          },
+          {
+            "address": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+            "userName": "RN1",
+            "rank": 6,
+            "pnl": 2216584.871732354,
+            "amount": 5126.980845,
+            "outcome": 0
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 30,
+        "timeUrgency": 6,
+        "priceMomentum": 0,
+        "volumeSpike": 15,
+        "liquidity": 9.7,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 26,
+      "score": 61.1,
+      "question": "US x Iran diplomatic meeting by April 23, 2026?",
+      "conditionId": "0x747a380bab6e04278667e1e881cc62bd2a6a6090d295678f426249d06ca79712",
+      "url": "https://polymarket.com/event/us-x-iran-diplomatic-meeting-by-april-23-2026",
+      "hoursLeft": 29,
+      "endDate": "2026-04-23T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.44,
+        "bestBid": 0.41,
+        "bestAsk": 0.42,
+        "spread": 0.01,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.415",
+          "0.585"
+        ],
+        "oneDayPriceChange": -0.385,
+        "oneHourPriceChange": -0.05
+      },
+      "activity": {
+        "volume24hr": 269061.84821399976,
+        "volumeTotal": 272396.9939290007,
+        "liquidity": 45575.288,
+        "volume24hrPct": "98.8%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 18,
+        "priceMomentum": 15,
+        "volumeSpike": 15,
+        "liquidity": 7.2,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 27,
+      "score": 57.8,
+      "question": "76ers vs. Celtics",
+      "conditionId": "0xba0e7ea79f5cf07a4b0a8d8962b429e026b40044e746ab5a7874d0b36c03f742",
+      "url": "https://polymarket.com/event/nba-phi-bos-2026-04-21",
+      "hoursLeft": 4,
+      "endDate": "2026-04-21T23:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.12,
+        "bestBid": 0.11,
+        "bestAsk": 0.12,
+        "spread": 0.01,
+        "outcomes": [
+          "76ers",
+          "Celtics"
+        ],
+        "outcomePrices": [
+          "0.115",
+          "0.885"
+        ],
+        "oneDayPriceChange": -0.01
+      },
+      "activity": {
+        "volume24hr": 540386.3670330013,
+        "volumeTotal": 759205.0786829962,
+        "liquidity": 2946330.4726,
+        "volume24hrPct": "71.2%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 1,
+        "smartMoneyHolders": [
+          {
+            "address": "0xead152b855effa6b5b5837f53b24c0756830c76a",
+            "userName": "elkmonkey",
+            "rank": 9,
+            "pnl": 1539983.2462493358,
+            "amount": 14599.25211,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 13,
+        "timeUrgency": 10,
+        "priceMomentum": 0.4,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 5,
+        "competitive": 4.4
+      }
+    },
+    {
+      "rank": 28,
+      "score": 55.1,
+      "question": "US x Iran permanent peace deal by April 22, 2026?",
+      "conditionId": "0xbbc6689d0f6d57ea42168836712237c7308b3e0118c8914d31b6126d0f3254c5",
+      "url": "https://polymarket.com/event/us-x-iran-permanent-peace-deal-by-april-22-2026",
+      "hoursLeft": 5,
+      "endDate": "2026-04-22T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.048,
+        "bestBid": 0.041,
+        "bestAsk": 0.044,
+        "spread": 0.003,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.0425",
+          "0.9575"
+        ],
+        "oneDayPriceChange": -0.1325,
+        "oneHourPriceChange": -0.0025
+      },
+      "activity": {
+        "volume24hr": 5956612.735521954,
+        "volumeTotal": 21628807.396014493,
+        "liquidity": 396815.66631,
+        "volume24hrPct": "27.5%",
+        "activityLevel": "ACTIVE"
+      },
+      "signals": {
+        "momentumSignal": "TRENDING_DOWN",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 1,
+        "smartMoneyHolders": [
+          {
+            "address": "0xbaa2bcb5439e985ce4ccf815b4700027d1b92c73",
+            "userName": "denizz",
+            "rank": 23,
+            "pnl": 951094.644859317,
+            "amount": 90939.096152,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 11.5,
+        "timeUrgency": 10,
+        "priceMomentum": 7.1,
+        "volumeSpike": 10.3,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4.1
+      }
+    },
+    {
+      "rank": 29,
+      "score": 54.8,
+      "question": "Will Donald Trump announce that the United States blockade of the Strait of Hormuz has been lifted by April 23, 2026?",
+      "conditionId": "0xd839785e6d4e4fdd44ef0e90f315eecccde47578924491e6ae74499e9f62d29e",
+      "url": "https://polymarket.com/event/will-donald-trump-announce-that-the-united-states-blockade-of-the-strait-of-hormuz-has-been-lifted-by-april-23-2026",
+      "hoursLeft": 29,
+      "endDate": "2026-04-23T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.37,
+        "bestBid": 0.38,
+        "bestAsk": 0.41,
+        "spread": 0.03,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.395",
+          "0.605"
+        ],
+        "oneDayPriceChange": 0.025,
+        "oneHourPriceChange": 0.075
+      },
+      "activity": {
+        "volume24hr": 150386.70285000006,
+        "volumeTotal": 333906.1711559993,
+        "liquidity": 34941.1627,
+        "volume24hrPct": "45%",
+        "activityLevel": "ACTIVE"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 18,
+        "priceMomentum": 8.1,
+        "volumeSpike": 15,
+        "liquidity": 6.7,
+        "priceBoundary": 2,
+        "competitive": 4.9
+      }
+    },
+    {
+      "rank": 30,
+      "score": 54.3,
+      "question": "LoL: LYON vs FlyQuest - Game 1 Winner",
+      "conditionId": "0x9ebc87ec2f3e139723fc44498b817389133df44a7e6e079f099ba2aeb03c8fec",
+      "url": "https://polymarket.com/event/lol-ly-fly-2026-04-21-game1",
+      "hoursLeft": 3,
+      "endDate": "2026-04-21T22:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.01,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "LYON",
+          "FlyQuest"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneDayPriceChange": -0.6445,
+        "oneHourPriceChange": -0.6245
+      },
+      "activity": {
+        "volume24hr": 141332.34914500004,
+        "volumeTotal": 141339.49200099992,
+        "liquidity": 83210.8257,
+        "volume24hrPct": "100%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 10,
+        "priceMomentum": 15,
+        "volumeSpike": 15,
+        "liquidity": 8.3,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 31,
+      "score": 51.5,
+      "question": "Will Elon Musk post <40 tweets from April 20 to April 22, 2026?",
+      "conditionId": "0xb295f8b30d32c810f2850f52eeca0a700dfed402f099a9f50e39fcf98e09ab7b",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-april-20-april-22-0-39",
+      "hoursLeft": 21,
+      "endDate": "2026-04-22T16:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.098,
+        "bestBid": 0.096,
+        "bestAsk": 0.099,
+        "spread": 0.003,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.0975",
+          "0.9025"
+        ],
+        "oneDayPriceChange": 0.01,
+        "oneHourPriceChange": 0.011
+      },
+      "activity": {
+        "volume24hr": 137791.007122,
+        "volumeTotal": 173759.0286559998,
+        "liquidity": 20117.48496,
+        "volume24hrPct": "79.3%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 20,
+        "priceMomentum": 1.5,
+        "volumeSpike": 15,
+        "liquidity": 5.7,
+        "priceBoundary": 5,
+        "competitive": 4.3
+      }
+    },
+    {
+      "rank": 32,
+      "score": 51.4,
+      "question": "LoL: LYON vs FlyQuest (BO3) - Esports World Cup North America Qualifier Playoffs",
+      "conditionId": "0xd71b9362375fcab6786e980e1378739e1f1e6f507b7a175df16d732147a06da8",
+      "url": "https://polymarket.com/event/lol-ly-fly-2026-04-21",
+      "hoursLeft": 5,
+      "endDate": "2026-04-22T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.42,
+        "bestBid": 0.41,
+        "bestAsk": 0.42,
+        "spread": 0.01,
+        "outcomes": [
+          "LYON",
+          "FlyQuest"
+        ],
+        "outcomePrices": [
+          "0.415",
+          "0.585"
+        ],
+        "oneDayPriceChange": -0.31,
+        "oneHourPriceChange": -0.3
+      },
+      "activity": {
+        "volume24hr": 175890.4547609999,
+        "volumeTotal": 177840.91547999994,
+        "liquidity": 18197.3267,
+        "volume24hrPct": "98.9%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 10,
+        "priceMomentum": 15,
+        "volumeSpike": 15,
+        "liquidity": 5.5,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 33,
+      "score": 50.7,
+      "question": "Trump announces end of military operations against Iran by April 21st?",
+      "conditionId": "0x1507c50c86fb307e4f1acd9d740b2be66d98773f90d161e94907d8ef2c5699b3",
+      "url": "https://polymarket.com/event/trump-announces-end-of-military-operations-against-iran-by-april-21st",
+      "hoursLeft": 5,
+      "endDate": "2026-04-21T23:55:00Z",
+      "pricing": {
+        "lastTradePrice": 0.02,
+        "bestBid": 0.019,
+        "bestAsk": 0.021,
+        "spread": 0.002,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.02",
+          "0.98"
+        ],
+        "oneDayPriceChange": -0.035,
+        "oneHourPriceChange": 0.0035
+      },
+      "activity": {
+        "volume24hr": 1410943.7667080008,
+        "volumeTotal": 4621493.93662,
+        "liquidity": 217203.40311,
+        "volume24hrPct": "30.5%",
+        "activityLevel": "ACTIVE"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": "NO",
+        "smartMoneyCount": 1,
+        "smartMoneyHolders": [
+          {
+            "address": "0xbaa2bcb5439e985ce4ccf815b4700027d1b92c73",
+            "userName": "denizz",
+            "rank": 23,
+            "pnl": 951094.644859317,
+            "amount": 46185.23,
+            "outcome": 1
+          }
+        ]
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 11.5,
+        "timeUrgency": 10,
+        "priceMomentum": 1.6,
+        "volumeSpike": 11.4,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4.1
+      }
+    },
+    {
+      "rank": 34,
+      "score": 50.6,
+      "question": "US x Iran diplomatic meeting by April 24, 2026?",
+      "conditionId": "0xe0ae0ae2866b5b6c2af93da2147022c19f92d807e92594a74f868a4c8a1c359d",
+      "url": "https://polymarket.com/event/us-x-iran-diplomatic-meeting-by-april-24-2026",
+      "hoursLeft": 53,
+      "endDate": "2026-04-24T00:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.54,
+        "bestBid": 0.54,
+        "bestAsk": 0.55,
+        "spread": 0.01,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.545",
+          "0.455"
+        ],
+        "oneDayPriceChange": -0.305
+      },
+      "activity": {
+        "volume24hr": 131940.298686,
+        "volumeTotal": 132944.66390699975,
+        "liquidity": 34014.3157,
+        "volume24hrPct": "99.2%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 15,
+        "priceMomentum": 8,
+        "volumeSpike": 15,
+        "liquidity": 6.7,
+        "priceBoundary": 1,
+        "competitive": 5
+      }
+    },
+    {
+      "rank": 35,
+      "score": 49,
+      "question": "LoL: Galions vs Solary (BO5) - EMEA Masters Playoffs",
+      "conditionId": "0x98007874b3f36785dced4305b6dc0e0e66fb1327eca0a4170579f34acf84e90a",
+      "url": "https://polymarket.com/event/lol-gal-sly-2026-04-21",
+      "hoursLeft": 2,
+      "endDate": "2026-04-21T21:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Galions",
+          "Solary"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneDayPriceChange": -0.4645
+      },
+      "activity": {
+        "volume24hr": 206712.632876,
+        "volumeTotal": 208858.6477640002,
+        "liquidity": 201973.66483,
+        "volume24hrPct": "99%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "STRONG_DOWN",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 10,
+        "priceMomentum": 8,
+        "volumeSpike": 15,
+        "liquidity": 10,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 36,
+      "score": 48.8,
+      "question": "Will the price of Bitcoin be above $84,000 on April 22?",
+      "conditionId": "0x559d673b5f67ead79c394f6edd86f984458b284bb6012600446bec089c62285b",
+      "url": "https://polymarket.com/event/bitcoin-above-84k-on-april-22",
+      "hoursLeft": 21,
+      "endDate": "2026-04-22T16:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ],
+        "oneDayPriceChange": -0.002
+      },
+      "activity": {
+        "volume24hr": 137787.87693899998,
+        "volumeTotal": 149354.10327200004,
+        "liquidity": 61074.44474,
+        "volume24hrPct": "92.3%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 20,
+        "priceMomentum": 0.1,
+        "volumeSpike": 15,
+        "liquidity": 7.8,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 37,
+      "score": 48.2,
+      "question": "Will the price of Bitcoin be above $68,000 on April 22?",
+      "conditionId": "0xf6105f8c7a469f55174e0930282e53be1f8954d463a291d566329019c6c7cd88",
+      "url": "https://polymarket.com/event/bitcoin-above-68k-on-april-22",
+      "hoursLeft": 21,
+      "endDate": "2026-04-22T16:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.998,
+        "bestAsk": 0.999,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.9985",
+          "0.0015"
+        ],
+        "oneDayPriceChange": 0.007
+      },
+      "activity": {
+        "volume24hr": 222348.088525,
+        "volumeTotal": 241416.3719050001,
+        "liquidity": 36671.21801,
+        "volume24hrPct": "92.1%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 20,
+        "priceMomentum": 0.4,
+        "volumeSpike": 15,
+        "liquidity": 6.8,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 38,
+      "score": 48.2,
+      "question": "Will the price of Bitcoin be above $64,000 on April 22?",
+      "conditionId": "0x0e7965e660cb856a399da4aebb76746ed9bd1da6e322ad8f0b0199ff3e3dceda",
+      "url": "https://polymarket.com/event/bitcoin-above-64k-on-april-22",
+      "hoursLeft": 21,
+      "endDate": "2026-04-22T16:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.999,
+        "bestAsk": 1,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.9995",
+          "0.0005"
+        ],
+        "oneDayPriceChange": 0.001
+      },
+      "activity": {
+        "volume24hr": 208774.27309900004,
+        "volumeTotal": 312855.1781639998,
+        "liquidity": 43327.51511,
+        "volume24hrPct": "66.7%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 20,
+        "priceMomentum": 0.1,
+        "volumeSpike": 15,
+        "liquidity": 7.1,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 39,
+      "score": 47.5,
+      "question": "Will the price of Ethereum be above $1,900 on April 22?",
+      "conditionId": "0x65433eb79931f043859bec0235bf53ab04ae80d42302b92a4714877ae9776324",
+      "url": "https://polymarket.com/event/ethereum-above-1900-on-april-22",
+      "hoursLeft": 21,
+      "endDate": "2026-04-22T16:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.999,
+        "bestBid": 0.994,
+        "bestAsk": 0.999,
+        "spread": 0.005,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.9965",
+          "0.0035"
+        ],
+        "oneDayPriceChange": -0.003,
+        "oneHourPriceChange": -0.0015
+      },
+      "activity": {
+        "volume24hr": 290665.5694999999,
+        "volumeTotal": 317081.04305299994,
+        "liquidity": 26179.38797,
+        "volume24hrPct": "91.7%",
+        "activityLevel": "HOT"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 20,
+        "priceMomentum": 0.3,
+        "volumeSpike": 15,
+        "liquidity": 6.2,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    },
+    {
+      "rank": 40,
+      "score": 44.4,
+      "question": "Will Elon Musk post 120-139 tweets from April 17 to April 24, 2026?",
+      "conditionId": "0xfcaeb92c47b30dfb45c4fc2bed4da15b9cfb4f1322f130e4b12a7107bef225b1",
+      "url": "https://polymarket.com/event/elon-musk-of-tweets-april-17-april-24-120-139",
+      "hoursLeft": 69,
+      "endDate": "2026-04-24T16:00:00Z",
+      "pricing": {
+        "lastTradePrice": 0.001,
+        "bestAsk": 0.001,
+        "spread": 0.001,
+        "outcomes": [
+          "Yes",
+          "No"
+        ],
+        "outcomePrices": [
+          "0.0005",
+          "0.9995"
+        ]
+      },
+      "activity": {
+        "volume24hr": 170254.385166,
+        "volumeTotal": 435777.6892360002,
+        "liquidity": 103910.40224,
+        "volume24hrPct": "39.1%",
+        "activityLevel": "ACTIVE"
+      },
+      "signals": {
+        "momentumSignal": "NEUTRAL",
+        "smartMoneySide": null,
+        "smartMoneyCount": 0,
+        "smartMoneyHolders": []
+      },
+      "scoreBreakdown": {
+        "leaderboardOverlap": 0,
+        "timeUrgency": 15,
+        "priceMomentum": 0,
+        "volumeSpike": 14.7,
+        "liquidity": 8.8,
+        "priceBoundary": 2,
+        "competitive": 4
+      }
+    }
+  ]
+}

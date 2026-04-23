@@ -262,5 +262,8 @@ README.md
 .github
 /data
 /persist
-.geminiignore
 .claudeignore
+docker-compose.yaml
+.gitignore
+.git
+.gitattributes

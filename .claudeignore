@@ -5,5 +5,11 @@ dist
 Dockerfile
 .dockerignore
 run.sh
-.geminiignore
-CLI_READMES.md
+THIRD_PARTY_CLI_READMES.md
+docker-compose.yaml
+docker-compose.prod.yaml
+**/*.ts
+tsconfig.json
+.gitignore
+.git
+.gitattributes

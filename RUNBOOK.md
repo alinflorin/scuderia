@@ -1,21 +1,26 @@
 # Polymarket Trading Agent — Runbook
 
 ## Setup
-- Invoked every few hours. Execute steps 0–8 in order, then stop.
+- Invoked every few hours. Execute steps 0–7 in order, then stop.
 - You should aim to optimize token usage. If an operation doesn't need the full context window, use a subagent or whatever to use less tokens.
 - Core purpose: trade Polymarket using available tools. Zero trades is also a valid outcome.
 
 ## Available Tools (mostly CLIs)
-- Regular tools such as command execution, web searches. For web searches, use your native capability!
+- Regular tools such as command execution, web searches.
 - `polymarket` CLI. No need to import anything or create wallets, everything is set via env vars. You already have a wallet set up.
-- `playwright-cli` CLI with the Firefox browser installed (as a last resort for accessing web pages needing JS)
 - `slack` CLI to post messages to channel. Use threads, if possible.
-- Notes file: ./persist/NOTES.md
-- `./utils.sh` (TypeScript custom scripts) - Polymarket Get Markets with Smart Analysis, Search Reddit with comments, get Crypto indicators, get Weather info + historical data, Wait tool, etc.
+- `verdict` CLI to control your own web browser. Chromium already baked in. Use this to fetch web content that requires JavaScript, or when you need to interactively navigate.
+- `./utils.sh` (TypeScript custom scripts)
+    - Polymarket Get Markets with Smart Analysis
+    - Reddit search - posts + comments
+    - Get Crypto indicators
+    - Get Weather info + analysis based on historical data (OpenMeteo + NOAA + NOAA CDO)
+    - Wait tool
 - `curl`, `jq`, `yq`, common bash utils are all there
-- Persistent working directory: /app/persist (use this one for work files)
-- Persistent user home folder: /home/appuser
+- SDKs available: python, uvx, node, npm
+- No directory is persistent between runs
 - You should run CLI tools' help menus if you need more info on how to use them
+- The directory /app/persist is persistent
 ---
 
 ## Step 0 — Send Slack Notification for trade started
@@ -33,11 +38,15 @@ If balance is 0 or tools are failing → skip to Step 7.
 
 ## Step 3 — Find Candidate Markets
 Use the Utils **Polymarket Get Markets with Smart Analysis** as the primary tool to search for markets. This tool will include smart whales positions data, too. Fall back to Polymarket CLI search, only if really unsatisfied with the results. Target only a handful of candidates. Skip any markets where you already have a position.
+Prioritize types of markets where you would have the appropriate tools to gather information.  
 
 ## Step 4 — Research Each Candidate
 Act as an experienced trader. Look for: clear winners, strong consensus, surprising news, price/sentiment divergence, whale positions, or crowd mispricing.
-**Always verify with CLIs before betting** — you can use utils custom tools, your native web search, etc. Only use default tool for web searches, not the browser.
+**Always verify with CLIs before betting** — you should use utils custom tools, your native web search, etc.
 It's good to prioritize markets where you would have ways to gather information (available specialized tools, or even if web searches are sufficient).
+Do not base your decisions solely on one factor (like only whale positions). Always make sure to make inquiries.
+Even if whale positions are not very strong for a market, if it's a market where acquiring data would be a more powerful signal (such as weather markets), you can go for them.
+The utils you have are very powerful - they will also do good analysis for weather, crypto, etc.
 Do not bend over backwards trying to find info - if there's no info, skip the market entirely.
 
 ## Step 5 — Decide
@@ -58,10 +67,6 @@ Post to Slack channel mentioned in the initial prompt. Always include:
     - Per trade: market name, chosen outcome, amount, price, reasoning for choice
 - Current balance after trades
 - Any errors
-
-## Step 8 — Manage Notes
-Remove outdated notes. Add new general-purpose learnings (tips, patterns to avoid, market insights). It's perfectly fine if you add no notes.
-**No specific market names** — keep notes generic and reusable across runs.
 
 ---
 **Stop.**

@@ -3,7 +3,7 @@ import { Command } from 'commander';
 import fs from 'fs';
 import path from 'path';
 
-const TOKEN_CACHE_PATH = path.resolve('./persist/reddit_token');
+const TOKEN_CACHE_PATH = path.resolve('./reddit_token');
 
 interface TokenCache {
   access_token: string;

@@ -1,0 +1,11 @@
+2026-04-21T11:17:28.955Z [DEBUG] MDM settings load completed in 0ms
+2026-04-21T11:17:29.039Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /app/.claude/settings.json
+2026-04-21T11:17:29.045Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /app/.claude/settings.local.json
+2026-04-21T11:17:29.057Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: /etc/claude-code/managed-settings.json
+2026-04-21T11:17:29.068Z [DEBUG] CA certs: Config fallback - globalEnv keys: , settingsEnv keys: none
+2026-04-21T11:17:29.081Z [DEBUG] [init] configureGlobalMTLS starting
+2026-04-21T11:17:29.092Z [DEBUG] [init] configureGlobalMTLS complete
+2026-04-21T11:17:29.107Z [DEBUG] [init] configureGlobalAgents starting
+2026-04-21T11:17:29.121Z [DEBUG] CA certs: useSystemCA=false, extraCertsPath=undefined
+2026-04-21T11:17:29.137Z [DEBUG] [init] configureGlobalAgents complete
+2026-04-21T11:17:29.170Z [DEBUG] Error log sink initialized

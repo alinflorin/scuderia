@@ -57,7 +57,7 @@ To find it:
 Polymarket runs on Polygon and only accepts USDC. Funds go into your proxy wallet.
 
 1. On Polymarket, click **Deposit** → select **Polygon** as the network
-2. Copy the deposit address shown (this is your proxy wallet address)
+2. Copy the deposit address shown (this is your deposit address, only for USDC)
 3. In MetaMask on the **Polygon** network, send USDC to that address
 
 If you only have USDC on Ethereum, bridge it first via [app.polygon.technology](https://app.polygon.technology). Sending USDC on the wrong network will result in lost funds.
@@ -110,6 +110,14 @@ Public channels work without an invite if you added the `chat:write.public` scop
 
 ---
 
+## Claude Code Oauth Token
+
+1. Open Claude Code in terminal, somewhere you are already logged in: `claude setup-token`
+2. Log in in the browser
+3. Token will be displayed in the terminal. Store it, to be used for the env var CLAUDE_CODE_OAUTH_TOKEN. It is valid for 1 year.
+
+---
+
 ## Environment Variables
 
 **Required:**
@@ -117,79 +125,36 @@ Public channels work without an invite if you added the `chat:write.public` scop
 | Variable | Example |
 |---|---|
 | `POLYMARKET_PRIVATE_KEY` | `0x...` |
-| `SLACK_CLI_TOKEN` | `xoxb-...` |
+| `CLAUDE_CODE_OAUTH_TOKEN` | `sk-ant-...` |
 
 **Optional (with defaults):**
 
 | Variable | Default | Options |
 |---|---|---|
-| `LLM` | `claude` | `gemini` |
+| `SLACK_CLI_TOKEN` | - | |
 | `SLACK_CHANNEL` | `trading` | |
 | `DEBUG` | `0` | `1` |
+| `NOAA_CDO_API_KEY` | - | |
+| `APISPORTS_API_KEY` | - | |
 | `CLAUDE_MODEL` | `claude-sonnet-4-6` | |
 | `CLAUDE_EFFORT` | `medium` | |
-| `GEMINI_MODEL` | `gemini-2.5-flash` | |
 | `REDDIT_CLIENT_ID` | — | |
 | `REDDIT_CLIENT_SECRET` | — | |
 | `BUDGETCAPPERCENT` | 20 | |
 
+---
 
-## Volumes
-
-| Mount | Purpose |
-|---|---|
-| `/home/appuser` | User home directory |
-| `/app/persist` | Persistent app data |
-
-## Running Locally
-
-### Clone and build (not preferred)
-Clone the repo and build:
-
-```sh
-git clone https://github.com/alinflorin/scuderia.git
-cd scuderia
-docker build -t scuderia:latest .
-```
-
-Run with the local image:
-
-```sh
-docker run --rm \
-  --name scuderia \
-  -e POLYMARKET_PRIVATE_KEY=0x... \
-  -e SLACK_CLI_TOKEN=xoxb-... \
-  -v ./data:/home/appuser \
-  -v ./persist:/app/persist \
-  scuderia:latest
-```
-
-### Or use the pre-built image from the registry:
+## Running
 
 ```sh
 docker pull ghcr.io/alinflorin/scuderia:latest && docker run --rm \
   --name scuderia \
   -e POLYMARKET_PRIVATE_KEY=0x... \
   -e SLACK_CLI_TOKEN=xoxb-... \
-  -v ./data:/home/appuser \
-  -v ./persist:/app/persist \
+  -e CLAUDE_CODE_OAUTH_TOKEN=... \
+  -e OTHER_ENV_VARS=values \
   ghcr.io/alinflorin/scuderia:latest
 ```
-
-## First-time Setup
-
-Run the docker run command manually at first. On first run, the container sleeps for 10 minutes and waits for authentication.
-Then, run `claude` or `gemini` (depending on how you've set the LLM env var. Defaults to claude) from `/app` to authenticate:
-
-```sh
-docker exec -it scuderia bash
-cd /app
-claude   # or: gemini
-```
-
-Once authentication completes, the container exits. On the next (scheduled or not) run, everything works automatically.
-
----
 
 > **Important:** When running on a schedule, ensure only one instance is active at a time. Starting a second container while one is already running will cause conflicting trades and unpredictable behavior. Use `docker ps` to check before starting, or use `--name scuderia` (as shown above) so Docker prevents duplicate containers automatically.  
 Do not schedule these more often than every 15 minutes!  
@@ -197,7 +162,6 @@ Do not schedule these more often than every 15 minutes!
 
 ## Scheduling with cron (Debian/Ubuntu VPS)
 
-After you have successfully ran the image once and logged in:
 Open the crontab editor:
 
 ```sh
@@ -211,10 +175,7 @@ Add a line to run the container on your desired schedule. The example below runs
   --name scuderia \
   -e POLYMARKET_PRIVATE_KEY=0x... \
   -e SLACK_CLI_TOKEN=xoxb-... \
-  -e OTHER_ENV_VARS=value \
-  -v /home/youruser/data:/home/appuser \
-  -v /home/youruser/persist:/app/persist \
-  ghcr.io/alinflorin/scuderia:latest >> /home/youruser/scuderia.log 2>&1
+  -e CLAUDE_CODE_OAUTH_TOKEN=... \
+  -e OTHER_ENV_VARS=values \
+  ghcr.io/alinflorin/scuderia:latest
 ```
-
-Replace `/home/youruser/` with actual absolute paths — cron does not run in your home directory, so relative paths like `./data` will not work.

@@ -1,9 +1,0 @@
-README.md
-RUNBOOK.md
-.github
-dist
-Dockerfile
-.dockerignore
-run.sh
-.claudeignore
-CLI_READMES.md
