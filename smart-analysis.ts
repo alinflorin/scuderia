@@ -312,12 +312,13 @@ export function makeSmartAnalysisCommand(): Command {
       const limit = parseInt(options.limit, 10);
       const offset = parseInt(options.offset, 10);
 
-      const [leaderboardWallets, rawMarketsMain] = await Promise.all([
+      const [leaderboardWallets, rawMarketsMain, rawMarketsSmall] = await Promise.all([
         fetchLeaderboard(),
         fetchMarkets({ limit, offset }),
+        fetchMarkets({ limit, offset: 0, liquidityMin: '300', volumeMin: '500', order: 'competitive' }),
       ]);
 
-      const markets = deduplicateMarkets(rawMarketsMain);
+      const markets = deduplicateMarkets([...rawMarketsMain, ...rawMarketsSmall]);
       if (markets.length === 0) {
         console.log(JSON.stringify({ success: false, error: 'No qualifying markets found', markets: [] }, null, 2));
         return;
