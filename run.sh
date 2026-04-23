@@ -16,7 +16,7 @@ PROMPT="$(cat ./RUNBOOK.md)
 ## CLI Readmes
 
 $(cat ./CLI_READMES.md)
-
+$(./utils.sh help-all)
 ---
 
 Current command is the following!

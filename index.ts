@@ -7,6 +7,7 @@ import { makeCryptoCoinIndicatorsCommand } from './crypto-coin-indicators.js';
 import { makeSearchRedditWithCommentsCommand } from './search-reddit-with-comments.js';
 import { makeWaitCommand } from './wait.js';
 import { makeWeatherForecastCommand } from './weather-forecast.js';
+import { makeSportsH2HCommand } from './sports-h2h.js';
 
 const program = new Command();
 
@@ -20,6 +21,7 @@ program.addCommand(makeCryptoCoinIndicatorsCommand());
 program.addCommand(makeSearchRedditWithCommentsCommand());
 program.addCommand(makeWeatherForecastCommand());
 program.addCommand(makeWaitCommand());
+program.addCommand(makeSportsH2HCommand());
 
 program
   .command('help-all')
