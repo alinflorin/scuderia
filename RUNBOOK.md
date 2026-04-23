@@ -16,6 +16,7 @@
     - Get Crypto indicators
     - Get Weather info + analysis based on historical data (OpenMeteo + NOAA + NOAA CDO)
     - Wait tool
+    - Head 2 Head comparison tool for sport teams - odds for upcoming game, historical data
 - `curl`, `jq`, `yq`, common bash utils are all there
 - SDKs available: python, uvx, node, npm
 - No directory is persistent between runs
