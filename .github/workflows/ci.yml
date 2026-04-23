@@ -23,6 +23,7 @@ jobs:
     runs-on: ubuntu-24.04
     permissions:
       contents: read
+      actions: write
     outputs:
       tag: ${{ steps.version.outputs.tag }}
       version: ${{ steps.version.outputs.version }}
@@ -46,6 +47,15 @@ jobs:
           done
           echo "tag=v${NEW_VERSION}-exp-${EXP_NUM}" >> $GITHUB_OUTPUT
           echo "version=${NEW_VERSION}-exp-${EXP_NUM}" >> $GITHUB_OUTPUT
+
+      - name: Update run title
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api \
+            --method PATCH \
+            /repos/${{ github.repository }}/actions/runs/${{ github.run_id }} \
+            -f name="main build ${{ steps.version.outputs.version }}"
 
   build:
     name: Build (${{ matrix.platform }})
@@ -122,6 +132,10 @@ jobs:
       contents: write
       packages: write
     steps:
+      - name: Checkout
+        if: github.ref == 'refs/heads/main'
+        uses: actions/checkout@v6
+
       - name: Download digests
         uses: actions/download-artifact@v8
         with:
