@@ -43,7 +43,7 @@ else
 
   CLAUDE_OUTPUT=$(claude \
     --verbose \
-    --allow-dangerously-skip-permissions \
+    --allodw-dangerously-skip-permissions \
     --dangerously-skip-permissions \
     --permission-mode bypassPermissions \
     --no-chrome \

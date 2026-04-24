@@ -98,15 +98,13 @@ Transactions on Polygon require **POL** (formerly MATIC) for gas fees. This goes
 4. Use it as `SLACK_CLI_TOKEN`
 5. Create a public channel called trading 
 
-### 4. Invite the bot to channels (if needed)
+### 4. Invite the bot to channel! Important!
 
-If you want the bot to post to a specific private channel, invite it first:
+If you want the bot to post to a specific channel, invite it first:
 
 ```
 /invite @your-app-name
 ```
-
-Public channels work without an invite if you added the `chat:write.public` scope.
 
 ---
 
