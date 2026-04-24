@@ -10,7 +10,27 @@ for var in CLAUDE_CODE_OAUTH_TOKEN POLYMARKET_PRIVATE_KEY; do
     fi
 done
 
-PROMPT="hi bro"
+PROMPT="$(cat ./RUNBOOK.md)
+
+---
+
+## CLI Guide
+
+$(cat ./CLI_GUIDE.md)
+
+---
+
+## ./utils.sh help menu
+
+\`\`\`
+$(./utils.sh help-all 2>&1)
+\`\`\`
+
+---
+
+Current command is the following!
+Trade as per the playbook defined above. IMPORTANT: The budget cap (percentage of total balance) for this run is: ${BUDGETCAPPERCENT} percent. Current datetime (UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ). Your Polymarket Proxy Wallet address is: $(polymarket wallet show -o json | jq -r '.proxy_address'). The Slack channel name is #${SLACK_CHANNEL}"
+
 
 if [ "${DEBUG}" = "1" ]; then
   echo DEBUGSLEEPING
