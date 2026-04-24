@@ -10,26 +10,7 @@ for var in CLAUDE_CODE_OAUTH_TOKEN POLYMARKET_PRIVATE_KEY; do
     fi
 done
 
-PROMPT="$(cat ./RUNBOOK.md)
-
----
-
-## CLI Guide
-
-$(cat ./CLI_GUIDE.md)
-
----
-
-## ./utils.sh help menu
-
-\`\`\`
-$(./utils.sh help-all 2>&1)
-\`\`\`
-
----
-
-Current command is the following!
-Trade as per the playbook defined above. IMPORTANT: The budget cap (percentage of total balance) for this run is: ${BUDGETCAPPERCENT} percent. Current datetime (UTC): $(date -u +%Y-%m-%dT%H:%M:%SZ). Your Polymarket Proxy Wallet address is: $(polymarket wallet show -o json | jq -r '.proxy_address'). The Slack channel name is #${SLACK_CHANNEL}"
+PROMPT="hi bro"
 
 if [ "${DEBUG}" = "1" ]; then
   echo DEBUGSLEEPING
@@ -40,7 +21,7 @@ else
   echo "$PROMPT"
   echo "==============="
 
-  CLAUDE_ERROR=$(claude \
+  CLAUDE_OUTPUT=$(claude \
     --verbose \
     --allow-dangerously-skip-permissions \
     --dangerously-skip-permissions \
@@ -51,14 +32,8 @@ else
     --model "${CLAUDE_MODEL}" \
     --effort "${CLAUDE_EFFORT}" \
     --output-format stream-json \
-    -p "$PROMPT" 2>&1 | tee /dev/stderr)
-  CLAUDE_EXIT=${PIPESTATUS[0]}
-  if [ $CLAUDE_EXIT -ne 0 ]; then
-    slack chat send --text "Claude command failed (exit $CLAUDE_EXIT): $CLAUDE_ERROR" --channel "#${SLACK_CHANNEL}"
-    exit $CLAUDE_EXIT
-  
-  else
-    slack chat send --text "Claude session logs: $CLAUDE_ERROR" --channel "#${SLACK_CHANNEL}"
-    exit $CLAUDE_EXIT
-  fi
+    -p "$PROMPT" 2>&1)
+  echo $CLAUDE_OUTPUT
+  slack chat send --text "Claude command failed (exit $CLAUDE_EXIT): $CLAUDE_OUTPUT" --channel "#${SLACK_CHANNEL}"
+  exit 0
 fi
