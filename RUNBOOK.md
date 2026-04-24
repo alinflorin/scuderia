@@ -23,7 +23,7 @@
 Use the Slack CLI to send a message to the channel mentioned in the initial prompt, including the current date and time.
 
 ## Step 1 — Review & Manage Open Positions
-Via Polymarket CLI (you should run `polymarket data positions 0x.....` with the proxy wallet address in the initial prompt):
+Via Polymarket CLI get open positions command.
 - Do not investigate these, just high level analysis. No redeems are needed, automatic redeem is enabled in Polymarket account settings.
 - Review recent closed positions briefly
 - Sell positions but as a very last resort, if risk warrants it. If loss is unavoidable.

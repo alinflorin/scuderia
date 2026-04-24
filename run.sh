@@ -1,4 +1,5 @@
 #!/bin/bash
+trap 'exit 0' SIGINT SIGTERM
 
 mkdir -p /app/persist || true
 
@@ -35,6 +36,10 @@ if [ "${DEBUG}" = "1" ]; then
   sleep infinity
 else
   slack chat send --text "Trading run starting... $(date -u +%Y-%m-%dT%H:%M:%SZ)" --channel "#${SLACK_CHANNEL}"
+  echo "=== PROMPT ==="
+  echo "$PROMPT"
+  echo "==============="
+
   CLAUDE_ERROR=$(claude \
     --verbose \
     --allow-dangerously-skip-permissions \
@@ -46,8 +51,8 @@ else
     --model "${CLAUDE_MODEL}" \
     --effort "${CLAUDE_EFFORT}" \
     --output-format stream-json \
-    -p "$PROMPT" 2>&1)
-  CLAUDE_EXIT=$?
+    -p "$PROMPT" 2>&1 | tee /dev/stderr)
+  CLAUDE_EXIT=${PIPESTATUS[0]}
   if [ $CLAUDE_EXIT -ne 0 ]; then
     slack chat send --text "Claude command failed (exit $CLAUDE_EXIT): $CLAUDE_ERROR" --channel "#${SLACK_CHANNEL}"
     exit $CLAUDE_EXIT
