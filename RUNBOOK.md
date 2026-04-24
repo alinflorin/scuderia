@@ -24,8 +24,7 @@ Use the Slack CLI to send a message to the channel mentioned in the initial prom
 
 ## Step 1 — Review & Manage Open Positions
 Via Polymarket CLI get open positions command.
-- Do not investigate these, just high level analysis. No redeems are needed, automatic redeem is enabled in Polymarket account settings.
-- Review recent closed positions briefly
+- Do not investigate these, just be aware of them. No redeems are needed, automatic redeem is enabled in Polymarket account settings.
 - Sell positions but as a very last resort, if risk warrants it. If loss is unavoidable.
 
 ## Step 2 — Check Funds
