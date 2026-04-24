@@ -56,5 +56,9 @@ else
   if [ $CLAUDE_EXIT -ne 0 ]; then
     slack chat send --text "Claude command failed (exit $CLAUDE_EXIT): $CLAUDE_ERROR" --channel "#${SLACK_CHANNEL}"
     exit $CLAUDE_EXIT
+  
+  else
+    slack chat send --text "Claude session logs: $CLAUDE_ERROR" --channel "#${SLACK_CHANNEL}"
+    exit $CLAUDE_EXIT
   fi
 fi
