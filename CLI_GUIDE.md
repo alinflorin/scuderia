@@ -158,20 +158,6 @@ polymarket clob earnings-markets --date 2024-06-15
 polymarket clob reward-percentages
 polymarket clob current-rewards
 polymarket clob market-reward 0xCONDITION...
-
-# Check if orders are scoring rewards
-polymarket clob order-scoring ORDER_ID
-polymarket clob orders-scoring "ORDER1,ORDER2"
-
-# API key management
-polymarket clob api-keys
-polymarket clob create-api-key
-polymarket clob delete-api-key
-
-# Account status
-polymarket clob account-status
-polymarket clob notifications
-polymarket clob delete-notifications "NOTIF1,NOTIF2"
 ```
 
 ### On-Chain Data
