@@ -95,7 +95,7 @@ else
 
   echo "$CLAUDE_OUTPUT"
 
-  LOG_FILE="/app/persist/claude_$(date +%s).log"
+  LOG_FILE="/app/persist/claude_${RUN_DATE}.log"
   echo "$CLAUDE_OUTPUT" > "$LOG_FILE"
   
   slack_upload_file "$LOG_FILE" "$RUN_DATE" || true
