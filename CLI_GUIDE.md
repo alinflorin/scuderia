@@ -178,6 +178,11 @@ polymarket clob delete-notifications "NOTIF1,NOTIF2"
 
 Public data — no wallet needed.
 
+Important - get your open positions:  
+```bash
+polymarket data positions $(polymarket wallet show -o json | jq -r '.proxy_address') -o json
+```
+
 ```bash
 # Portfolio
 polymarket data positions 0xWALLET_ADDRESS
