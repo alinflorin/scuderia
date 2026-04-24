@@ -10,6 +10,7 @@
 - `polymarket` CLI. No need to import anything or create wallets, everything is set via env vars. You already have a wallet set up. Important: if the Polymarket API is down or having issues, retry 2 times and then just stop. This doesn't apply for intentional retries.
 - `slack` CLI to post messages to channel. Use threads, if possible.
 - `verdict` CLI to control your own web browser. Chromium already baked in. But you can also fetch web content programatically or with curl or python.
+- `mem0` CLI to manage your long term memory.
 - `./utils.sh` (TypeScript custom scripts) - IMPORTANT, SPECIALIZED
 - `curl`, `jq`, `yq`, common bash utils are all there
 - SDKs available: python, uvx, node, npm
@@ -27,9 +28,10 @@ Via Polymarket CLI get open positions command.
 - Do not investigate these, just be aware of them. No redeems are needed, automatic redeem is enabled in Polymarket account settings.
 - Sell positions but as a very last resort, if risk warrants it. If loss is unavoidable.
 
-## Step 2 — Check Funds
+## Step 2 — Check Funds and Memory
 Fetch USDC balance via Polymarket CLI.
 If balance is 0 or tools are failing → skip to Step 7.
+Check your long term mem0 memory for useful info.  
 
 ## Step 3 — Find Candidate Markets
 Use the Utils **Polymarket Get Markets with Smart Analysis** as the primary tool to search for markets (a good limit parameter value is 10-15). This tool will include smart whales positions data, too. Fall back to Polymarket CLI search, only if really unsatisfied with the results. Target only a handful of candidates. Skip buying any markets where you already have a position.
@@ -53,6 +55,7 @@ Make independent trading decisions — no approval needed. Calculated risk is ac
 - Per trade: place order → confirm a valid order ID
 - If an order fails, skip it (don't count it)
 - Place orders in such a way they get filled immediately! Do not wait for someone to match the price! This is important. I think these would be market orders?
+- Store facts in your mem0 long term memory. Generic facts, not scoped to particular markets. Markets come and go, it's important to remember useful general info. You should also delete/manage older memories, which you don't need any more.
 
 ## Step 7 — Notify Outcome
 Post to Slack channel mentioned in the initial prompt. Always include:

@@ -108,6 +108,20 @@ If you want the bot to post to a specific channel, invite it first:
 
 ---
 
+## mem0 Setup
+
+### 1. Create an account
+
+Go to [app.mem0.ai](https://app.mem0.ai) and sign up.
+
+### 2. Get your API key
+
+1. After logging in, go to **API Keys** in your dashboard
+2. Click **Create API Key**
+3. Copy the key and use it as `MEM0_API_KEY`
+
+---
+
 ## Claude Code Oauth Token
 
 1. Open Claude Code in terminal, somewhere you are already logged in: `claude setup-token`
@@ -139,6 +153,7 @@ If you want the bot to post to a specific channel, invite it first:
 | `REDDIT_CLIENT_ID` | — | |
 | `REDDIT_CLIENT_SECRET` | — | |
 | `BUDGETCAPPERCENT` | 20 | |
+| `MEM0_API_KEY` | - | |
 
 ---
 
