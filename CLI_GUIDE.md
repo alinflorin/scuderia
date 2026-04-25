@@ -431,124 +431,59 @@ verdict stop
 
 
 
+# Mem0 Memory Wrapper (`mem.sh`)
 
-# Mem0 - Long term memory
+> Streamlined memory management for AI agents.
 
-> Manage memories from your terminal — built for AI agents.
-
-The mem0 CLI lets you add, search, list, update, and delete memories directly from the terminal. 
-
-<Tip>
-  **Built for AI agents.** Pass `--agent` (or `--json`) as a global flag on any command to get structured JSON output optimized for programmatic consumption — sanitized fields, no colors or spinners, and errors as JSON too. Drop it into any agent tool loop with zero extra parsing.
-</Tip>
-
-User ID: use "agent"!
+The `mem.sh` script is a bash wrapper around the Mem0 CLI, optimized for programmatic use by AI agents.
 
 ## Commands
 
-### `mem0 add`
-
-Add a memory from text, a JSON messages array, a file, or stdin.
-
-```bash theme={null}
-mem0 add "I prefer dark mode" --user-id alice
-mem0 add --file conversation.json --user-id alice
-echo "Loves hiking on weekends" | mem0 add --user-id alice
+### `all` / `list`
+List all memories associated with the agent.
+```bash
+./mem.sh list
 ```
 
-| Flag                   | Description                                |
-| ---------------------- | ------------------------------------------ |
-| `-u, --user-id`        | Scope to a user                            |
-| `--agent-id`           | Scope to an agent                          |
-| `--messages`           | Conversation messages as JSON              |
-| `-f, --file`           | Read messages from a JSON file             |
-| `-m, --metadata`       | Custom metadata as JSON                    |
-| `--categories`         | Categories (JSON array or comma-separated) |
-| `--graph / --no-graph` | Enable or disable graph memory extraction  |
-| `-o, --output`         | Output format: `text`, `json`, `quiet`     |
-
-### `mem0 search`
-
-Search memories using natural language.
-
-```bash theme={null}
-mem0 search "dietary restrictions" --user-id alice
-mem0 search "preferred tools" --user-id alice --output json --top-k 5
+### `get <memory-id>`
+Retrieve the details of a specific memory.
+```bash
+./mem.sh get 7b3c1a2e-4d5f-6789-abcd-ef0123456789
 ```
 
-| Flag                   | Description                             |
-| ---------------------- | --------------------------------------- |
-| `-u, --user-id`        | Filter by user                          |
-| `-k, --top-k`          | Number of results (default: 10)         |
-| `--threshold`          | Minimum similarity score (default: 0.3) |
-| `--rerank`             | Enable reranking                        |
-| `--keyword`            | Use keyword search instead of semantic  |
-| `--filter`             | Advanced filter expression (JSON)       |
-| `--graph / --no-graph` | Enable or disable graph in search       |
-| `-o, --output`         | Output format: `text`, `json`, `table`  |
-
-### `mem0 list`
-
-List memories with optional filters and pagination.
-
-```bash theme={null}
-mem0 list --user-id alice
-mem0 list --user-id alice --category preferences --output json
-mem0 list --user-id alice --after 2024-01-01 --page-size 50
+### `add <text>`
+Add a new memory to the agent's long-term storage.
+```bash
+./mem.sh add "Market Analysis: Trump vs Biden election markets exhibit 15% spread during weekend hours; avoid large orders then."
 ```
 
-| Flag            | Description                            |
-| --------------- | -------------------------------------- |
-| `-u, --user-id` | Filter by user                         |
-| `--page`        | Page number (default: 1)               |
-| `--page-size`   | Results per page (default: 100)        |
-| `--category`    | Filter by category                     |
-| `--after`       | Created after date (YYYY-MM-DD)        |
-| `--before`      | Created before date (YYYY-MM-DD)       |
-| `-o, --output`  | Output format: `text`, `json`, `table` |
-
-### `mem0 get`
-
-Retrieve a specific memory by ID.
-
-```bash theme={null}
-mem0 get 7b3c1a2e-4d5f-6789-abcd-ef0123456789
-mem0 get 7b3c1a2e-4d5f-6789-abcd-ef0123456789 --output json
+### `search <query>`
+Perform a semantic search across the agent's memories.
+```bash
+./mem.sh search "What is the recorded spread behavior for political election markets?"
 ```
 
-### `mem0 update`
-
-Update the text or metadata of an existing memory.
-
-```bash theme={null}
-mem0 update <memory-id> "Updated preference text"
-mem0 update <memory-id> --metadata '{"priority": "high"}'
-echo "new text" | mem0 update <memory-id>
+### `update <memory-id> <new-text>`
+Update the content of an existing memory.
+```bash
+./mem.sh update 7b3c1a2e-4d5f-6789-abcd-ef0123456789 "Market Analysis: Spread now stays under 5% after the recent liquidity provider entry."
 ```
 
-### `mem0 delete`
-
-Delete a single memory, all memories for a scope, or an entire entity.
-
-```bash theme={null}
-# Delete a single memory
-mem0 delete <memory-id>
-
-# Delete all memories for a user
-mem0 delete --all --user-id alice --force
-
-# Delete all memories project-wide
-mem0 delete --all --project --force
-
-# Preview what would be deleted
-mem0 delete --all --user-id alice --dry-run
+### `delete <memory-id>`
+Permanently remove a memory.
+```bash
+./mem.sh delete 7b3c1a2e-4d5f-6789-abcd-ef0123456789
 ```
 
-| Flag        | Description                                    |
-| ----------- | ---------------------------------------------- |
-| `--all`     | Delete all memories matching scope filters     |
-| `--entity`  | Delete the entity and all its memories         |
-| `--project` | With `--all`: delete all memories project-wide |
-| `--dry-run` | Preview without deleting                       |
-| `--force`   | Skip confirmation prompt                       |
+## Summary Table
+
+| Command | Args | Description |
+| :--- | :--- | :--- |
+| `all` | - | Alias for `list` |
+| `list` | - | List all memories for `user-id: agent` |
+| `get` | `<id>` | Get specific memory details |
+| `add` | `<text>` | Store new memory |
+| `search`| `<query>`| Semantic search |
+| `update`| `<id> <t>`| Update memory content |
+| `delete`| `<id>` | Delete memory (forced) |
 
