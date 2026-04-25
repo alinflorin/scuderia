@@ -41,7 +41,7 @@ case "$1" in
             echo '{"status": "error", "message": "Memory ID required"}'
             exit 1
         fi
-        exec_mem0 delete "$2" --force
+        exec_mem0 delete "$2" --agent-id "$AGENT_ID" --app-id "$APP_ID" --force
         ;;
     update)
         if [ -z "$2" ] || [ -z "$3" ]; then
@@ -55,7 +55,7 @@ case "$1" in
             echo '{"status": "error", "message": "Search query required"}'
             exit 1
         fi
-        exec_mem0 search "$2" --agent-id "$AGENT_ID"
+        exec_mem0 search "$2" --agent-id "$AGENT_ID" --app-id "$APP_ID"
         ;;
     add)
         if [ -z "$2" ]; then
