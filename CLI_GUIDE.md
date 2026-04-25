@@ -233,6 +233,24 @@ polymarket --help
 
 # Slack CLI
 ---
+Full usage:  
+$ slack chat send \
+  --actions '{"type": "button", "style": "primary", "text": "See results", "url": "http://example.com"}' \
+  --author 'author' \
+  --author-icon 'https://assets-cdn.github.com/images/modules/logos_page/Octocat.png' \
+  --author-link 'https://github.com/rockymadden/slack-cli' \
+  --channel '#channel' \
+  --color good \
+  --fields '{"title": "Environment", "value": "snapshot", "short": true}' \
+  --footer 'footer' \
+  --footer-icon 'https://assets-cdn.github.com/images/modules/logos_page/Octocat.png' \
+  --image 'https://assets-cdn.github.com/images/modules/logos_page/Octocat.png' \
+  --pretext 'pretext' \
+  --text 'text' \
+  --time 123456789 \
+  --title 'title' \
+  --title-link 'https://github.com/rockymadden/slack-cli'
+
 ### `chat send`
 
 ```console
@@ -242,6 +260,12 @@ $
 $ # Send message via options:
 $ slack chat send --text 'Hello world!' --channel '#channel'
 ```
+
+
+
+
+
+
 
 # Verdict CLI
 
@@ -353,11 +377,14 @@ verdict stop
 
 
 
-# Mem0 Memory Wrapper (`mem.sh`)
+
+
+
+# Memory CLI (`./mem.sh`)
 
 > Streamlined memory management for AI agents.
 
-The `mem.sh` script is a bash wrapper around the Mem0 CLI, optimized for programmatic use by AI agents.
+The `./mem.sh` script is a bash wrapper around a cloud memory service, optimized for programmatic use by AI agents.
 
 ## Summary Table
 
