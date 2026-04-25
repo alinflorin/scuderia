@@ -25,7 +25,7 @@ Use the Slack CLI to send a message to the channel mentioned in the initial prom
 
 ## Step 1 — Review & Manage Open Positions
 Via Polymarket CLI get open positions command.
-- Do not investigate these, just be aware of them. No redeems are needed, automatic redeem is enabled in Polymarket account settings.
+- Be aware of them. No redeems are needed, automatic redeem is enabled in Polymarket account settings.
 - You can also cash out open positions, but as a very last resort, if risk warrants it. If loss is unavoidable. If percent PnL is, let's say, worse than the potential sell threshold percentage (defined below), that's a candidate for selling (cashing out). It also depends on the type of the market (example sports can still have surprises, even if threshold is passed). You can also do SMALL investigations to cross-check.
 - Cash out obviously losing positions, of course.
 - If you decide to cash out, don't use limit orders. Sell immediately.
