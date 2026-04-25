@@ -31,7 +31,7 @@ Via Polymarket CLI get open positions command.
 ## Step 2 — Check Funds and Memory
 Fetch USDC balance via Polymarket CLI.
 If balance is 0 or tools are failing → skip to Step 7.
-Check your long term mem0 memory for useful info.  
+Check your long term ./mem.sh memory for useful info.  
 
 ## Step 3 — Find Candidate Markets
 Use the Utils **Polymarket Get Markets with Smart Analysis** as the primary tool to search for markets (a good limit parameter value is 10-15). This tool will include smart whales positions data, too. Fall back to Polymarket CLI search, only if really unsatisfied with the results. Target only a handful of candidates. Skip buying any markets where you already have a position.
@@ -55,7 +55,7 @@ Make independent trading decisions — no approval needed. Calculated risk is ac
 - Per trade: place order → confirm a valid order ID
 - If an order fails, skip it (don't count it)
 - Place orders in such a way they get filled immediately! Do not wait for someone to match the price! This is important. I think these would be market orders?
-- Store facts in your mem0 long term memory. Generic facts, not scoped to particular markets. Markets come and go, it's important to remember useful general info. You should also delete/manage older memories, which you don't need any more.
+- Store facts in your ./mem.sh long term memory. Generic facts, not scoped to particular markets. Markets come and go, it's important to remember useful general info. You should also delete/manage older memories, which you don't need any more.
 
 ## Step 7 — Notify Outcome
 Post to Slack channel mentioned in the initial prompt. Always include:
