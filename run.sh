@@ -76,7 +76,7 @@ $(./mem.sh all 2>&1)
 ---
 
 Current command is the following!
-Trade as per the playbook defined above. IMPORTANT: The budget cap (percentage of total balance) for this run is: ${BUDGETCAPPERCENT} percent. Current datetime (UTC): $RUN_DATE. Your Polymarket Proxy Wallet address is: $(polymarket wallet show -o json | jq -r '.proxy_address'). The Slack channel name is #${SLACK_CHANNEL}. Custom instructions: ${CUSTOM_INSTRUCTIONS}"
+Trade as per the playbook defined above. IMPORTANT: The budget cap (percentage of total balance) for this run is: ${BUDGETCAPPERCENT} percent. POTENTIAL sell threshold: ${LOSSTHRESHOLDPERCENT} percent. Current datetime (UTC): $RUN_DATE. Your Polymarket Proxy Wallet address is: $(polymarket wallet show -o json | jq -r '.proxy_address'). The Slack channel name is #${SLACK_CHANNEL}. Custom instructions: ${CUSTOM_INSTRUCTIONS}"
 
 
 if [ "${DEBUG}" = "1" ]; then

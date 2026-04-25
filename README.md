@@ -155,7 +155,7 @@ Go to [app.mem0.ai](https://app.mem0.ai) and sign up.
 | `BUDGETCAPPERCENT` | 20 | |
 | `MEM0_API_KEY` | - | |
 | `CUSTOM_INSTRUCTIONS` | - | |
-
+| `LOSSTHRESHOLDPERCENT` | 30 | |
 ---
 
 ## Running
