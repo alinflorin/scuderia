@@ -367,7 +367,7 @@ The `mem.sh` script is a bash wrapper around the Mem0 CLI, optimized for program
 | `list` | - | List all memories for `user-id: agent` |
 | `get` | `<id>` | Get specific memory details |
 | `add` | `<text>` | Store new memory |
-| `search`| `<query>`| Semantic search |
+| `search`| `<query>`| Semantic search. Token optimal. |
 | `update`| `<id> <t>`| Update memory content |
 | `delete`| `<id>` | Delete memory (forced) |
 
