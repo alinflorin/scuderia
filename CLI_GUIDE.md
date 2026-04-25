@@ -427,3 +427,63 @@ verdict cookie-import example.com
 verdict status
 verdict stop
 ```
+
+
+
+
+# Mem0 Memory Wrapper (`mem.sh`)
+
+> Streamlined memory management for AI agents.
+
+The `mem.sh` script is a bash wrapper around the Mem0 CLI, optimized for programmatic use by AI agents.
+
+## Commands
+
+### `all` / `list`
+List all memories associated with the agent.
+```bash
+./mem.sh list
+```
+
+### `get <memory-id>`
+Retrieve the details of a specific memory.
+```bash
+./mem.sh get 7b3c1a2e-4d5f-6789-abcd-ef0123456789
+```
+
+### `add <text>`
+Add a new memory to the agent's long-term storage.
+```bash
+./mem.sh add "Market Analysis: Trump vs Biden election markets exhibit 15% spread during weekend hours; avoid large orders then."
+```
+
+### `search <query>`
+Perform a semantic search across the agent's memories.
+```bash
+./mem.sh search "What is the recorded spread behavior for political election markets?"
+```
+
+### `update <memory-id> <new-text>`
+Update the content of an existing memory.
+```bash
+./mem.sh update 7b3c1a2e-4d5f-6789-abcd-ef0123456789 "Market Analysis: Spread now stays under 5% after the recent liquidity provider entry."
+```
+
+### `delete <memory-id>`
+Permanently remove a memory.
+```bash
+./mem.sh delete 7b3c1a2e-4d5f-6789-abcd-ef0123456789
+```
+
+## Summary Table
+
+| Command | Args | Description |
+| :--- | :--- | :--- |
+| `all` | - | Alias for `list` |
+| `list` | - | List all memories for `user-id: agent` |
+| `get` | `<id>` | Get specific memory details |
+| `add` | `<text>` | Store new memory |
+| `search`| `<query>`| Semantic search |
+| `update`| `<id> <t>`| Update memory content |
+| `delete`| `<id>` | Delete memory (forced) |
+
