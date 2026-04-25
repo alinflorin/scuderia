@@ -28,10 +28,10 @@ Via Polymarket CLI get open positions command.
 - Do not investigate these, just be aware of them. No redeems are needed, automatic redeem is enabled in Polymarket account settings.
 - Sell positions but as a very last resort, if risk warrants it. If loss is unavoidable.
 
-## Step 2 — Check Funds and Memory
+## Step 2 — Check Funds
 Fetch USDC balance via Polymarket CLI.
 If balance is 0 or tools are failing → skip to Step 7.
-Check your long term ./mem.sh memory. Make sure not to overflood the context window!  
+
 
 ## Step 3 — Find Candidate Markets
 Use the Utils **Polymarket Get Markets with Smart Analysis** as the primary tool to search for markets (a good limit parameter value is 10-15). This tool will include smart whales positions data, too. Fall back to Polymarket CLI search, only if really unsatisfied with the results. Target only a handful of candidates. Skip buying any markets where you already have a position.
@@ -55,7 +55,7 @@ Make independent trading decisions — no approval needed. Calculated risk is ac
 - Per trade: place order → confirm a valid order ID
 - If an order fails, skip it (don't count it)
 - Place orders in such a way they get filled immediately! Do not wait for someone to match the price! This is important. I think these would be market orders?
-- You can store any facts in your ./mem.sh long term memory. Generic facts, not scoped to particular markets. Markets come and go, it's important to remember useful general info. You should also delete/manage older memories, which you don't need any more. If the information is already in this prompt, don't store it again.
+- You can store any facts in your ./mem.sh long term memory. Generic facts, not scoped to particular markets. Markets come and go, it's important to remember useful general info. You should also delete/manage older memories, which you don't need any more. If the information is already in this prompt, don't store it again. The whole memory will be loaded at the next run so be careful with the tokens. Keep memories short.
 
 ## Step 7 — Notify Outcome
 Post to Slack channel mentioned in the initial prompt. Always include:
