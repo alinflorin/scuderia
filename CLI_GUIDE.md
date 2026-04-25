@@ -391,7 +391,7 @@ The `./mem.sh` script is a bash wrapper around a cloud memory service, optimized
 | Command | Args | Description |
 | :--- | :--- | :--- |
 | `all` | - | Alias for `list` |
-| `list` | - | List all memories for `user-id: agent` |
+| `list` | - | List all memories since 14 days ago |
 | `get` | `<id>` | Get specific memory details |
 | `add` | `<text>` | Store new memory |
 | `search`| `<query>`| Semantic search. Token optimal. |

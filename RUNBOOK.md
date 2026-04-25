@@ -30,7 +30,7 @@ Via Polymarket CLI get open positions command.
 
 ## Step 2 — Check Funds
 Fetch USDC balance via Polymarket CLI.
-If balance is 0 or tools are failing → skip to Step 7.
+If balance is 0 or tools are failing → skip to Step 8.
 
 
 ## Step 3 — Find Candidate Markets
@@ -55,15 +55,20 @@ Make independent trading decisions — no approval needed. Calculated risk is ac
 - Per trade: place order → confirm a valid order ID
 - If an order fails, skip it (don't count it)
 - Place orders in such a way they get filled immediately! Do not wait for someone to match the price! This is important. I think these would be market orders?
-- You can store any facts in your ./mem.sh long term memory. Generic facts, not scoped to particular markets. Markets come and go, it's important to remember useful general info. You should also delete/manage older memories, which you don't need any more. If the information is already in this prompt, don't store it again. The whole memory will be loaded at the next run so be careful with the tokens. Keep memories short.
 
-## Step 7 — Notify Outcome
+## Step 7 - Manage memory
+- You can store any facts in your ./mem.sh long term memory. Generic facts, not scoped to particular markets.
+- You must also update/delete older memories if needed. If the information is already in this prompt or coming from a tool, don't store it. The whole memory will be loaded at the next run so be careful with the tokens. Keep memories short!
+- What can go in the long term memory: lessons learned about your lost positions (think generally), hints about future bets.
+
+## Step 8 — Notify Outcome
 Post to Slack channel mentioned in the initial prompt. Always include:
 - Open positions, their status, and the redeems summary
 - Number of trades placed (if any)
     - Per trade: market name, chosen outcome, amount, price, reasoning for choice. Also include a summary of the tools used to gather information, and how many times they were called.
 - Current balance after trades
 - Any errors
+- Include a funny conclusion sentence.
 
 ---
 **Stop.**

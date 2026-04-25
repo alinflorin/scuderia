@@ -67,7 +67,7 @@ $(./utils.sh help-all 2>&1)
 
 ---
 
-## ./mem.sh all result
+## Your long-term memory (limit 14 days):
 
 \`\`\`
 $(./mem.sh all 2>&1)

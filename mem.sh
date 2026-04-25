@@ -3,8 +3,9 @@
 # mem.sh - A wrapper for mem0 CLI
 # Uses 'agent' as the default user-id and always calls with --agent flag for structured JSON output.
 
-USER_ID="agent"
+AGENT_ID="claude"
 MEM0_BIN="mem0"
+APP_ID="scuderia"
 
 # Function to execute mem0 with the agent flag
 exec_mem0() {
@@ -15,8 +16,8 @@ function show_help() {
     echo "Usage: $0 [command] [options]"
     echo ""
     echo "Commands:"
-    echo "  all             Get all memories for the agent user"
-    echo "  list            List memories for the agent user"
+    echo "  all             Get all memories for the agent"
+    echo "  list            List memories for the agent"
     echo "  get <id>        Get a specific memory by ID"
     echo "  delete <id>     Delete a specific memory by ID"
     echo "  update <id> <t> Update a specific memory with new text"
@@ -26,7 +27,7 @@ function show_help() {
 
 case "$1" in
     all|list)
-        exec_mem0 list --user-id "$USER_ID"
+        exec_mem0 list --agent-id "$AGENT_ID" --app-id "$APP_ID" --page-size 200 --page 1 
         ;;
     get)
         if [ -z "$2" ]; then
@@ -54,14 +55,15 @@ case "$1" in
             echo '{"status": "error", "message": "Search query required"}'
             exit 1
         fi
-        exec_mem0 search "$2" --user-id "$USER_ID"
+        exec_mem0 search "$2" --agent-id "$AGENT_ID"
         ;;
     add)
         if [ -z "$2" ]; then
             echo '{"status": "error", "message": "Memory text required"}'
             exit 1
         fi
-        exec_mem0 add "$2" --user-id "$USER_ID"
+        exec_mem0 add "$2" --agent-id "$AGENT_ID" --app-id "$APP_ID" --no-infer --expires $(date -u -d "+14 days" +%Y-%m-%d)
+
         ;;
     *)
         show_help
