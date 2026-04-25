@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export function makeSportsH2HCommand(): Command {
   return new Command('sports-h2h')
-    .description('Compare two sports teams head-to-head.')
+    .description('Compare two sports teams head-to-head. Use full names for teams.')
     .requiredOption('--sport <type>', 'The sport to compare (e.g., football, basketball, hockey, baseball, american-football)')
     .requiredOption('--team1 <name>', 'The first team name to search for (e.g., "Lakers")')
     .requiredOption('--team2 <name>', 'The second team name to search for (e.g., "Warriors")')
