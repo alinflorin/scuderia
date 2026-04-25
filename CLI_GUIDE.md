@@ -8,7 +8,6 @@ Rust CLI for Polymarket. Browse markets, place orders, manage positions, and int
 
 ```bash
 # List markets with filters
-polymarket markets list --limit 10
 polymarket markets list --active true --order volume_num
 polymarket markets list --closed false --limit 50 --offset 25
 
@@ -27,8 +26,6 @@ polymarket markets tags 12345
 
 ### Events
 
-Events group related markets (e.g. "2024 Election" contains multiple yes/no markets).
-
 ```bash
 polymarket events list --limit 10
 polymarket events list --tag politics --active true
@@ -38,14 +35,12 @@ polymarket events tags 500
 
 **Flags for `events list`**: `--limit`, `--offset`, `--order`, `--ascending`, `--active`, `--closed`, `--tag`
 
-### Tags, Series, Comments, Profiles, Sports
+### Tags, Series, Comments, Profiles
 
 ```bash
 # Tags
 polymarket tags list
 polymarket tags get politics
-polymarket tags related politics
-polymarket tags related-tags politics
 
 # Series (recurring events)
 polymarket series list --limit 10
@@ -58,20 +53,11 @@ polymarket comments by-user 0xf5E6...
 
 # Public profiles
 polymarket profiles get 0xf5E6...
-
-# Sports metadata
-polymarket sports list
-polymarket sports market-types
-polymarket sports teams --league NFL --limit 32
 ```
 
 ### Order Book & Prices (CLOB)
 
-All read-only — no wallet needed.
-
 ```bash
-# Check API health
-polymarket clob ok
 
 # Prices
 polymarket clob price 48331043336612883... --side buy
@@ -101,15 +87,11 @@ polymarket clob price-history 48331043336612883... --interval 1d --fidelity 30
 polymarket clob tick-size 48331043336612883...
 polymarket clob fee-rate 48331043336612883...
 polymarket clob neg-risk 48331043336612883...
-polymarket clob time
-polymarket clob geoblock
 ```
 
 **Interval options for `price-history`**: `1m`, `1h`, `6h`, `1d`, `1w`, `max`
 
-### Trading (CLOB, authenticated)
-
-Requires a configured wallet.
+### Trading
 
 ```bash
 # Place a limit order (buy 10 shares at $0.50)
@@ -161,8 +143,6 @@ polymarket clob market-reward 0xCONDITION...
 ```
 
 ### On-Chain Data
-
-Public data — no wallet needed.
 
 Important - get your open positions:  
 ```bash
@@ -242,8 +222,6 @@ polymarket wallet show                 # Full wallet info (address, source, conf
 ### Other
 
 ```bash
-polymarket status     # API health check
-polymarket --version
 polymarket --help
 ```
 
@@ -255,29 +233,14 @@ polymarket --help
 
 # Slack CLI
 ---
-A pure bash, pipe friendly, feature rich, command line interface for Slack. Richly formatted messages, file uploads, and even creating Slack posts are first class constructs. Deep integration with jq allows for the ability to perform advanced operations upon JSON responses, helping you perform complex queries and pipe chaining with ease.
-
-
 ### `chat send`
 
 ```console
-$ # Send message via prompts:
-$ slack chat send
-$
 $ # Send message via arguments:
 $ slack chat send 'Hello world!' '#channel'
 $
 $ # Send message via options:
 $ slack chat send --text 'Hello world!' --channel '#channel'
-$
-$ # Send message via short form options:
-$ slack chat send -tx 'Hello world!' -ch '#channel'
-$
-$ # Send message via pipe:
-$ ls -al | slack chat send --channel '#channel' --pretext 'Directory:' --color good
-$
-$ # Send message and returning just the timestamp via filter option:
-$ slack chat send 'Hello world!' '#channel' --filter '.ts'
 ```
 
 # Verdict CLI
@@ -296,13 +259,6 @@ verdict stop
 ```
 
 The server auto-starts on first call (~3s). Subsequent calls take ~100-200ms.
-
-## Token Savings
-
-| Tool | Per call | 20 calls | Savings |
-|------|----------|----------|---------|
-| Playwright MCP | ~1,500 tokens | ~30,000 tokens | — |
-| **Verdict** | **~75 tokens** | **~1,500 tokens** | **95%** |
 
 ## Usage
 
@@ -327,14 +283,6 @@ verdict snapshot -i           # interactive elements only
 verdict snapshot -D           # diff against previous snapshot
 verdict snapshot -a           # annotated screenshot with ref labels
 verdict snapshot -C           # include cursor-clickable @c refs
-```
-
-Output looks like this:
-
-```
-@e1 - link "Home"
-@e2 - button "Search"
-@e3 - textbox "Email"
 ```
 
 Use refs in any command: `click @e2`, `fill @e3 "test"`.
@@ -362,37 +310,12 @@ verdict click @e2
 verdict snapshot -D
 ```
 
-```diff
---- previous
-+++ current
-- @e5 - button "Submit"
-+ @e5 - button "Loading..."
-+ @e12 - text "Form submitted successfully"
-```
-
-### Responsive Testing
-
-Screenshot at mobile, tablet, and desktop in one command:
-
-```bash
-verdict responsive /tmp
-```
-
 ### Screenshots
 
 ```bash
 verdict screenshot /tmp/page.png
 verdict screenshot /tmp/full.png --full
 verdict viewport 375x812
-```
-
-### JavaScript and Debugging
-
-```bash
-verdict js "document.title"
-verdict console
-verdict network
-verdict perf
 ```
 
 ### Tabs and Frames
@@ -430,50 +353,11 @@ verdict stop
 
 
 
-
 # Mem0 Memory Wrapper (`mem.sh`)
 
 > Streamlined memory management for AI agents.
 
 The `mem.sh` script is a bash wrapper around the Mem0 CLI, optimized for programmatic use by AI agents.
-
-## Commands
-
-### `all` / `list`
-List all memories associated with the agent.
-```bash
-./mem.sh list
-```
-
-### `get <memory-id>`
-Retrieve the details of a specific memory.
-```bash
-./mem.sh get 7b3c1a2e-4d5f-6789-abcd-ef0123456789
-```
-
-### `add <text>`
-Add a new memory to the agent's long-term storage.
-```bash
-./mem.sh add "Market Analysis: Trump vs Biden election markets exhibit 15% spread during weekend hours; avoid large orders then."
-```
-
-### `search <query>`
-Perform a semantic search across the agent's memories.
-```bash
-./mem.sh search "What is the recorded spread behavior for political election markets?"
-```
-
-### `update <memory-id> <new-text>`
-Update the content of an existing memory.
-```bash
-./mem.sh update 7b3c1a2e-4d5f-6789-abcd-ef0123456789 "Market Analysis: Spread now stays under 5% after the recent liquidity provider entry."
-```
-
-### `delete <memory-id>`
-Permanently remove a memory.
-```bash
-./mem.sh delete 7b3c1a2e-4d5f-6789-abcd-ef0123456789
-```
 
 ## Summary Table
 

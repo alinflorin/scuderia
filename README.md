@@ -154,6 +154,7 @@ Go to [app.mem0.ai](https://app.mem0.ai) and sign up.
 | `REDDIT_CLIENT_SECRET` | — | |
 | `BUDGETCAPPERCENT` | 20 | |
 | `MEM0_API_KEY` | - | |
+| `CUSTOM_INSTRUCTIONS` | - | |
 
 ---
 
