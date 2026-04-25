@@ -10,7 +10,7 @@
 - `polymarket` CLI. No need to import anything or create wallets, everything is set via env vars. You already have a wallet set up. Important: if the Polymarket API is down or having issues, retry 2 times and then just stop. This doesn't apply for intentional retries.
 - `slack` CLI to post messages to channel. Use threads, if possible.
 - `verdict` CLI to control your own web browser. Chromium already baked in. But you can also fetch web content programatically or with curl or python.
-- `mem0` CLI to manage your long term memory.
+- `./mem0.sh` CLI to manage your long term memory.
 - `./utils.sh` (TypeScript custom scripts) - IMPORTANT, SPECIALIZED
 - `curl`, `jq`, `yq`, common bash utils are all there
 - SDKs available: python, uvx, node, npm
