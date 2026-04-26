@@ -233,32 +233,68 @@ polymarket --help
 
 # Slack CLI
 ---
-Full usage:  
-$ slack chat send \
-  --actions '{"type": "button", "style": "primary", "text": "See results", "url": "http://example.com"}' \
-  --author 'author' \
-  --author-icon 'https://assets-cdn.github.com/images/modules/logos_page/Octocat.png' \
-  --author-link 'https://github.com/rockymadden/slack-cli' \
-  --channel '#channel' \
-  --color good \
-  --fields '{"title": "Environment", "value": "snapshot", "short": true}' \
-  --footer 'footer' \
-  --footer-icon 'https://assets-cdn.github.com/images/modules/logos_page/Octocat.png' \
-  --image 'https://assets-cdn.github.com/images/modules/logos_page/Octocat.png' \
-  --pretext 'pretext' \
-  --text 'text' \
-  --time 123456789 \
-  --title 'title' \
-  --title-link 'https://github.com/rockymadden/slack-cli'
 
 ### `chat send`
 
 ```console
+$ # Send message via prompts:
+$ slack chat send
+$
 $ # Send message via arguments:
 $ slack chat send 'Hello world!' '#channel'
 $
 $ # Send message via options:
 $ slack chat send --text 'Hello world!' --channel '#channel'
+$
+$ # Send message via short form options:
+$ slack chat send -tx 'Hello world!' -ch '#channel'
+$
+$ # Send message via pipe:
+$ ls -al | slack chat send --channel '#channel' --pretext 'Directory:' --color good
+$
+$ # Send message and returning just the timestamp via filter option:
+$ slack chat send 'Hello world!' '#channel' --filter '.ts'
+```
+
+### `chat update`
+
+```console
+$ # Update message via prompts:
+$ slack chat update
+$
+$ # Update message via arguments:
+$ slack chat update 'Hello world, again!' 1405894322.002768 '#channel'
+$
+$ # Update message via options:
+$ slack chat update --text 'Hello world, again!' --timestamp 1405894322.002768 --channel '#channel'
+$
+$ # Update message via short form options:
+$ slack chat update -tx 'Hello world, again!' -ts 1405894322.002768 -ch '#channel'
+$
+$ # Send message and immediately update:
+$ slack chat send 'Hello world!' '#channel' --filter '.ts + "\n" + .channel' |
+  xargs -n2 slack chat update 'Goodbye world!'
+```
+
+
+### `chat delete`
+
+```console
+$ # Delete message via prompts:
+$ slack chat delete
+$
+$ # Delete message via arguments:
+$ slack chat delete 1405894322.002768 '#channel'
+$
+$ # Delete message via options:
+$ slack chat delete --timestamp 1405894322.002768 --channel '#channel'
+$
+$ # Delete message via short form options:
+$ slack chat delete -ts 1405894322.002768 -ch '#channel'
+$
+$ # Send message and immediately delete:
+$ slack chat send 'Hello world!' '#channel' --filter '.ts + "\n" + .channel' |
+  xargs -n2 slack chat delete
 ```
 
 
