@@ -10,6 +10,7 @@
 - `polymarket` CLI. No need to import anything or create wallets, everything is set via env vars. You already have a wallet set up. Important: if the Polymarket API is down or having issues, retry 2 times and then just stop. This doesn't apply for intentional retries.
 - `slack` CLI to post messages to channel. Use threads, if possible.
 - `verdict` CLI to control your own web browser. Chromium already baked in. But you can also fetch web content programatically or with curl or python.
+- `mem0` CLI - your own long term memory. Store here anything you want to persist between trading runs. General items, not scoped to specific markets or market types (example: learnings from losses).
 - `./utils.sh` (TypeScript custom scripts) - IMPORTANT, SPECIALIZED
 - `curl`, `jq`, `yq`, common bash utils are all there
 - SDKs available: python, uvx, node, npm
@@ -29,6 +30,7 @@ Via Polymarket CLI get open positions command.
 - If percent PnL is negative and, let's say, worse than the potential sell threshold percentage (defined below), that's a candidate for selling (cashing out). It also depends on the type of the market (example sports can still have surprises, even if threshold is passed). You can also do SMALL investigations to cross-check.
 - Cash out obviously losing positions, of course.
 - If you decide to cash out, don't use limit orders. Sell immediately.
+- You can store learnings in your long term memory
 
 ## Step 2 — Check Funds
 Fetch USDC balance via Polymarket CLI.
@@ -46,6 +48,7 @@ Do not base your decisions solely on one factor (like only whale positions), unl
 Even if whale positions are not very strong for a market, if it's a market where acquiring data would be a more powerful signal (such as weather markets, X tweets, etc), you can go for the analysis and maybe pick them.
 For short run Crypto markets use the crypto-coin-indicators and binance-momentum tool to get insights.
 Do not bend over backwards trying to find info - if there's no info or little info, skip the market entirely.
+You can consult your memory for info
 
 ## Step 5 — Decide
 Make independent trading decisions — no approval needed. Calculated risk is acceptable.

@@ -410,3 +410,47 @@ verdict cookie-import example.com
 verdict status
 verdict stop
 ```
+
+
+# Memory CLI (`mem0`)
+
+Streamlined long-term memory management.  
+Use --agent-id `claude`, --app-id `scuderia`, and --user-id `claude` to scope.  
+
+## Adding
+`mem0 add "NVDA stock will be on the rise for 3 months" \
+  --no-infer \
+  --user-id claude \
+  --agent-id claude \
+  --app-id scuderia \
+  --expires $(date -d "+14 days" +%Y-%m-%d)`
+
+# Reading memories with short summaries
+`mem0 list \
+  --user-id claude \
+  --agent-id claude \
+  --app-id scuderia \
+  --output json`
+It can also support --page and --page-size (default 100)
+
+# Get one memory
+`mem0 get <memory_id> -u claude --agent-id claude --app-id scuderia -o json`
+
+# Delete a memory
+`mem0 delete <memory_id> \
+  --user-id claude \
+  --agent-id claude \
+  --app-id scuderia --force`
+
+# Update a memory
+`mem0 update <memory_id> "NVDA stock will actually be on the rise for 2 months only" \
+  --user-id claude \
+  --agent-id claude \
+  --app-id scuderia`
+
+# Semantic search
+`mem0 search "What are the markets where I lost most?" \
+  --user-id claude \
+  --agent-id claude \
+  --app-id scuderia \
+  --top-k 5 -o json`
