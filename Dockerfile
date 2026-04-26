@@ -29,8 +29,6 @@ ENV PATH="/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sb
 RUN curl -LsSf https://astral.sh/uv/install.sh | bash
 
 
-# Mem0
-RUN npm install -g @mem0/cli
 
 # Node + Bash project
 WORKDIR /app

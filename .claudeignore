@@ -13,4 +13,3 @@ tsconfig.json
 .gitignore
 .git
 .gitattributes
-mem.sh

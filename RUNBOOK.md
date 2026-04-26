@@ -10,7 +10,6 @@
 - `polymarket` CLI. No need to import anything or create wallets, everything is set via env vars. You already have a wallet set up. Important: if the Polymarket API is down or having issues, retry 2 times and then just stop. This doesn't apply for intentional retries.
 - `slack` CLI to post messages to channel. Use threads, if possible.
 - `verdict` CLI to control your own web browser. Chromium already baked in. But you can also fetch web content programatically or with curl or python.
-- `./mem.sh` CLI to manage your long term memory. This is your main long-term memory. Use this to store useful info between trading runs (not specific to any market, but rather general).
 - `./utils.sh` (TypeScript custom scripts) - IMPORTANT, SPECIALIZED
 - `curl`, `jq`, `yq`, common bash utils are all there
 - SDKs available: python, uvx, node, npm
@@ -26,13 +25,14 @@ Use the Slack CLI to send a message to the channel mentioned in the initial prom
 ## Step 1 — Review & Manage Open Positions
 Via Polymarket CLI get open positions command.
 - Be aware of them. No redeems are needed, automatic redeem is enabled in Polymarket account settings.
-- You can also cash out open positions, but as a very last resort, if risk warrants it. If loss is unavoidable. If percent PnL is negative and, let's say, worse than the potential sell threshold percentage (defined below), that's a candidate for selling (cashing out). It also depends on the type of the market (example sports can still have surprises, even if threshold is passed). You can also do SMALL investigations to cross-check.
+- You can also cash out open positions, but as a very last resort, if risk warrants it. If loss is unavoidable.
+- If percent PnL is negative and, let's say, worse than the potential sell threshold percentage (defined below), that's a candidate for selling (cashing out). It also depends on the type of the market (example sports can still have surprises, even if threshold is passed). You can also do SMALL investigations to cross-check.
 - Cash out obviously losing positions, of course.
 - If you decide to cash out, don't use limit orders. Sell immediately.
 
 ## Step 2 — Check Funds
 Fetch USDC balance via Polymarket CLI.
-If balance is 0 or tools are failing → skip to Step 8.
+If balance is 0 or tools are failing → skip to Step 7.
 
 
 ## Step 3 — Find Candidate Markets
@@ -58,12 +58,7 @@ Make independent trading decisions — no approval needed. Calculated risk is ac
 - If an order fails, skip it (don't count it)
 - Place orders in such a way they get filled immediately! Do not wait for someone to match the price! This is important. I think these would be market orders?
 
-## Step 7 - Manage memory
-- You can store any facts in your ./mem.sh long term memory. Generic facts, not scoped to particular markets.
-- You must also update/delete older memories if needed. If the information is already in this prompt or coming from a tool, don't store it. The whole memory will be loaded at the next run so be careful with the tokens. Keep memories short!
-- What can go in the long term memory: lessons learned about your lost positions (think generally), hints about future bets.
-
-## Step 8 — Notify Outcome
+## Step 7 — Notify Outcome
 Post to Slack channel mentioned in the initial prompt. Always include:
 - Open positions, their status, and the redeems summary
 - Number of trades placed (if any)

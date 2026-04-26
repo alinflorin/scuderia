@@ -374,27 +374,3 @@ verdict cookie-import example.com
 verdict status
 verdict stop
 ```
-
-
-
-
-
-
-# Memory CLI (`./mem.sh`)
-
-> Streamlined memory management for AI agents.
-
-The `./mem.sh` script is a bash wrapper around a cloud memory service, optimized for programmatic use by AI agents.
-
-## Summary Table
-
-| Command | Args | Description |
-| :--- | :--- | :--- |
-| `all` | - | Alias for `list` |
-| `list` | - | List all memories since 14 days ago |
-| `get` | `<id>` | Get specific memory details |
-| `add` | `<text>` | Store new memory |
-| `search`| `<query>`| Semantic search. Token optimal. |
-| `update`| `<id> <t>`| Update memory content |
-| `delete`| `<id>` | Delete memory (forced) |
-
